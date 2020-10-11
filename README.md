@@ -4,6 +4,6 @@
 
 역할 | 이름
 --- | ---
-강사 | 야무
+강사 | 야무(yamoo9@euid.dev)
 학생 | 한나(shhn0509@gmail.com)
 
