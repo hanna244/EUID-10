@@ -6,7 +6,7 @@
 
 - [x]  영상 강의 사이트 시청 권한 부여
 - [x]  GitHub 저장소 생성(한나 계정) 및 초대
-- [ ]  [멘토링 프로그램](https://github.com/yamoo9/mentoring-program) 설치
+- [x]  [멘토링 프로그램](https://github.com/yamoo9/mentoring-program) 설치
 
 ## 학습 계획 시간
 
