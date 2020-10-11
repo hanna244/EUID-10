@@ -1,9 +1,11 @@
 # 이듬(E.UID) 멘토링 프로그램
 
-멘토링 프로그램 역할 설정
+![](./__MENTORING__/assets/GrowthAnalytics.png)
 
-역할 | 이름
---- | ---
-강사 | 야무(yamoo9@euid.dev)
-학생 | 한나(shhn0509@gmail.com)
+<br>
 
+맨투맨(`1:1`) 멘토링 프로그램
+
+- [x]  [멘토링: **가이드**](./__MENTORING__/GUIDE.md) 
+- [x]  [멘토링: **프리페어링**](./__MENTORING__/PREPARING.md) 
+- [x]  [멘토링: **스케쥴**](./__MENTORING__/SCHEDULES.md) 
