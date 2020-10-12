@@ -38,4 +38,6 @@
   - [x]  코멘트 / 디버깅 (4분 22초)
   - [x]  선언 / 할당 (14분 22초)
   - [x]  Start! 인터랙션 (5분 31초)
+
+  **🍿 참고:** [CSS 변수(Variables, Custom Property)](./documents/css-variables.md)
 </details>
