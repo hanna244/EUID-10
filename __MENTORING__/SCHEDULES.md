@@ -7,12 +7,24 @@
 
 - [DAY 01](#-day-01)
 - [DAY 02](#-day-02)
+- [DAY 03](#-day-03)
 
 <!-- 일차 별 학습 진행 목표 -->
 
-## ␥ DAY 02
+## ␥ DAY 03
 
 <details open>
+  <summary><b>학습 진행</b></summary>
+  
+  <br>프로그래밍에서 매우 중요한 개념인 **함수**에 대해 익혀보는 시간을 가져봅니다.<br>
+
+  - [ ]  JavaScript 함수 (10분 17초, 5분 9초, 6분 34초, 6분 2초)
+
+</details>
+
+## ␥ DAY 02
+
+<details>
   <summary><b>학습 진행</b></summary>
   
   <br>기본이자 중요한 열쇠인 JavaScript 데이터에 대해 이해하고, 언어가 가진 특성에 대해 살펴봅니다.<br>
