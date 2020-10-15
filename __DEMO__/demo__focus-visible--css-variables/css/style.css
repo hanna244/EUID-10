@@ -1,0 +1,38 @@
+/* :focus-visible ----------------------------------------------------------- */
+
+body {
+  /* CSS 변수(커스텀 속성): 상속 가능 */
+  --focus-visible-shadow: 0 0 0 4px rgba(20, 37, 189, 0.7);
+  --focus-visible-rounded: 3px;
+}
+
+:focus {
+  outline: 0;
+  /* 부모로부터 상속된 CSS 변수 사용 가능 */
+  box-shadow: var(--focus-visible-shadow);
+  border-radius: var(--focus-visible-rounded, 0);
+}
+
+:focus:not(:focus-visible),
+/* :focus-visible 유사 클래스 폴리필 */ 
+.js-focus-visible :focus:not(.focus-visible) {
+  box-shadow: none;
+}
+
+:focus-visible,
+/* :focus-visible 유사 클래스 폴리필 */ 
+.js-focus-visible .focus-visible {
+  /* 부모로부터 상속된 CSS 변수 사용 가능 */
+  box-shadow: var(--focus-visible-shadow);
+  border-radius: var(--focus-visible-rounded, 0);
+}
+
+/* -------------------------------------------------------------------------- */
+
+body {
+  margin: 3rem;
+}
+
+a {
+  padding: 0.25em 0.38em;
+}

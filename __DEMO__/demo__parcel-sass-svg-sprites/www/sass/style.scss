@@ -1,0 +1,21 @@
+@import "./config";
+@import "./defaults";
+@import "./svgSprites";
+
+body {
+  // 지역 변수
+  $space: 0;
+
+  margin: 60px $space;
+  font: 1rem/1.5 SpoqaHanSans, sans-serif;
+}
+
+.container {
+  width: $container-width;
+  margin: 0 auto;
+}
+
+.headline {
+  font-weight: 300;
+  font-size: 2.3rem;
+}

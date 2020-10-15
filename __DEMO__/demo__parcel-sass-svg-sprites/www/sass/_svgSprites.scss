@@ -1,0 +1,13 @@
+.icon {
+  $icon-size: 28px;
+
+  display: inline-block;
+  background: url("../assets/SVG_Srpites.svg") no-repeat;
+  width: $icon-size;
+  height: $icon-size;
+  
+  &.up-arrow { background-position: 0 0; }
+  &.new { background-position: 0 -1 * $icon-size; }
+  &.down-arrow { background-position: 0 -2 * $icon-size; }
+  &.dash { background-position: 0 -3 * $icon-size; }
+}

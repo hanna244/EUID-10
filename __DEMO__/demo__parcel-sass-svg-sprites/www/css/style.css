@@ -1,0 +1,47 @@
+figure {
+  margin: 0;
+}
+
+hr {
+  height: 0;
+  border: 0;
+  box-shadow: 0 0 0 0.5px #999;
+}
+hr.gap {
+  margin: 5rem 0;
+}
+
+.icon {
+  display: inline-block;
+  background: url("SVG_Srpites.6b79d218.svg") no-repeat;
+  width: 28px;
+  height: 28px;
+}
+.icon.up-arrow {
+  background-position: 0 0;
+}
+.icon.new {
+  background-position: 0 -28px;
+}
+.icon.down-arrow {
+  background-position: 0 -56px;
+}
+.icon.dash {
+  background-position: 0 -84px;
+}
+
+body {
+  margin: 60px 0;
+  font: 1rem/1.5 SpoqaHanSans, sans-serif;
+}
+
+.container {
+  width: 960px;
+  margin: 0 auto;
+}
+
+.headline {
+  font-weight: 300;
+  font-size: 2.3rem;
+}
+/*# sourceMappingURL=style.css.map */

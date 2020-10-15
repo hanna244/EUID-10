@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "start": "npm-run-all --parallel sass server",
+    "clean": "rimraf .parcel-cache www/css",
+    "sass": "parcel www/sass/style.scss --dist-dir www/css",
+    "server": "live-server --port=9099 www"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.1",
+    "npm-run-all": "^4.1.5",
+    "parcel": "^2.0.0-nightly.425",
+    "rimraf": "^3.0.2",
+    "sass": "^1.27.0"
+  }
+}
