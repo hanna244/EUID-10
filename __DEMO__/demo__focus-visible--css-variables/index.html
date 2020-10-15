@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS 포커스 비저블 데모</title>
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <!-- :focus-visible 유사 클래스 폴리필 -->
+    <script src="https://unpkg.com/focus-visible@5.2.0/dist/focus-visible.min.js"></script>
+
+    <!-- CSS 변수(커스텀 속성) IE 11+ 폴리필 -->
+    <script>
+      window.MSInputMethodContext && document.documentMode &&
+        document.write('<script src="https://cdn.jsdelivr.net/gh/nuxodin/ie11CustomProperties@4.1.0/ie11CustomProperties.min.js"><\/script>');
+    </script>
+
+    <script>
+      (function focusVisibleDEMO() {
+        'use strict';
+
+        function demo() {
+
+          var targetNode = document.querySelector('.demo a');
+
+          var targetNodeStyles = window.getComputedStyle(targetNode, null);
+
+          var focusVisibleStyles = {
+            color: targetNodeStyles.getPropertyValue('--color'),
+            shadow: targetNodeStyles.getPropertyValue('--focus-visible-shadow'),
+            rounded: targetNodeStyles.getPropertyValue('--focus-visible-rounded'),
+          };
+
+          // .demo a 요소노드에 설정된 포커스 비저블 관련 스타일 속성 객체 출력
+          console.log(focusVisibleStyles);
+
+        }
+
+        window.addEventListener('DOMContentLoaded', demo);
+
+      })();
+    </script>
+  </head>
+
+  <body>
+
+    <!-- 
+      ⚠️ IE 11에서 인라인 스타일 방법으로 설정된 CSS 변수 값을 가져오려면? 
+         비 표준 속성인 ie-style 값을 함께 설정해줘야 함.
+         
+         그러므로 인라인 스타일 방법으로 CSS 변수를 설정하는 것은 권장되지 않음.
+    -->
+    <div
+      class="demo"
+      style="--color: blue;"
+      ie-style="--color: blue">
+      <a href="#focus-visible-demo">포커스 비저블</a>
+    </div>
+
+  </body>
+
+</html>
