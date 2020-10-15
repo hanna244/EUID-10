@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SVG 스프라이트(Sprite)</title>
+    <link href="https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <script src="./js/svgSprites.js" defer></script>
+  </head>
+
+  <body>
+
+    <section class="container">
+      <h1 class="headline">SVG Sprites 배경 이미지 활용</h1>
+
+      <span role="img" aria-label="위로" class="icon up-arrow"></span>
+      <span role="img" aria-label="아래로" class="icon down-arrow"></span>
+      <span role="img" aria-label="신상품" class="icon new"></span>
+      <span role="img" aria-label="중립 선택" class="icon dash"></span>
+    </section>
+
+    <hr class="gap" />
+    
+    <section class="container">
+      <h1 class="headline">SVG Sprites 활용</h1>
+
+      <figure aria-label="EDIYA COFFEE" style="margin-bottom: 15px;">
+        <svg width="300" height="29"><use href="#brand"></use></svg>
+      </figure>
+      
+      <figure aria-label="EDIYA COFFEE">
+        <svg width="161" height="16"><use href="#brand-dark"></use></svg>
+      </figure>
+
+    </section>
+    
+  </body>
+
+</html>
