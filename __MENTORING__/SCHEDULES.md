@@ -1,5 +1,7 @@
 [← BACK](../README.md)
 
+<br />
+
 # SCHEDULES
 
 영상 강의 학습 일정을 일차 별로 안내하니, 학습 일정을 완료한 후 [`완료 상태`로 변경하고 원격 저장소에 푸시(push)](./tutorials/changeCompleteState.md) 합니다.
@@ -10,12 +12,27 @@
 - [DAY 03](#-day-03)
 - [DAY 04](#-day-04)
 - [DAY 05](#-day-05)
+- [DAY 06](#-day-06)
+
+<br />
 
 <!-- 일차 별 학습 진행 목표 -->
 
-## ␥ DAY 05
+## ␥ DAY 06
 
 <details open>
+  <summary><b>학습 진행</b></summary>
+  
+  <br>이벤트 프로그래밍 학습을 진행합니다.<br>
+
+  - [ ]  마우스 이벤트 핸들링 (10분 2초, 5분 21초)
+  - [ ]  키보드 이벤트 핸들링 (11분 16초, 17분 20초)
+
+</details>
+
+## ␥ DAY 05
+
+<details>
   <summary><b>학습 진행</b></summary>
   
   <br>프로그래밍 조건 처리를 위한 기초 공부 Part 2를 진행합니다.<br>
