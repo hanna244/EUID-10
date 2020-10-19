@@ -16,12 +16,17 @@ console.log(goTo('세나'));
 
 function findElement(selector) {
   // document.querySelector(selector); // 문서에서 찾은 요소 객체
-  return document.querySelector(selector);
+
+  return findElement('.app-hearder');
+  // return console.log(selector);
+  // return selector;
+
+  // return document.querySelector(selector);
 }
 
-function findElements(selector) {
-  return document.querySelectorAll(selector);
-}
+// function findElements(selector) {
+//     return document.querySelectorAll(selector)
+// }
 
 var appHeader = findElement('.app-header');
 console.log(appHeader);
