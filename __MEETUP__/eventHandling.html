@@ -63,7 +63,29 @@
     박스 색상 바꾸기
   </button>
 
+  <!-- <div class="box" onmouseenter="handleMouseEnterOfBox()" onmouseleave="handleMouseLeaveOfBox()"></div> -->
   <div class="box"></div>
+
+  <script>
+    var boxNode = document.querySelector('.box');
+
+    // 이벤트 객체와 이벤트 대상(target)
+    function handleMouseEnterOfBox(e) {
+      // 이벤트 객체 출력
+      console.log('mouse enter');
+      console.log(e.target);
+    }
+
+    function handleMouseLeaveOfBox(e) {
+      console.log('mouse leave');
+      console.log(e.type);
+    }
+
+    // 마우스 이벤트 연결
+    boxNode.onmouseenter = handleMouseEnterOfBox;
+    boxNode.onmouseleave = handleMouseLeaveOfBox;
+
+  </script>
 
   <script>
     function logToConsole() {
