@@ -19,4 +19,5 @@
 
 **␥ 오늘 내가 배운것들**
 
-- [x]  [**TIL**](./__TIL__/README.md) 
+- [x]  [**온라인 TIL**](./__TIL__/README.md)
+- [x]  [**오프라인 TIL**](./__OFFLINE__/README.md)
