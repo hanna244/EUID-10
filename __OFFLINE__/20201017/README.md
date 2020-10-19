@@ -380,7 +380,7 @@ console.log(appHeaderTitle); // null
 // '위치3', '위치4'에 <script>가 위치할 때
 console.log(appHeaderTitle); // <h1 class="app-header-title">...</h1>
 ```
-* 위 처럼 각각의 자리에 <script>를 위치해보고 값을 확인했다. 값을 확인하려는 DOM 요소의 뒤에 위치했을 때 부터 값이 제대로 나온다. 결론, `<script>`는 HTML `<body>` 하단에 위치시키는 것을 권장.
+* 위 처럼 각각의 자리에 `<script>`를 위치해보고 값을 확인했다. 값을 확인하려는 DOM 요소의 뒤에 위치했을 때 부터 값이 제대로 나온다. 결론, `<script>`는 HTML `<body>` 하단에 위치시키는 것을 권장.
 
 ### 함수 실습
 * JS 함수를 직접 실습하면서 놓쳤던 부분이 많았다. 그 부분들을 줄줄 작성해 보자! 한 번 실수 했으니 두 번은 없다!
