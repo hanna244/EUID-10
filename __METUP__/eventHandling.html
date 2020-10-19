@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>이벤트 프로그래밍</title>
+  <style>
+    body {
+      --focus-visible-color: rgba(25, 133, 176, 0.71);
+      
+      margin: 4rem;
+    }
+
+    :focus {
+      outline: 0;
+      border-radius: 4px;
+      box-shadow: 0 0 0 4px var(--focus-visible-color);
+    }
+    :focus:not(:focus-visible) {
+      box-shadow: none;
+    }
+    :focus-visible {
+      box-shadow: 0 0 0 4px var(--focus-visible-color);
+    }
+
+    /* ----------------------------------------------------------------------- */
+
+    .box {
+      width: 100px;
+      height: 100px;
+      background: #aaaaaa;
+    }
+
+    .button {
+      cursor: pointer;
+      margin-bottom: 20px;
+      border: 0;
+      border-radius: 4px;
+      background: #393939;
+      color: #ffffff;
+      padding: 5px 10px 8px;
+    }
+
+    .button:hover {
+      background: #000;
+    }
+  </style>
+</head>
+<body>
+  
+  <button
+    type="button"
+    class="button"
+    onclick="logToConsole()"
+  >
+    콘솔 패널에 로그 출력
+  </button>
+
+  <button
+    type="button"
+    class="button button__modern"
+  >
+    박스 색상 바꾸기
+  </button>
+
+  <div class="box"></div>
+
+  <script>
+    function logToConsole() {
+      console.log('`콘솔 패널에 로그 출력` 버튼 클릭했어요!');
+    }
+
+    // box, button 요소를 찾는다.
+    var boxNode, buttonNode;
+    
+    boxNode = document.querySelector('.box');
+    buttonNode = document.querySelector('.button__modern');
+    // console.log(boxNode);
+    // console.log(buttonNode);
+
+    // button 요소를 사용자가 클릭하면
+    // 이벤트 속성의 기본 값은? null
+    // 이벤트 속성에 설정 가능한 값은 function
+    // console.log(buttonNode.onclick);
+
+    // 변수는 데이터를 저장하는 공간
+    // 변수는 데이터 값을 저장합니다.
+    // 함수 값을 저장(참조)
+    var handleChangeBackgroundOfBox = function () {
+      // 함수(기능) 구현
+      // console.log('clicked button');
+      boxNode.style.backgroundColor = '#fc1c0e';
+      boxNode.style.transition = 'transform 0.6s 0.4s ease-in-out';
+      boxNode.style.transform = 'rotate(-45deg) scale(1.2)';
+    };
+
+    // 변수(HTMLButtonElement 요소노드 참조)
+    // <button type="button" class="button">click me</button>
+    // new HTMLButtonElement()
+    // HTML 문서의 모든 요소는 이벤트 속성을 가지고 있다.
+    // 이벤트 속성의 특징은 접두사 on-을 사용한다.
+    // onclick, onfocus, onblur, onmouseover, ...
+    
+    if (!buttonNode.onclick) {
+      buttonNode.onclick = handleChangeBackgroundOfBox;
+    }
+
+    // if (A && B) {} : A, B 모두 참이어야만 참이된다.
+    // A && B : A가 참이면 B를 실행한다.
+    // A || B : A가 거짓이면 B를 실행한다.
+    // buttonNode.onclick = function(){}
+
+    // 객체의 속성이 아니라, 그냥 그 자체의 변수만 선언 → var 사용
+    // 하지만 객체의 속성을 사용할 때는 var를 사용하지 않음
+
+    // console.log(buttonNode.onclick);
+    // box의 배경 색상을 변경한다.
+  </script>
+</body>
+</html>
