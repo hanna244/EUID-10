@@ -13,14 +13,30 @@
 - [DAY 04](#-day-04)
 - [DAY 05](#-day-05)
 - [DAY 06](#-day-06)
+- [DAY 07](#-day-07)
 
 <br />
 
 <!-- 일차 별 학습 진행 목표 -->
 
-## ␥ DAY 06
+## ␥ DAY 07
 
 <details open>
+  <summary><b>학습 진행</b></summary>
+  
+  <br>리스트 / 반복 처리 학습을 진행합니다.<br>
+
+  - [ ]  배열과 반복/순환 문 (2분 55초)
+  - [ ]  while 문 (15분 04초)
+  - [ ]  continue, break, label 문 & do ~while 문 (15분 13초)
+  - [ ]  for 문 (11분 39초)
+  - [ ]  for ~ in 문 (4분 46초)
+
+</details>
+
+## ␥ DAY 06
+
+<details>
   <summary><b>학습 진행</b></summary>
   
   <br>이벤트 프로그래밍 학습을 진행합니다.<br>
