@@ -1,0 +1,5 @@
+# OFFLINE_MENTORING
+
+오프라인 멘토링 TIL
+
+1. [2020.10.17](./20201017/README.md)
