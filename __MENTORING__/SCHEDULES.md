@@ -26,11 +26,11 @@
   
   <br>리스트 / 반복 처리 학습을 진행합니다.<br>
 
-  - [ ]  배열과 반복/순환 문 (2분 55초)
-  - [ ]  while 문 (15분 04초)
-  - [ ]  continue, break, label 문 & do ~while 문 (15분 13초)
-  - [ ]  for 문 (11분 39초)
-  - [ ]  for ~ in 문 (4분 46초)
+  - [x]  배열과 반복/순환 문 (2분 55초)
+  - [x]  while 문 (15분 04초)
+  - [x]  continue, break, label 문 & do ~while 문 (15분 13초)
+  - [x]  for 문 (11분 39초)
+  - [x]  for ~ in 문 (4분 46초)
 
 </details>
 
