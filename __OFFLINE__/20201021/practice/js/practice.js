@@ -13,13 +13,27 @@ var photoGalleryBigPhotoImage = photoGalleryBigPhoto.querySelector('img');
 function handleChangeBigImage(e) {
   // console.log(e.currentTarget); // 이벤트가 연결된 대상
   // console.log(e.target); // 사용자가 클릭한 이벤트 대상 (현 시점, 나중에 위임 배울 때 자세히 설명)
-  console.log(photoGalleryBigPhotoImage);
+  // console.log(e.currentTarget);
+  // console.log(e.currentTarget.getAttribute('data-index'));
+  var selectedButtonIndex = e.currentTarget.getAttribute('data-index');
   // HTML 요소의 속성(attribute) src
   // getAttribute(name)
   // console.log(photoGalleryBigPhotoImage.src);
-  console.log(photoGalleryBigPhotoImage.getAttribute('src'));
+  // console.log(photoGalleryBigPhotoImage.getAttribute('src'));
   // setAttribute(name, value)
-  photoGalleryBigPhotoImage.setAttribute('src', './assets/' + photoList[1]);
+  photoGalleryBigPhotoImage.setAttribute('src', './assets/' + photoList[selectedButtonIndex]);
 }
+
 // 이벤트 구문
-photoGalleryButtons[1].addEventListener('click', handleChangeBigImage);
+// photoGalleryButtons[0].addEventListener('click', handleChangeBigImage0);
+// photoGalleryButtons[1].addEventListener('click', handleChangeBigImage1);
+
+var i = 0;
+var l = photoGalleryButtons.length;
+
+while (i < l) {
+  var button = photoGalleryButtons[i];
+  button.setAttribute('data-index', i);
+  button.addEventListener('click', handleChangeBigImage);
+  ++i;
+}
