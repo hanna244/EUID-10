@@ -14,14 +14,30 @@
 - [DAY 05](#-day-05)
 - [DAY 06](#-day-06)
 - [DAY 07](#-day-07)
+- [DAY 08](#-day-08)
 
 <br />
 
 <!-- 일차 별 학습 진행 목표 -->
 
-## ␥ DAY 07
+## ␥ DAY 08
 
 <details open>
+  <summary><b>학습 진행</b></summary>
+  
+  <br>포토 갤러리 UI를 제작해보세요.<br>
+
+  - [ ]  라이프 스타일 포토 갤러리 Figma 디자인 시안을 참고하여 HTML, CSS UI 그리기
+  - [ ]  JavaScript를 사용해 썸네일 이미지 버튼을 클릭하면 빅 이미지 교체 스크립트 구현
+  - [ ]  포토 갤러리를 만들면서 경험한 이야기를 TIL에 요약 정리
+
+  ![](./assets/mission--photo-slide-ui.png)
+
+</details>
+
+## ␥ DAY 07
+
+<details>
   <summary><b>학습 진행</b></summary>
   
   <br>리스트 / 반복 처리 학습을 진행합니다.<br>
