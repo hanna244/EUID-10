@@ -1,0 +1,70 @@
+/* sass
+font–family: SpoqaHanSans; */
+
+
+body {
+    margin: 0;
+}
+.photoGallery {
+    display: flex;
+    flex-flow: row-reverse nowrap;
+    justify-content: center;
+    margin: 30px 40px 30px 50px;
+}
+
+.photoGallery ul{
+    padding: 0;
+    margin: 0;
+}
+
+.photoGallery__thumbnail--button {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+figure {
+    position: relative;
+    margin: 0;
+}
+
+h2, figcaption {
+    position: absolute;
+}
+
+h2 {
+    /* font–family: SpoqaHanSans; */
+    font-size: 14px;
+    margin-top: 30px;
+    margin-left: 10px;
+    color: #FFFFFF;
+}
+
+figcaption {
+    background-color: #111111;
+    width: 439px;
+    height: 36px;
+    bottom : 27px;
+    left: 280px;
+    text-align: center;
+    /* font–family: SpoqaHanSans; */
+    color: #FFFFFF;
+    border-radius: 50px;
+
+    /* 비교해보세요. */
+
+    background-color: #111111;
+    width: 440px;
+    height: 36px;
+    /* bottom: 27px; */
+    left: 50%;
+    top: 50%;
+    /* margin-left: -439/2; */
+    /* text-align: center; */
+    transform: translate(-50%,-50%);
+    color: #FFFFFF;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
