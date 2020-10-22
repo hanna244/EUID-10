@@ -1,21 +1,20 @@
 @import "./config";
-@import "./defaults";
-@import "./svgSprites";
+// @import "./defaults";
+@import "./minxins";
+// @import "./svgSprites";
 
-body {
-  // 지역 변수
-  $space: 0;
-
-  margin: 60px $space;
-  font: 1rem/1.5 SpoqaHanSans, sans-serif;
+.a {
+  @include size(100px, 200px);
 }
 
-.container {
-  width: $container-width;
-  margin: 0 auto;
+.ab {
+  @include size(100px);
 }
 
-.headline {
-  font-weight: 300;
-  font-size: 2.3rem;
+.abc {
+  @include size(null, 200px);
+}
+
+.add {
+  @include size(100vw, 100vh);
 }

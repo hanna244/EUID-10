@@ -1,0 +1,10 @@
+// width, height
+@mixin size($w: null, $h: null) {
+  width: $w;
+  height: $h;
+}
+   
+//  function size(w, h){
+//    if (!h) { h = w; }
+//    return { width: w, height: h };
+//  }
