@@ -1,0 +1,80 @@
+@import "./functions";
+
+@mixin flexWrapper($justifyContent: null, $alignItems: null, $display: flex) {
+  display: $display;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+}
+
+@mixin position($position, $args: ()) {
+  $offsets: top right bottom left;
+  position: $position;
+
+  @each $offset in $offsets {
+    $index: index($args, $offset);
+    @if $index {
+      @if $index == length($args) {
+        #{$offset}: 0;
+      } @else {
+        $next: nth($args, $index + 1);
+
+        @if is-valid-length($next) {
+          #{$offset}: $next;
+        } @else if index($offsets, $next) {
+          #{$offset}: 0;
+        } @else {
+          @warn "잘못된 값: `#{$next}`, 전달된 $offset `#{$offset}`.";
+        }
+      }
+    }
+  }
+}
+
+@mixin absolute($args: ()) {
+  @include position(absolute, $args);
+}
+
+@mixin fixed($args: ()) {
+  @include position(fixed, $args);
+}
+
+@mixin relative($args: ()) {
+  @include position(relative, $args);
+}
+
+@mixin a11yHidden() {
+  overflow: hidden;
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
+@mixin size($width: null, $height: null) {
+  width: $width;
+  height: $height;
+}
+
+/* -------------------------------------------------------------------------- */
+@mixin resetImage {
+  vertical-align: middle;
+}
+
+@mixin resetList() {
+  list-style-type: none;
+  margin: {
+    top: 0;
+    bottom: 0;
+  }
+  padding: 0;
+}
+
+@mixin resetButton() {
+  user-select: none;
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background: transparent;
+}

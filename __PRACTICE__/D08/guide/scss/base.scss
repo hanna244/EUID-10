@@ -1,0 +1,20 @@
+@import "./config";
+@import "./mixins";
+
+::selection {
+  background: $black;
+  color: $white;
+}
+
+img::selection {
+  background: transparent;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  @include flexWrapper(center, center);
+  height: 100vh;
+}
