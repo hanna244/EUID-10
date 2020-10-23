@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JavaScript 블록과 스코프</title>
+</head>
+<body>
+
+  <script>
+
+    var a = '알파';
+    console.log(a) // '알파'
+
+    if (true) {
+      var a = '베타';
+      console.log(a); // '베타'
+    }
+    
+    if (true) {
+      var a = '감마';
+      console.log(a); // '감마'
+    }
+
+    function aaa () {
+      var a = '';
+    }
+
+    console.log(a); // '알파' ('베타')
+
+  </script>
+</body>
+</html>
