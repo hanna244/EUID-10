@@ -1,5 +1,5 @@
-@import "./config";
-@import "./mixins";
+@import "../config";
+@import "../modules/mixins";
 
 .photoGallery {
   @include size( 1120px, 667px);
@@ -26,10 +26,11 @@
     @include absolute(z-index 100 left 50% bottom 27px);
     transform: translateX(-50%);
     border-radius: 50px;
-    padding: 0.625em 8.75em;
+    padding: 0.625em 8em;
     background: $black;
     color: $white;
     font: 700 1rem/1 SpoqaHanSans;
+    text-align: center;
   }
 
   &__controls {

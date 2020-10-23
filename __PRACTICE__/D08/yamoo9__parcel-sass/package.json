@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "start": "parcel src/index.html --open"
+  },
+  "devDependencies": {
+    "parcel": "^1.12.4",
+    "sass": "^1.27.0"
+  }
+}

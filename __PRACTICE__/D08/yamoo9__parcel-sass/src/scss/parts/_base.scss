@@ -1,5 +1,5 @@
-@import "./config";
-@import "./mixins";
+@import "../config";
+@import "../modules/mixins";
 
 ::selection {
   background: $black;
