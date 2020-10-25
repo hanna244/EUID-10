@@ -1,0 +1,27 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  background: #e9e9e9;
+  color: #060b38;
+  text-align: center;
+  font: 1rem/1.5 SpoqaHanSans, Verdana, Arial, Sans-Serif;
+}
+
+a {
+  color: inherit;
+}
+
+.headline {
+  margin-bottom: 0;
+  font-weight: lighter;
+  font-size: 2.2rem;
+}
+
+.description {
+  margin-top: 0.625em;
+  font-weight: bolder;
+}

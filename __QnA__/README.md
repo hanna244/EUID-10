@@ -23,7 +23,11 @@
 1. [프로그램에서 "파싱(parsing)"이란 무엇인가요?](#q13-질문)
 1. [`var target = e.target;` 구문 해석을 어떻게 해야 할지 모르겠습니다.](#q14-질문)
 1. [손 코딩 과제를 해야하는 이유가 뭔가요?](#q15-질문)
-1. [버튼을 클릭했을 시에 이미지가 우측 모서리 쪽으로 이동하는 현상](#3-4)
+1. [개발자 도구에서 중단점(Breakpoint)을 사용하는 것을 봤습니다. 중단점은 어떤 기능을 하나요?](#q16-질문)
+1. ['스크립트 의존성'으로 본다면 HTML 마크업 할 때 `index.js`, `helper.js`를 기본적으로 불러와야 하나요?](#q17-질문)
+1. [스코프 체인(Scope Chain)은 정확히 무엇을 말하는 건가요?](#q18-질문)
+1. [버튼을 클릭했을 시에 이미지가 우측 모서리 쪽으로 이동하는 현상을 어떻게 해결하나요?](#q19-질문)
+<!-- 1. [](#q19-질문) -->
 
 <br />
 
@@ -31,18 +35,92 @@
 
 <br />
 
-## Q16. 질문
+## Q19. 질문
 
-버튼을 클릭했을 시에 이미지가 우측 모서리 쪽으로 이동하는 현상 해결 방법
+버튼을 클릭했을 시에 이미지가 우측 모서리 쪽으로 이동하는 현상을 어떻게 해결하나요? 
 ![](../__TIL__/assets/D10_TIL_attached_file2.jpg)
 
 <details>
-  <summary>A16. 답변</summary>
+  <summary>A19. 답변</summary>
   <br />
 
 </details>
 
 <br />
+
+## Q18. 질문
+
+스코프 체인(Scope Chain)은 정확히 무엇을 말하는 건가요?
+
+<details>
+  <summary>A18. 답변</summary>
+  <br/>
+
+  JavaScript에서 변수가 사용되면 JavaScript 엔진은 현재 범위에서 변수 값을 찾으려고 합니다. 
+  변수를 찾을 수없는 경우 상위 범위을 조사하고 변수를 찾고, 전역 범위에 도달 할 때까지 계속 검색합니다.
+  여전히 변수를 찾을 수 없는 경우 전역 범위에서 변수를 암시적으로 선언하거나, `ReferenceError` 오류를 반환합니다.
+
+  ```js
+  var globalVariable = '전역 변수';
+
+  function outerLocalScope() {
+    var variable = '지역 변수';
+    
+    function innerLocalScope() {
+      console.log(variable);        // '지역 변수' (상위 범위에서 찾음)
+      console.log(globalVariable);  // '전역역 변수' (전역 범위에서 찾음)
+      console.log(lexicalVariable)  // ReferenceError (못찾음)
+    }
+
+    innerLocalScope();
+  }
+
+  outerLocalScope();
+  ```
+</details>
+
+<br/>
+
+## Q17. 질문
+
+'스크립트 의존성'으로 본다면 HTML 마크업 할 때 `index.js`, `helper.js`를 기본적으로 불러와야 하나요?
+
+<details>
+  <summary>A17. 답변</summary>
+  <br/>
+
+  `index.js`는 `helper.js` 파일에 의존합니다. 쉽게 말해 `helper.js` 파일 코드에 작성된 함수를 
+  `index.js`에서 실행합니다. 그러므로 `helper.js` 파일을 먼저 호출해야 하고, 이어서 `index.js` 파일을
+  호출해야 프로그램이 정상적으로 실행됩니다. 작성 순서가 뒤바뀌면 프로그램은 오류를 발생시킵니다.
+
+  ```html
+  <script src="./js/helper.js"></script>
+  <script src="./js/index.js"></script>
+  ```
+</details>
+
+<br/>
+
+## Q16. 질문
+
+개발자 도구에서 중단점(Breakpoint)을 사용하는 것을 봤습니다. 중단점은 어떤 기능을 하나요?
+
+<details>
+  <summary>A16. 답변</summary>
+  <br/>
+
+  중단점(Breakpoint)는 말 그대로 코드 실행을 중단하여 진행 흐름을 살펴볼 때 사용합니다.
+  코드가 실행 완료된 후 Console 패널을 통해 확인하는 `console.log()` 디버깅에 비해 
+  면밀하게 코드가 작동하는 흐름을 확인하여 디버깅 할 수 있습니다.
+
+  작성된 코드에서 오류가 발생한 경우, 오류가 의심되는 코드 라인에 중단점을 추가하고
+  디버깅을 실행하면 설정된 중단점 마다, 함수가 호출되는 과정과 함수의 지역 변수 값을 
+  확인하거나 디버그 콘솔을 통해 검토할 수 있습니다. → [코드 참고](../__DEMO__/demo__using-breakpoint)
+
+  ![](./assets/chrome-debug.png)
+</details>
+
+<br/>
 
 ## Q15. 질문
 
