@@ -1,0 +1,83 @@
+body {
+    margin: 0;
+}
+.photoGallery {
+    display: flex;
+    flex-flow: row-reverse nowrap;
+    justify-content: center;
+    margin: 30px 40px;
+    
+    &__title {
+        display: none;
+    }
+
+    &__controls{
+        padding: 0;
+        margin: 0 0 0 10px;
+        list-style: none;
+    }
+    
+    &__thumbnail {
+    
+        &--button {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+        }
+    }
+    
+    &__bigPhoto {
+        position: relative;
+        margin: 0;
+    }
+    
+    &__bigPhotoTitle {
+        position: absolute;
+        font-size: 14px;
+        margin-top: 30px;
+        margin-left: 30px;
+        color: #FFFFFF;
+    }
+
+    &__bigPhotoCaption {
+        position: absolute;
+        background-color: black;
+        width: 440px;
+        height: 36px;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 27px;
+        border-radius: 50px;
+        color: #FFFFFF;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* -------------------- 버튼 리스트 */
+/* -------------------- 썸네일 이미지 일반 스타일 */
+
+.photoGallery__button {
+    padding: 0;
+    border: 0;
+    outline: none;
+    width: 110px;
+    height: 73px;
+    margin-bottom: 10px;
+    filter: grayscale(100%);
+}
+
+/* -------------------- 썸네일 이미지 마우스 호버 */
+.photoGallery__button:hover {
+    filter: grayscale(0%);
+}
+
+/* -------------------- 썸네일 이미지 마우스 클릭 */
+.photoGallery__button:active {
+    filter: grayscale(0%);
+    border: 3px solid #2E2828;
+    outline: 0;
+}
+
+

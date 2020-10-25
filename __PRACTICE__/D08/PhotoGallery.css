@@ -1,7 +1,3 @@
-/* sass
-font–family: SpoqaHanSans; */
-
-
 body {
     margin: 0;
 }
@@ -9,12 +5,17 @@ body {
     display: flex;
     flex-flow: row-reverse nowrap;
     justify-content: center;
-    margin: 30px 40px 30px 50px;
+    margin: 30px 40px;
 }
 
-.photoGallery ul{
+.photoGallery__title {
+    display: none;
+}
+
+.photoGallery__controls{
     padding: 0;
-    margin: 0;
+    margin: 0 0 0 10px;
+    list-style: none;
 }
 
 .photoGallery__thumbnail--button {
@@ -23,48 +24,59 @@ body {
     justify-content: space-between;
 }
 
-figure {
+.photoGallery__bigPhoto {
     position: relative;
     margin: 0;
 }
 
-h2, figcaption {
-    position: absolute;
-}
-
-h2 {
+.photoGallery__bigPhotoTitle {
     /* font–family: SpoqaHanSans; */
+    position: absolute;
     font-size: 14px;
     margin-top: 30px;
-    margin-left: 10px;
+    margin-left: 30px;
     color: #FFFFFF;
 }
 
 figcaption {
-    background-color: #111111;
-    width: 439px;
-    height: 36px;
-    bottom : 27px;
-    left: 280px;
-    text-align: center;
-    /* font–family: SpoqaHanSans; */
-    color: #FFFFFF;
-    border-radius: 50px;
-
-    /* 비교해보세요. */
-
-    background-color: #111111;
+    position: absolute;
+    background-color: black;
     width: 440px;
     height: 36px;
-    /* bottom: 27px; */
     left: 50%;
-    top: 50%;
-    /* margin-left: -439/2; */
-    /* text-align: center; */
-    transform: translate(-50%,-50%);
-    color: #FFFFFF;
+    transform: translateX(-50%);
+    bottom: 27px;
     border-radius: 50px;
+    color: #FFFFFF;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 }
+
+/* 버튼 리스트 --------------------*/
+
+/* 일반 스타일 --------------------*/
+
+.photoGallery__button {
+    padding: 0;
+    border: 0;
+    outline: none;
+    width: 110px;
+    height: 73px;
+    margin-bottom: 10px;
+    filter: grayscale(100%);
+}
+
+/* 마우스 호버 --------------------*/
+.photoGallery__button:hover {
+    filter: grayscale(0%);
+}
+
+/* 마우스 클릭 --------------------*/
+.photoGallery__button:active {
+    filter: grayscale(0%);
+    border: 3px solid #2E2828;
+    outline: 0;
+}
+
+
