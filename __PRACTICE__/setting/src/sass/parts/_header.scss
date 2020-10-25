@@ -1,0 +1,19 @@
+@import "../config";
+
+.header {
+    background: $white;
+
+    &--fixed {
+        position: fixed;
+        z-index: 1000;
+    }
+
+    &--themeDark {
+        background: $black;
+    }
+    
+    // 요소
+    &__homeLink {
+        display: block;
+    }
+}
