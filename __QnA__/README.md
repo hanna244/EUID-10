@@ -23,6 +23,7 @@
 1. [프로그램에서 "파싱(parsing)"이란 무엇인가요?](#q13-질문)
 1. [`var target = e.target;` 구문 해석을 어떻게 해야 할지 모르겠습니다.](#q14-질문)
 1. [손 코딩 과제를 해야하는 이유가 뭔가요?](#q15-질문)
+1. [버튼을 클릭했을 시에 이미지가 우측 모서리 쪽으로 이동하는 현상](#3-4)
 
 <br />
 
@@ -30,11 +31,24 @@
 
 <br />
 
+## Q16. 질문
+
+버튼을 클릭했을 시에 이미지가 우측 모서리 쪽으로 이동하는 현상 해결 방법
+![](../__TIL__/assets/D10_TIL_attached_file2.jpg)
+
+<details>
+  <summary>A16. 답변</summary>
+  <br />
+
+</details>
+
+<br />
+
 ## Q15. 질문
 
 손 코딩 과제를 해야하는 이유가 뭔가요?
 
-<details open>
+<details>
   <summary>A15. 답변</summary>
 
   ### 손 코딩(Hand Write Coding)
