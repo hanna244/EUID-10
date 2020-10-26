@@ -37,12 +37,42 @@
 
 ## Q19. 질문
 
-버튼을 클릭했을 시에 이미지가 우측 모서리 쪽으로 이동하는 현상을 어떻게 해결하나요? 
+버튼을 클릭했을 시에 이미지가 우측 모서리 쪽으로 이동하는 현상을 어떻게 해결하나요?
+
 ![](../__TIL__/assets/D10_TIL_attached_file2.jpg)
 
-<details>
+<details open>
   <summary>A19. 답변</summary>
   <br />
+
+  `border` 속성은 상태가 변경되어 테두리(border)가 그려질 때 박스 모델이 변경됩니다.
+  그러므로 이미지의 위치를 변경하지 않도록 하려면, 아웃라인(outline)을 그려야 합니다.
+  아래 작성된 예시 코드를 참고하여 실습해보길 바랍니다.
+
+  ```css
+  /* 일반 스타일 --------------------*/
+  .photoGallery__button {
+      /* outline: none; */
+      width: 110px;
+      height: 73px;
+      margin-bottom: 10px;
+      border: 0;
+      padding: 0;
+      filter: grayscale(100%);
+  }
+
+  /* 마우스 호버 --------------------*/
+  .photoGallery__button:hover {
+      filter: grayscale(0%);
+  }
+
+  /* 키보드 포커스 --------------------*/
+  .photoGallery__button:focus {
+      /* border: 3px solid #2E2828; */
+      outline: 3px solid #2E2828;
+      filter: grayscale(0%);
+  }
+  ```
 
 </details>
 
