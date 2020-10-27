@@ -15,7 +15,7 @@ function repetitiveWork(doIt, canYou, repeatCount, limitCount) {
   repeatCount = repeatCount || 0;
   limitCount = limitCount || 10;
 
-  // 함수 안의 함수 (함숭 안에서만 접근 가능)
+  // 함수 안의 함수 (함수 안에서만 접근 가능)
   function repeat(doIt) {
     console.log(doIt);
     if (++repeatCount > limitCount) { canYou = !canYou; }
