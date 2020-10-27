@@ -17,14 +17,27 @@
 - [DAY 08](#-day-08)
 - [DAY 09](#-day-09)
 - [DAY 10](#-day-10)
+- [DAY 11](#-day-11)
 
 <br />
 
 <!-- 일차 별 학습 진행 목표 -->
 
-## ␥ DAY 10
+## ␥ DAY 11
 
 <details open>
+  <summary><b>학습 진행</b></summary>
+  
+  <br>함수 그리고 HTML, Sass에 익숙해질 수 있도록 훈련해봅니다.<br>
+
+  - [ ]  함수 정복하기! (일상 생활에서 생각해볼 수 있는 절차를 함수로 만들어 보기, 손코딩)
+  - [ ]  Netflix 홈페이지 디자인 시안 → HTML, Sass 실습 (구조 설계, BEM 방법론 도입)
+
+</details>
+
+## ␥ DAY 10
+
+<details>
   <summary><b>학습 진행</b></summary>
   
   <br>호이스트 현상과 스코프 체인. 그리고 문자, 숫자 객체에 대해 학습합니다.<br>
