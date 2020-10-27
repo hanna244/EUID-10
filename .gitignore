@@ -1,5 +1,5 @@
 # 답안 파일 관리 제외
-*.answer.js
+# *.answer.js
 
 # Logs
 logs
