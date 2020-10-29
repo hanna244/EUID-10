@@ -3,12 +3,12 @@
 /*    1    */
 
 // '나라'의 랜드마크는 '이곳'이다.
-// function visit(country, place) {
-//     return country + '의 랜드마크는' + ' ' + place + '이다';
-// }
+function visit(country, place) {
+    return country + '의 랜드마크는' + ' ' + place + '이다';
+}
 
-//     console.log(visit('프랑스', '에펠탑'));
-//     console.log(visit('러시아', '성바실리성당'));
+    console.log(visit('프랑스', '에펠탑'));
+    console.log(visit('러시아', '성바실리성당'));
 
 // [주의]
 // * 함수를 실행하는 구문이 없음. 그래서 함수가 실행될 수가 없다.
@@ -40,15 +40,15 @@ function choose(diet, goto) {
 // }
 
 // 마트에서 'oo'를 사와라 만약, 'oo'이 없다면 물을 사와라.
-// function buy(beverage) {
-//     if (!beverage) {
-//         beverage = '물';
-//     }
-//     return '마트에서' + ' ' + beverage + '(을)를 사와라';
-// }
+function buy(beverage) {
+    if (!beverage) {
+        beverage = '물';
+    }
+    return '마트에서' + ' ' + beverage + '(을)를 사와라';
+}
 
-// console.log(buy('사과주스'));
-// console.log(buy());
+console.log(buy('사과주스'));
+console.log(buy());
 
 // [주의]
 
@@ -72,12 +72,12 @@ function choose(diet, goto) {
 
 /*    4    */
 
-// function sum(x, y) {
-//     console.log(x + y);
-//     return x + y;
-// }
+function sum(x, y) {
+    console.log(x + y);
+    return x + y;
+}
 
-// var n1 = sum(7, 8);
+var n1 = sum(7, 8);
 
 // [주의]
 // * 위의 함수식에서 `console.log(x + y)` 로직이 없으면 콘솔패널에서 결과값을 확인 할 수 없다.
@@ -94,28 +94,28 @@ console.log(number); // 8여덞 undefined
 
 /*    6    */
 
-// function testResult(score) {
-//     if (score === 100) {
-//         console.log('참 잘했어요!');
-//     }
-//     else if (score >= 80) {
-//         console.log('조금만 더 노력하면 100점!');
-//     }
-//     else if (score >= 50) {
-//         console.log('분발하세요!');
-//     }
-//     else if (score >= 30) {
-//         console.log('나머지 공부 당첨!');
-//     }
-//      else {
-//          console.log('정말 너무 해요...');
-//      }
-// }
+function testResult(score) {
+    if (score === 100) {
+        console.log('참 잘했어요!');
+    }
+    else if (score >= 80) {
+        console.log('조금만 더 노력하면 100점!');
+    }
+    else if (score >= 50) {
+        console.log('분발하세요!');
+    }
+    else if (score >= 30) {
+        console.log('나머지 공부 당첨!');
+    }
+     else {
+         console.log('정말 너무 해요...');
+     }
+}
 
-// testResult(100);
-// testResult(80);
-// testResult(50);
-// testResult(30);
+testResult(100);
+testResult(80);
+testResult(50);
+testResult(30);
 
 // [주의]
 // * if문의 조건변수에는 항상 논리값이 나오게 한다! 뭘 써야하지 하고 멈춰있지말고 참!, 거짓! 이 두개만 생각하기!
@@ -124,24 +124,24 @@ console.log(number); // 8여덞 undefined
 
 /*    7    */
 
-// var score = 10;
+var score = 10;
 
-// switch (score) {
-//     case 100:
-//         console.log('참 잘했어요!');
-//         break;
-//     case  80:
-//         console.log('조금만 더 노력하면 100점!');
-//         break;
-//     case 50:
-//         console.log('분발하세요!');
-//         break;
-//     case 30:
-//         console.log('나머지 공부 당첨!');
-//         break;
-//     default:
-//         console.log('고생많았어요!');
-// }
+switch (score) {
+    case 100:
+        console.log('참 잘했어요!');
+        break;
+    case  80:
+        console.log('조금만 더 노력하면 100점!');
+        break;
+    case 50:
+        console.log('분발하세요!');
+        break;
+    case 30:
+        console.log('나머지 공부 당첨!');
+        break;
+    default:
+        console.log('고생많았어요!');
+}
 
 // [주의]
 // switch문은 비교 연산자 사용이 불가능하다.!
@@ -171,43 +171,43 @@ switch (true) {
 
 /*    8   */
 
-// function Meet(who) {
-//     if (who === '친구') {
-//         console.log('대학로에 있는 맛집을 추천해!');
-//     }
-//     else if (who === '애인') {
-//         console.log('강남의 감성 포차가는 것을 추천해!');
-//     }
-//     else if (who === '부모님') {
-//         console.log('종로에 한식집에서 한정식 먹는 것을 추천!');
-//     }
-//     else {
-//         console.log('집 앞 편의점에서 라면 먹는 것을 추천!');
-//     }
-// }
+function Meet(who) {
+    if (who === '친구') {
+        console.log('대학로에 있는 맛집을 추천해!');
+    }
+    else if (who === '애인') {
+        console.log('강남의 감성 포차가는 것을 추천해!');
+    }
+    else if (who === '부모님') {
+        console.log('종로에 한식집에서 한정식 먹는 것을 추천!');
+    }
+    else {
+        console.log('집 앞 편의점에서 라면 먹는 것을 추천!');
+    }
+}
 
-// Meet('친구');
-// Meet('애인');
-// Meet('부모님');
-// Meet();
+Meet('친구');
+Meet('애인');
+Meet('부모님');
+Meet();
 
 /*====    9    ====*/
 // 값이 제대로 안나옴!!!!!!!!!
-// switch (who){
-//     case '친구':
-//         console.log('대학로에 있는 맛집을 추천해!');
-//         break;
-//     case '애인':
-//         console.log('강남의 감성 포차가는 것을 추천해!');
-//         break;
-//     case '부모님':
-//         console.log('종로에 한식집에서 한정식 먹는 것을 추천!');
-//         break;
-//     default:
-//         console.log('집 앞 편의점에서 라면 먹는 것을 추천!')
-// }
+switch (who){
+    case '친구':
+        console.log('대학로에 있는 맛집을 추천해!');
+        break;
+    case '애인':
+        console.log('강남의 감성 포차가는 것을 추천해!');
+        break;
+    case '부모님':
+        console.log('종로에 한식집에서 한정식 먹는 것을 추천!');
+        break;
+    default:
+        console.log('집 앞 편의점에서 라면 먹는 것을 추천!')
+}
 
-// var who = '친구'; //집 앞 편의점에서 라면 먹는 것을 추천!
+var who = '친구'; //집 앞 편의점에서 라면 먹는 것을 추천!
 
 // [주의]
 // * `switch (조건변수){}` 조건 변수 잊지말고 기입! 그게 아니면 함수에 값을 전달 할 수 없음!
