@@ -27,6 +27,7 @@
 1. ['스크립트 의존성'으로 본다면 HTML 마크업 할 때 `index.js`, `helper.js`를 기본적으로 불러와야 하나요?](#q17-질문)
 1. [스코프 체인(Scope Chain)은 정확히 무엇을 말하는 건가요?](#q18-질문)
 1. [버튼을 클릭했을 시에 이미지가 우측 모서리 쪽으로 이동하는 현상을 어떻게 해결하나요?](#q19-질문)
+1. [`git fetch`와 `git pull/push`는 어떤 차이가 있나요?](#q20-질문)
 <!-- 1. [](#q19-질문) -->
 
 <br />
@@ -35,13 +36,25 @@
 
 <br />
 
+## Q20. 질문
+
+`git fetch`와 `git pull/push`는 어떤 차이가 있나요?
+
+<details open>
+  <summary>A20. 답변</summary>
+  <br />
+
+
+</details>
+
+<br />
 ## Q19. 질문
 
 버튼을 클릭했을 시에 이미지가 우측 모서리 쪽으로 이동하는 현상을 어떻게 해결하나요?
 
 ![](../__TIL__/assets/D10_TIL_attached_file2.jpg)
 
-<details open>
+<details>
   <summary>A19. 답변</summary>
   <br />
 
