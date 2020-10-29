@@ -397,7 +397,8 @@ function findElement(selector) {}
 ```
 4. 아래의 `document.querySelector(selector);`구문을 해석해보면 '전체 문서에서 전달된 인자에 부합하는 선택자 이름을 가진 요소 객체를 찾아라' 이때 `selector`는 DOM 요소 객체이다. (사실 원소 데이터인줄 알았다. 원소데이터가 아니다!! 객체!!)
 
-5. 아래 처럼 변수와 함수를 선언하고 값을 확인해보니 `undefined`가 나왔다. 왜? **함수식에서 제일 중요한 값을 반환하는 `return`를 입력해주지 않았기 때문이다.** 로직에서 `selector`를 찾으라고 명령을 했지만 찾은 값을 어떻게 해야 하는지 입력해 주지 않았다는 말이다. 
+5. 아래 처럼 변수와 함수를 선언하고 값을 확인해보니 `undefined`가 나왔다. <br/>
+왜? **함수식에서 제일 중요한 값을 반환하는 `return`를 입력해주지 않았기 때문이다.** 로직에서 `selector`를 찾으라고 명령을 했지만 찾은 값을 어떻게 해야 하는지 입력해 주지 않았다는 말이다. 
 ```js
 function findElement(selector) {
   document.querySelector(selector);
