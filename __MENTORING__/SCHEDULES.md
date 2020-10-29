@@ -18,14 +18,26 @@
 - [DAY 09](#-day-09)
 - [DAY 10](#-day-10)
 - [DAY 11](#-day-11)
+- [DAY 12](#-day-12)
 
 <br />
 
 <!-- 일차 별 학습 진행 목표 -->
 
-## ␥ DAY 11
+## ␥ DAY 12
 
 <details open>
+  <summary><b>학습 진행</b></summary>
+  
+  <br>함수 객체에 대해 좀 더 깊이 학습해봅니다.<br>
+
+  - [ ]  함수 객체 (17분 40초, 6분 53초, 9분 50초)
+
+</details>
+
+## ␥ DAY 11
+
+<details>
   <summary><b>학습 진행</b></summary>
   
   <br>함수 그리고 HTML, Sass에 익숙해질 수 있도록 훈련해봅니다.<br>
