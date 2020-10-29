@@ -17,7 +17,7 @@ console.log(goTo('세나'));
 function findElement(selector) {
   // document.querySelector(selector); // 문서에서 찾은 요소 객체
 
-  return findElement('.app-hearder');
+  return findElement('.app-header');
   // return console.log(selector);
   // return selector;
 
