@@ -28,7 +28,7 @@
 1. [스코프 체인(Scope Chain)은 정확히 무엇을 말하는 건가요?](#q18-질문)
 1. [버튼을 클릭했을 시에 이미지가 우측 모서리 쪽으로 이동하는 현상을 어떻게 해결하나요?](#q19-질문)
 1. [`git fetch`와 `git pull/push`는 어떤 차이가 있나요?](#q20-질문)
-1. [`Web AIP`와 `DOM API`와 같은 건가요?](#q21-질문)
+1. [`Web API`와 `DOM API`와 같은 건가요?](#q21-질문)
 1. [인터페이스(Interface)는 객체의 유형을 말하는 건가요?](#q22-질문)
 1. [`Element Node`와 `HTMLElement`와 다른 건가요?](#q23-질문)
 <!-- 1. [](#q19-질문) -->
@@ -45,9 +45,21 @@
 
 <details open>
   <summary>A23. 답변</summary>
-  <br />
+  <!-- <br /> -->
 
+  ### Node? Element? HTMLElement?
 
+  Element는 Document의 모든 요소 객체를 지칭하며
+  HTML 요소(`HTMLElement`), SVG 요소(`SVGElement`) 자식 인터페이스의 부모(상위) 인터페이스를 말합니다. 즉,
+  요소(`Element`)의 능력을 상속(물려 받아) HTML, SVG로 각각 확장(Extends)한 인터페이스가 `HTMLElement`, `SVGElement` 입니다.
+  아래 작성한 내용은 상위 인터페이스에서 하위 인터페이스의 상속 구조를 표현한 것입니다.
+
+  - Object
+    - EventTarget `← Object 상속 후, 확장`
+      - Node `← EventTarget 상속 후, 확장`
+        - [**Element**](https://developer.mozilla.org/ko/docs/Web/API/Element) `← Node 상속 후, 확장`
+          - [**HTMLElement**](https://developer.mozilla.org/ko/docs/Web/API/HTMLElement) `← Element 상속 후, 확장`
+          - SVGElement `← Element 상속 후, 확장`
 </details>
 
 <br />
@@ -56,23 +68,42 @@
 
 인터페이스(Interface)는 객체의 유형을 말하는 건가요?
 
-<details>
+<details open>
   <summary>A22. 답변</summary>
   <br />
 
+  인터페이스(Interface)는 **사용자가 기기를 쉽게 동작시키는데 도움을 주는 시스템을 의미**합니다. 
+  즉, 사용자와 인터랙션(Interaction, 상호작용)하는 환경을 "인터페이스"라고 부릅니다. 예를 들어 TV, Smart Phone 인터페이스를 생각해보세요.
 
+  - **TV 인터페이스** → <u>리모컨 인터페이스</u>를 통해 TV를 컨트롤 (전원 ON/OFF, 채널 변경, 볼륨 조정 등) 
+  - **Smart Phone 인터페이스** → <u>터치 인터페이스</u>를 통해 앱을 컨트롤 (앱 ON/OFF, 페이지 전환, 화면 확대/축소 등)
 </details>
 
 <br />
 
 ## Q21. 질문
 
-`Web AIP`와 `DOM API`와 같은 건가요?
+`Web API`와 `DOM API`와 같은 건가요?
 
-<details>
+<details open>
   <summary>A21. 답변</summary>
-  <br />
+  <!-- <br /> -->
 
+  ### Web API란?
+
+  [Web API](https://developer.mozilla.org/ko/docs/Web/%EC%B0%B8%EC%A1%B0/API)는 **웹 환경에서 다양한 개발(웹 애플리케이션, 데이터 관리 등)을 할 수 있도록 제공되는 API를 통칭하는 용어입니다.**
+
+  JavaScript 언어(코드)를 통해 API를 사용할 수 있고, 문서 객체 모델(DOM)에 접근하고 조작하는 일부터 WebGL, Web Audio와 같은
+  복잡한 그래픽, 오디오 이펙트를 만들어내는 일을 할 수도 있습니다.
+
+  - DOM API → `문서 객체에 접근, 조작하는 기능을 제공합니다.`
+  - Device API → `장치의 하드웨어를 조작하는 기능을 제공합니다. (예: 조명 센서, 배터리 상태, 진동 API 등)`
+  - Communication API → `다른 기기와 통신하는 기능을 제공합니다. (예: 네트워크 정보, 웹 알림, 단순 푸시 API 등)`
+  - Data Management API → `사용자의 데이터를 보관, 관리하는 기능을 제공합니다. (예: 파일 핸들 API, IndexedDB 등)`
+
+  ### 결론
+
+  **DOM API**는 **Web API에 포함되는 하위(종속) API**이며, **웹 애플리케이션의 문서 객체에 접근, 조작하는 기능을 제공**합니다.
 
 </details>
 
@@ -82,14 +113,49 @@
 
 `git fetch`와 `git pull/push`는 어떤 차이가 있나요?
 
-<details>
+<details open>
   <summary>A20. 답변</summary>
   <br />
 
+  **원격 저장소(origin)의 HEAD**를 가져온(`fetch`) 다음, **로컬 저장소(local)의 HEAD**에 합치는(`merge`) 것을 동시에 수행하는 명령이 풀(`pull`) 입니다.
+  즉, `pull` 명령은 `fetch` + `merge` 명령을 합쳐 실행한 결과를 보여줍니다.
 
+  ```
+  git pull  =  git fetch; git merge FEACH_HEAD
+  ```
+
+  <br/>
+
+  아래 그린 인포그래픽을 참고하면 이해하기 쉬울 겁니다.
+
+  <img src="./assets/git-fetch-merge-pull.jpg" alt />
+
+  ### fetch, merge 명령
+
+  원격 저장소의 HEAD가 로컬 저장소의 HEAD 보다 1단계 앞에 있다고 가정했을 때,
+  원격 저장소의 HEAD와 로컬 저장소의 HEAD를 비교하여 변경 이력을 검토하기 위한 목적이라면 `fetch` 명령을 사용합니다.
+  비교 후에 원격 HEAD와 로컬 HEAD를 합치고 싶을 때 `merge` 명령을 사용하는 것입니다.
+
+  ```sh
+  # 원격 저장소(origin)의 master 브랜치 HEAD를 가져와 로컬 저장소의 HEAD와 비교
+  git fetch origin master 
+
+  # 원격 저장소(origin)의 master 브랜치 HEAD를 로컬 저장소의 HEAD에 병합
+  git merge origin master
+  ```
+
+  ### pull 명령
+
+  반면 비교(검토)가 목적이 아니라, 로컬 저장소에서 원격 저장소의 HEAD를 가져와 즉시 합치고자 한다면? `pull` 명령을 사용합니다.
+
+  ```sh
+  # 원격 저장소(origin)의 master 브랜치 HEAD를 가져와 로컬 저장소의 HEAD에 병합
+  git pull origin master
+  ```
 </details>
 
 <br />
+
 ## Q19. 질문
 
 버튼을 클릭했을 시에 이미지가 우측 모서리 쪽으로 이동하는 현상을 어떻게 해결하나요?
