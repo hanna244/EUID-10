@@ -28,6 +28,9 @@
 1. [스코프 체인(Scope Chain)은 정확히 무엇을 말하는 건가요?](#q18-질문)
 1. [버튼을 클릭했을 시에 이미지가 우측 모서리 쪽으로 이동하는 현상을 어떻게 해결하나요?](#q19-질문)
 1. [`git fetch`와 `git pull/push`는 어떤 차이가 있나요?](#q20-질문)
+1. [`Web AIP`와 `DOM API`와 같은 건가요?](#q21-질문)
+1. [인터페이스(Interface)는 객체의 유형을 말하는 건가요?](#q22-질문)
+1. [`Element Node`와 `HTMLElement`와 다른 건가요?](#q23-질문)
 <!-- 1. [](#q19-질문) -->
 
 <br />
@@ -36,11 +39,50 @@
 
 <br />
 
+## Q23. 질문
+
+`Element Node`와 `HTMLElement`와 다른 건가요?
+
+<details open>
+  <summary>A23. 답변</summary>
+  <br />
+
+
+</details>
+
+<br />
+
+## Q22. 질문
+
+인터페이스(Interface)는 객체의 유형을 말하는 건가요?
+
+<details>
+  <summary>A22. 답변</summary>
+  <br />
+
+
+</details>
+
+<br />
+
+## Q21. 질문
+
+`Web AIP`와 `DOM API`와 같은 건가요?
+
+<details>
+  <summary>A21. 답변</summary>
+  <br />
+
+
+</details>
+
+<br />
+
 ## Q20. 질문
 
 `git fetch`와 `git pull/push`는 어떤 차이가 있나요?
 
-<details open>
+<details>
   <summary>A20. 답변</summary>
   <br />
 
