@@ -31,11 +31,39 @@
 1. [`Web API`와 `DOM API`와 같은 건가요?](#q21-질문)
 1. [인터페이스(Interface)는 객체의 유형을 말하는 건가요?](#q22-질문)
 1. [`Element Node`와 `HTMLElement`와 다른 건가요?](#q23-질문)
+1. [프로그래밍에서 인스턴스(instance)란 무엇인가요?](#q24-질문)
+1. [정적(static) 메서드란 무엇인가요?](#q25-질문)
 <!-- 1. [](#q19-질문) -->
 
 <br />
 
 ---
+
+<br />
+
+## Q25. 질문
+
+정적(static) 메서드란 무엇인가요?
+
+<details open>
+  <summary>A25. 답변</summary>
+  <br />
+
+
+</details>
+
+<br />
+
+## Q24. 질문
+
+프로그래밍에서 인스턴스(instance)란 무엇인가요?
+
+<details open>
+  <summary>A24. 답변</summary>
+  <br />
+
+
+</details>
 
 <br />
 
