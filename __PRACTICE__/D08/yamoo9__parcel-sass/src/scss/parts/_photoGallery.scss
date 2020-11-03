@@ -2,7 +2,7 @@
 @import "../modules/mixins";
 
 .photoGallery {
-  @include size( 1120px, 667px);
+  @include size(1120px, 667px);
   display: flex;
 
   &__title {
