@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>왜 IIFE 패턴을 사용해야 하나?</title>
+  <script src="./js/module1.js"></script>
+  <script src="./js/module2.js"></script>
+  <script>
+    (function netflixHeaderControl(){
+      'use strict';
+
+      var hanna = '김한나'
+      console.log(hanna)
+    })();
+
+    (function netflixHeroControl() {
+      'use strict';
+
+      var goeun = '박고은'
+      console.log(goeun)
+    })();
+    
+    // console.log(hanna + '는 ' + goeun + '을 좋아한다')
+  </script>
+</head>
+<body>
+  
+  <div class="demo">
+    <h1>
+      <!-- IIFE: 즉시 실행 함수 식 패턴 : (모듈(Module, 독립성(자기 영역 보호)) 활용) -->
+      <abbr title="Immediate Invoke Function Expresson">IIFE</abbr> 패턴을 활용하자
+    </h1>
+  </div>
+
+</body>
+</html>
