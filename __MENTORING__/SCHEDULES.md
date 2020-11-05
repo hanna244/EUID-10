@@ -22,14 +22,28 @@
 - [DAY 13](#-day-13)
 - [DAY 14](#-day-14)
 - [DAY 15](#-day-15)
+- [DAY 16](#-day-16)
 
 <br />
 
 <!-- 일차 별 학습 진행 목표 -->
 
-## ␥ DAY 15
+## ␥ DAY 16
 
 <details open>
+  <summary><b>학습 진행</b></summary>
+  
+  <br>Netflix 웹사이트 홈페이지를 제작합니다.<br>
+
+- [ ]  Netflix 웹사이트에 사용된 개발 가이드 읽고 분석
+- [ ]  Netflix 웹사이트 홈페이지 스타일링
+- [ ]  CSS 리마인드 (모르는 부분 영상 강의 찾아 시청 후 정리)
+
+</details>
+
+## ␥ DAY 15
+
+<details>
   <summary><b>학습 진행</b></summary>
   
   <br>JavaScript 함수 식 중 즉시 실행 함수 식을 공부해봅니다.<br>
