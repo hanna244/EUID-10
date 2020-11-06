@@ -22,13 +22,13 @@
 - [DAY 13](#-day-13)
 - [DAY 14](#-day-14)
 - [DAY 15](#-day-15)
-- [DAY 16](#-day-16)
+- [DAY 16-17](#-day-16-17)
 
 <br />
 
 <!-- 일차 별 학습 진행 목표 -->
 
-## ␥ DAY 16
+## ␥ DAY 16-17
 
 <details open>
   <summary><b>학습 진행</b></summary>
