@@ -23,14 +23,24 @@
 - [DAY 14](#-day-14)
 - [DAY 15](#-day-15)
 - [DAY 16-17](#-day-16-17)
+- [DAY 18](#-day-18)
 
 <br />
 
 <!-- 일차 별 학습 진행 목표 -->
 
-## ␥ DAY 16-17
+## ␥ DAY 18
 
 <details open>
+  <summary><b>학습 진행</b></summary>
+  
+  <br>JavaScript 클로저에 대해 학습합니다.<br>
+
+- [ ] JavaScript 클로저 (원할한 이해를 위해서는 반복 시청이 중요합니다.)
+
+## ␥ DAY 16-17
+
+<details>
   <summary><b>학습 진행</b></summary>
   
   <br>Netflix 웹사이트 홈페이지를 제작합니다.<br>
