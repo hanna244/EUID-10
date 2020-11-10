@@ -24,19 +24,33 @@
 - [DAY 15](#-day-15)
 - [DAY 16-17](#-day-16-17)
 - [DAY 18](#-day-18)
+- [DAY 19](#-day-19)
 
 <br />
 
 <!-- 일차 별 학습 진행 목표 -->
 
-## ␥ DAY 18
+## ␥ DAY 19
 
 <details open>
+  <summary><b>학습 진행</b></summary>
+  
+  <br>모던 JavaScript인 ES6 학습을 진행합니다.<br>
+
+- [ ]  [ES6] 블록영역 ⎼ let & const (14분 36초, 14분 05초)
+- [ ]  [ES6] 블록영역 ⎼ IIFE → Block (읽기)
+- [ ]  [ES6] 문자 ⎼ Template Literal (5분 44초)
+- [ ]  [ES6] 문자 ⎼ String Addtions (8분 47초)
+
+## ␥ DAY 18
+
+<details>
   <summary><b>학습 진행</b></summary>
   
   <br>JavaScript 클로저에 대해 학습합니다.<br>
 
 - [ ] JavaScript 클로저 (원할한 이해를 위해서는 반복 시청이 중요합니다.)
+</details>
 
 ## ␥ DAY 16-17
 
