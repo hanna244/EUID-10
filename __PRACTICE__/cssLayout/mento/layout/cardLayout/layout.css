@@ -2,6 +2,8 @@ body {
   margin: 3rem;
 }
 
+/* -------------------------------------------------------------------------- */
+
 .container {
   width: 120rem;
   margin-left: auto;
@@ -17,6 +19,9 @@ body {
   color: #ffffff;
 }
 
+/* -------------------------------------------------------------------------- */
+/* floatMode */
+
 .floatMode::after {
   content: '';
   display: block;
@@ -30,9 +35,44 @@ body {
 }
 
 .floatMode--liquid .item {
-  /* 100%/4 */ 
+  /* 100%/4 */
   /* width: 25%; */
   width: 23.3334%;
   /* 1rem/120rem * 100% */
   margin: 0.8333%; /* 1rem */
+}
+
+/* -------------------------------------------------------------------------- */
+/* flexMode */
+
+.flexMode {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.flexMode .item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: calc(100% / 7 - (1rem * 2)); */
+  flex: 0 0 calc(100% / 4 - (1rem * 2));
+}
+
+/* -------------------------------------------------------------------------- */
+/* gridMode */
+.gridMode {
+  display: grid;
+  /* grid-template-rows: repeat(4, 9rem);
+  grid-template-columns: repeat(3, 1fr); */
+  grid-template: repeat(3, 9rem) / repeat(4, 1fr);
+}
+
+.gridMode .item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: initial;
+  height: initial;
 }
