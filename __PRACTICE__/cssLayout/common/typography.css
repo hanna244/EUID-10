@@ -15,7 +15,7 @@ p {
   font-size: 1.6rem; /* 명시적으로 설정 */
 }
 
-/*    제목 설계    */
+/* 제목 설계 */
 h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0;
 }
@@ -34,4 +34,3 @@ h6 { font-size: 1.6rem; }
 .heroText {
   font-size: 6rem;
 }
-
