@@ -8,8 +8,34 @@
   <link rel="stylesheet" href="../../../common/userReset.css" />
   <link rel="stylesheet" href="../../../common/typography.css" />
   <link rel="stylesheet" href="./layout.css" />
+  <style>
+    .video-container {
+      position: relative;
+      width: 45rem;
+      height: 24.6rem;
+    }
+    .video-frame {
+      position: absolute;
+      z-index: 10;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      border: 1rem solid;
+    }
+    .video {
+      width: 100%;
+      height: 100%;
+      background: #f00;
+    }
+  </style>
 </head>
 <body>
+
+  <div class="video-container" hidden>
+    <div class="video-frame"></div>
+    <div class="video"></div>
+  </div>
 
   <div class="box" style="background: gray" hidden>
     <div class="box-item" style="width: 100px; height: 30px; background: red">01</div>
@@ -17,7 +43,11 @@
     <div class="box-item" style="width: 100px; height: 30px; background: blue">03</div>
   </div>
 
-  <div class="container floatMode floatMode--liquid">
+  <p hidden>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae libero ipsam dolores temporibus, tempora quisquam quas aliquam, magni et dolorem alias ad voluptate ipsum doloremque eius facilis labore reiciendis repudiandae!</p>
+
+  <!-- <div class="container floatMode floatMode--liquid"> -->
+  <!-- <div class="container flexMode"> -->
+  <div class="container gridMode">
     <!-- ::before -->
     <div class="item item--1">01</div>
     <div class="item item--2">02</div>
@@ -31,8 +61,6 @@
     <div class="item item--10">10</div>
     <!-- ::after -->
   </div>
-
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae libero ipsam dolores temporibus, tempora quisquam quas aliquam, magni et dolorem alias ad voluptate ipsum doloremque eius facilis labore reiciendis repudiandae!</p>
   
 </body>
 </html>
