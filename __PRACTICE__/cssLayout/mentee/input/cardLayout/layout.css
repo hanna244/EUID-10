@@ -1,0 +1,36 @@
+body {
+  margin: 3rem;
+}
+
+.container {
+  width: 96rem;
+  margin-left: auto;
+  margin-right: auto;
+  background: #fefefe;
+}
+
+.item {
+  width: 16rem;
+  height: 9rem;
+  margin: 1rem;
+  background: #000000;
+  color: #ffffff;
+}
+
+.floatMode .item {
+  float: left;
+  text-align: center;
+  line-height: 9rem;
+}
+
+.floatMode::after {
+  content: '';
+  clear: both;
+  display: block;
+}
+
+.floatMode--liquid .item {
+  /* width: 25%; */
+  width: 22.9168%;
+  /* margin: 1.0416%; */
+}

@@ -1,0 +1,17 @@
+.resetButton {
+  user-select: none;
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+  background: transparent;
+}
+
+.resetFigure {
+  margin: 0;
+}
+
+.resetImage {
+  vertical-align: middle;
+}

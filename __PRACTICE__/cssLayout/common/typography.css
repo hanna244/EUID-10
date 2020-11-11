@@ -1,0 +1,37 @@
+/*    root em 글자 크기 기준 설정    */
+body {
+  font-size: 10px;
+}
+
+/*    본문 설계    */
+body {
+  font: 1.6rem/1.5 SpoqaHanSans, verdana, Arial, Sans-serif;
+}
+
+/*    단락 설계    */
+p {
+  margin-top: 1em; /* 16px */
+  margin-bottom: 0;
+  font-size: 1.6rem; /* 명시적으로 설정 */
+}
+
+/*    제목 설계    */
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0;
+}
+
+/* 글자 크기의 비율(ratio) */
+
+h1 { font-size: 3rem; font-weight: normal; }
+h2 { font-size: 2.4rem; }
+h3 { font-size: 2.2rem; }
+h4 { font-size: 2rem; }
+h5 { font-size: 1.8rem; }
+h6 { font-size: 1.6rem; }
+
+/* 디자인 된 글자 설계 */
+
+.heroText {
+  font-size: 6rem;
+}
+
