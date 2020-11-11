@@ -30,6 +30,7 @@ body {
 }
 
 .floatMode--liquid .item {
+  /* (item 너비 / 전체 너비 * 100%) - (margin * 2) */
   /* width: 25%; */
   width: 22.9168%;
   /* margin: 1.0416%; */
