@@ -25,14 +25,27 @@
 - [DAY 16-17](#-day-16-17)
 - [DAY 18](#-day-18)
 - [DAY 19](#-day-19)
+- [DAY 20](#-day-20)
 
 <br />
 
 <!-- 일차 별 학습 진행 목표 -->
 
+## ␥ DAY 20
+
+<details>
+  <summary><b>학습 진행</b></summary>
+  
+  <br>JavaScript 수학, 숫자, 문자 객체에 대해 학습합니다.<br>
+
+- [ ]  숫자 / 수학 객체 (15분 31초, 8분 9초)
+- [ ]  문자 객체 (7분 26초, 16분 8초)
+- [ ]  [ES6] 문자 ⎼ String Addtions (8분 47초)
+</details>
+
 ## ␥ DAY 19
 
-<details open>
+<details>
   <summary><b>학습 진행</b></summary>
   
   <br>모던 JavaScript인 ES6 학습을 진행합니다.<br>
@@ -41,6 +54,7 @@
 - [ ]  [ES6] 블록영역 ⎼ IIFE → Block (읽기)
 - [ ]  [ES6] 문자 ⎼ Template Literal (5분 44초)
 - [ ]  [ES6] 문자 ⎼ String Addtions (8분 47초)
+</details>
 
 ## ␥ DAY 18
 
