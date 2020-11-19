@@ -1,0 +1,121 @@
+/* -------------- 기본 레이아웃 구성*/
+body {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+}
+
+header, footer {
+  height: 6rem;
+  padding-left: 1rem;
+  font-size: 2rem;
+  line-height: 6rem;
+  background-color: cornsilk;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container .item {
+  padding: 1rem;
+}
+
+/* -------------- floatMode*/
+
+
+.floatMode::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.floatMode {
+  height: 60rem;
+}
+
+.floatMode .item {
+  float: left;
+  height: 100%;
+}
+
+/* 각 아이템의 너비를 %로 설정 할때는 꼭! 마진, 패딩 값 또한 염두해 두고 설정한 % 값에서 빼야 한다!!  */
+
+.floatMode .item--1 {
+  /* 30% */
+  width: calc(100% / 10 * 3 - (1rem * 2));
+  background-color: rgb(187, 214, 214);
+}
+
+.floatMode .item--2 {
+  /* 50% */
+  width: calc(100% / 10 * 5 - (1rem * 2));
+  background-color: rgb(196, 196, 228);
+
+}
+
+.floatMode .item--3 {
+  /* 20% */
+  width: calc(100% / 10 * 2 - (1rem * 2));
+  background-color: rgb(236, 217, 211);
+
+}
+/* -------------- flexMode */
+
+.flexMode {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  /* flex-flow: row wrap; */
+  align-items: stretch;
+  height: 100%;
+}
+
+.flexMode .item {
+  flex-wrap: wrap;
+}
+
+/* flex-grow가 안먹어서 정말 미치는 줄 알았는데.... flex-shrink, flex-basis를 같이 설정해 줘야 속성이 먹히다니! 기억하자!*/
+
+.flexMode .item--1{
+  background-color: rgb(187, 214, 214);
+  flex: 1.5;
+}
+
+.flexMode .item--2{
+  background-color: rgb(196, 196, 228);
+  flex: 4;
+}
+
+.flexMode .item--3{
+  background-color: rgb(236, 217, 211);
+  flex: 1;
+}
+
+/* -------------- gridMode */
+
+/* `display: grid;`를 적용하니 body 요소에 적용한 position 속성이 말을 듣지 않는다. 왜? */
+
+.gridMode {
+  display: grid;
+  grid-template-columns: 30% 50% 20%;
+  grid-template-rows: 60rem;
+}
+
+.gridMode .item--1{
+  background-color: rgb(187, 214, 214);
+  flex: 1.5;
+}
+
+.gridMode .item--2{
+  background-color: rgb(196, 196, 228);
+  flex: 4;
+}
+
+.gridMode .item--3{
+  background-color: rgb(236, 217, 211);
+  flex: 1;
+}

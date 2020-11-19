@@ -1,0 +1,75 @@
+/* -------------- 기본 레이아웃 구성*/
+p {
+  margin: 2rem;
+  font-size: 1.2rem;
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border: solid 3px #111111;
+}
+
+.item {
+  padding: 1rem;
+}
+
+.item--1 {
+  position: relative;
+  background-color: rgb(173, 237, 230);
+}
+
+.item__p {
+  position: absolute;
+  bottom: 2rem;
+}
+
+.item--2 {
+  background-color: rgb(235, 206, 230);
+  overflow: auto;
+}
+
+/* -------------- floatMode */
+
+.floatMode::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.floatMode .item--1 {
+  float: left;
+  width: 20rem;
+  height: 96.2%;
+}
+
+.floatMode .item--2 {
+  float: left;
+  width: calc(100% - 20rem - (1rem * 4));
+  height: 96.2%;
+}
+
+/* -------------- flexMode */
+
+.flexMode {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.flexMode .item--1 {
+  flex: 1 0 0;
+}
+
+.flexMode .item--2 {
+  flex: 4 0 0;
+}
+
+/* -------------- gridMode */
+
+.gridMode {
+  display: grid;
+  grid-template-columns: 21rem auto;
+}

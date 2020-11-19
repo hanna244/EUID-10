@@ -1,0 +1,77 @@
+/* -------------- 기본 레이아웃 구성*/
+body {
+  margin: 3rem;
+  box-sizing: border-box;
+}
+
+figure {
+  position: relative;
+}
+
+img {
+  width: 100%;
+}
+
+h1 {
+  font-size: 4rem;
+  color: rgb(226 152 153);
+}
+
+figcaption {
+  font-size: 2rem;
+  color: rgb(226 152 153);
+}
+
+button {
+  position: absolute;
+  bottom: 3rem;
+  background-color: rgb(168 48 89);
+  color: #ffffff;
+  font: bold 2rem spoqaHanSans;
+  border: 0;
+  border-radius: 4px;
+  padding: 1.5rem;
+}
+
+.container {
+  width: 130rem;
+  height: 70rem;  
+  margin-left: auto;
+  margin-right: auto;
+  border: solid 1px #921919;
+}
+
+.item {
+  margin: 0;
+  border: solid 2px #ce8787;
+  border-radius: 20px;
+  margin: 1rem;
+}
+
+/* -------------- floatMode*/
+.floatMode::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.floatMode .item {
+  float: left;
+  width: calc(33.3333% - (1.2rem * 2));
+  height: 100%;
+}
+
+/* -------------- flexMode */
+
+.flexMode {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+
+/* -------------- gridMode */
+
+.gridMode {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}

@@ -1,0 +1,88 @@
+/* -------------- 기본 레이아웃 구성*/
+body {
+  margin: 3rem;
+}
+
+.container {
+  width: 120rem;
+  height: 60rem;
+  border: solid 3px #111111;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem;
+}
+
+.section {
+  width: 90rem;
+  margin: 1rem; 
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #c2d6f0;
+}
+
+.item {
+  height: 4rem;
+  margin: 1rem;
+  background-color: #e2e8f0;
+  font-size: 2rem;
+  color: #111111;
+}
+
+/* -------------- floatMode */
+
+.floatMode::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.floatMode .item {
+  float: left;
+  text-align: center;
+  line-height: 3.2rem;
+}
+
+.floatMode--liquid {
+  width: 75%;
+}
+
+.floatMode .item--1 {
+  width: calc(100% / 2 - (1rem * 2));
+}
+
+.floatMode .item--1--4, .floatMode .item--1--5 {
+  width: calc(100% / 4 - (1rem * 2));
+}
+
+.floatMode .item--2 {
+  width: calc(100% / 3 - (1rem * 2));
+}
+
+.floatMode .item--2--5 {
+  width: calc((100% / 3) * 2 - (1rem * 2));
+}
+
+.floatMode .item--3 {
+  width: calc(100% / 4 - (1rem * 2));
+}
+
+.floatMode .item--3--6 {
+  width: calc((75% / 5) * 3 - (1rem * 2));
+}
+
+.floatMode .item--3--7 {
+  width: calc((75% / 5) * 2 - (1rem * 2));
+}
+
+/* -------------- flexMode */
+
+
+/* -------------- gridMode */
+
+.gridMode {
+  display: grid;
+  grid-template-areas: "1 1 2 2" "3 3 4 5";
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 10px;
+}
