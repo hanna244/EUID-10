@@ -26,10 +26,30 @@
 - [DAY 18](#-day-18)
 - [DAY 19](#-day-19)
 - [DAY 20](#-day-20)
+- [DAY 21](#-day-21)
 
 <br />
 
 <!-- 일차 별 학습 진행 목표 -->
+
+## ␥ DAY 21
+
+<details open>
+  <summary><b>학습 진행</b></summary>
+  
+  <br>객체 지향 JavaScript, ES6에 대해 학습합니다.<br>
+
+-  [ ]  객체 / 상속 (6분 48초, 8분 28초, 16분 54초)
+-  [ ]  생성자 / 프로토타입 (9분 47초, 10분 54초, 16분 41초)
+-  [ ]  객체지향 프로그래밍 (21분 12초)
+-  [ ]  `ES6` 문자 ⎼ Template Literal (5분 44초)
+-  [ ]  `ES6` 문자 ⎼ String Addtions (8분 47초)
+-  [ ]  `ES6` 함수 ⎼ Arrow Function (20분 21초)
+-  [ ]  `ES6` 함수 ⎼ Default Parameter (10분 05초)
+-  [ ]  `ES6` 함수 ⎼ Rest Parameter (18분 38초)
+-  [ ]  `ES6` 함수 ⎼ Spread Operator
+-  [ ]  `ES6` 배열 ⎼ Array Additions (15분 43초, 10분 06초)
+</details>
 
 ## ␥ DAY 20
 
