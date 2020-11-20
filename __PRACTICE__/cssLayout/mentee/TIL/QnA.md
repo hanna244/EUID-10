@@ -1,24 +1,28 @@
 # QnA
 
-## Q. 질문
+## 목차
+
+1. [`align-content`와 `justify-content`의 차이점?](#q1-질문)
+1. [컨테이너 안의 아이템의 패딩공간이 컨테이너를 넘어갑니다 왜 그런가요?](#q2-질문)
+
+## Q1. 질문
 
 `align-content`와 `justify-content`의 차이점?
 
 <details>
-  <summary>A. 답변</summary>
+  <summary>상세 내용</summary>
   <br/>
-  
-  답변 내용을 작성합니다.
+
 </details>
 
 <br/>
 
-## Q. 질문
+## Q2. 질문
 
-[Same height columns] `<figcaption>` 컨텐츠가 컨테이너 영역을 넘어갑니다. 왜 그런가요?
+컨테이너 안의 아이템의 패딩공간이 컨테이너를 넘어갑니다 왜 그런가요?
 
 <details open>
-  <summary>A. 답변</summary>
+  <summary>상세내용</summary>
   <br/>
 
 ![](./assets/layout_attached_file1.jpg)
