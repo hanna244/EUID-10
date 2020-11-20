@@ -9,9 +9,22 @@
 
 `align-content`와 `justify-content`의 차이점?
 
-<details>
-  <summary>상세 내용</summary>
+<details open>
+  <summary>A1. 답변</summary>
   <br/>
+
+| 속성                               | 공통점                                                                                                                                                   |
+| ---------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `justify-content`, `align-content` | 이 둘의 속성은 컨테이너 안에서 아이템들이 이동하는 축을 중심으로 이동한다. 단 아이템 박스가 전체로 이동하는 것이지 아이템이 가운데 정렬되는 것은 아니다. |
+
+![](./assets/layout_TIL_attached_file1.jpg)
+
+  <br />
+
+| 속성            | 차이점                                                              |
+| --------------- | ------------------------------------------------------------------- |
+| justify-content | `flex-direction`에 설정된 주축을 중심으로 이동한다.                 |
+| align-content   | `flex-direction`에 설정된 주축의 반대인 교차축을 중심으로 이동한다. |
 
 </details>
 
@@ -22,10 +35,37 @@
 컨테이너 안의 아이템의 패딩공간이 컨테이너를 넘어갑니다 왜 그런가요?
 
 <details open>
-  <summary>상세내용</summary>
+  <summary>A2. 답변</summary>
   <br/>
 
-![](./assets/layout_attached_file1.jpg)
+A : `box-sizing`에 해답이 있다! 박스 사이징이 보더 박스가 아니기 때문이다. 그래서 아이템에 `padding`에 공간을 적용했을때 컨테이너를 넘쳐 났다.
+
+- 해결방법
+  - **주의!**
+    - 공간 관련한 속성은 상속이 되지 않는다.
+    - 가상요소에는 전체 선택자(`*`)가 적용되지 않는다. 그러므로 따로 적용해야 한다.
+
+```css
+/* 1. 해당 아이템에 box-sizing을 적용 하는 방법 */
+item {
+  box-sizing: border-box; /* 또는 padding-box */
+}
+
+/* 2. body에 적용하는 방법 */
+body {
+  box-sizing: border-box; /* 또는 padding-box */
+}
+body * {
+  box-sizing: inherit; /* 상속 */
+}
+
+body::before,
+body::after {
+  box-sizing: inherit;
+}
+```
+
+![](./assets/layout_QnA_attached_file1.jpg)
 
 ```css
 /* -------------- 기본 레이아웃 구성*/
@@ -88,7 +128,7 @@ button {
 
 ---
 
-![](./assets/layout_attached_file2.jpg)
+![](./assets/layout_QnA_attached_file2.jpg)
 
 ```css
 /* -------------- 기본 레이아웃 구성*/
