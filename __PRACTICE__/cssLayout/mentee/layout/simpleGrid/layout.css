@@ -81,7 +81,9 @@ body {
 
 .gridMode {
   display: grid;
-  grid-template-areas: "1 1 2 2" "3 3 4 5";
+  grid-template-areas: 
+    "area1 area1 area3 area3" 
+    "area2 area2 area4 area5";
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   grid-gap: 10px;
