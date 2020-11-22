@@ -21,7 +21,28 @@
 
 ### 캡처링과 버블링
 
+- 버블링(bubbling) : 요소에 이벤트가 발생하면 이어서 부모요소, 그리고 그 최상단의 조상 요소를 만날 때까지 이 과정이 반복되며 각 요소의 이벤트 핸들러가 동작한다.
+- 캡처링(capturing) : 상위 부모요소에 이벤트가 동작하면 순차적으로 그 하위 자식요소 그 아래 자식요소... 에 할당된 이벤트가 동작한다.
+
+  ```js
+  elem.addEventListener(...)       // 버블링
+  elem.addEventListener(..., true) // 캡처링
+  ```
+
+  `capture` 옵션은 두 가지 값을 가질 수 있습니다.
+
+  - `false`이면(`default` 값) 핸들러는 버블링 단계에서 동작한다.
+  - `true`이면 핸들러는 캡처링 단계에서 동작한다.
+
 [[클릭!] 캡처링과 버블링을 더 자세하게 알아보자!](https://ko.javascript.info/bubbling-and-capturing)
+
+&spades; 그림을 보며 이해하기!
+
+- **버블링**은 맨 아래의 자식요소에 이벤트가 동작하면 순차적으로 루트(상위요소)로 올라가며 이벤트가 동작한다. 마치 아래에서 위로 올라가는 흐름처럼 보인다.  
+  버블링 이벤트 작동 순서 : `grand-child` &rarr; `child` &rarr; `parent`
+
+- **캡처링**은 흐름이 버블링과 반대라고 생각하면 쉽다.
+
 ![](./assets/event_delegation_attached_file2.jpg)
 
 ## 실습
