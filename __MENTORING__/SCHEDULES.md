@@ -27,6 +27,7 @@
 - [DAY 19](#-day-19)
 - [DAY 20](#-day-20)
 - [DAY 21](#-day-21)
+- [DAY 22](#-day-22)
 
 <br />
 
@@ -35,6 +36,18 @@
 ## ␥ DAY 21
 
 <details open>
+  <summary><b>학습 진행</b></summary>
+  
+  <br>객체 지향, 함수형 프로그래밍, ES6 구조 분해 할당에 대해 학습합니다.<br>
+
+-  [ ]  객체 지향 프로그래밍 용어 풀이
+-  [ ]  함수형 vs 객체 지향 프로그래밍 (15분 45초, 16분 59초)
+-  [ ]  `ES6` 구조 분해 할당 ⎼ Destructuring Assignment (15분 2초)
+</details>
+
+## ␥ DAY 22
+
+<details>
   <summary><b>학습 진행</b></summary>
   
   <br>객체 지향 JavaScript, ES6에 대해 학습합니다.<br>
