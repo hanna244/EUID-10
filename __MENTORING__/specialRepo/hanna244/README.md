@@ -22,7 +22,8 @@
 - 한나는 **오늘도 노력합니다!** 👱🏻‍♀️ 🧁 🍰 🎂
 - 2021년의 한나는 **좋은 개발자로 성장**할 겁니다. 지켜봐주세요. 👀 🙊
 - 코로나19 🦠 로 전 세계가 힘들지만, 모두 힘내서 이겨냈으면 좋겠습니다. 🌹
-- 연락은 [shhn0509@gmail.com](shhn0509@gmail.com)로 메일 주세요. ☃️
+- 연락은 [hanna244@euid.dev](hanna244@euid.dev)로 메일 주세요. ☃️
+<!-- - 연락은 [shhn0509@gmail.com](shhn0509@gmail.com)로 메일 주세요. ☃️ -->
 
 <br/>
 
@@ -32,12 +33,13 @@
 
 <!-- 테마 참고: https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md -->
 
-[![](https://github-readme-stats.vercel.app/api?username=hanna244&count_private=true&include_all_commits=true&line_height=22&show_icons=true&theme=buefy&hide=issues)](https://github.com/anuraghazra/github-readme-stats)
+[![](https://github-readme-stats.vercel.app/api?username=hanna244&count_private=true&include_all_commits=true&line_height=24&show_icons=true&theme=dracula&hide=issues)](https://github.com/anuraghazra/github-readme-stats)
 
 <br />
 
 ## 한나가 공부하고 사용하는 것들은
 
+<img align="left" title="Accessibility" alt="Accessibility" width="26" src="./assets/a11y.jpg" />
 <img align="left" title="HTML5" alt="HTML5" width="26" src="./assets/html.jpg" />
 <img align="left" title="CSS3" alt="CSS3" width="26" src="./assets/css.jpg" />
 <img align="left" title="Sass" alt="Sass" width="26" src="./assets/sass.jpg" />
@@ -49,6 +51,8 @@
 <img align="left" title="GitHub" alt="GitHub" width="26" src="./assets/github.jpg" />
 <img align="left" title="Git" alt="Git" width="26" src="./assets/git.jpg" />
 <img align="left" title="VS Code" alt="Visual Studio Code" width="26" src="./assets/vscode.jpg" />
+
+<br/>
 <br/>
 <br/>
 
@@ -56,12 +60,24 @@
 
 <br/>
 
-## 한나가 최근 관심을 주는 저장소는
+## 한나가 참여한 학습 저장소는
 
 - **이듬(E.UID) 멘토링 프로그램**에 참여하고 있어요.
 
   [![한나가 공부 중인 이듬 멘토링 프로그램](https://github-readme-stats.vercel.app/api/pin/?username=hanna244&repo=EUID-mentoring&show_owner=true)](https://github.com/hanna244/EUID-mentoring)
 
+- **이듬(E.UID) 블렌디드 러닝 2020**에 참여했어요.
+
+  [![](https://github-readme-stats.vercel.app/api/pin/?username=yamoo9&repo=EUID_202010&show_owner=true)](https://github.com/yamoo9/EUID_202010)
+
+<br/>
+
+## 한나가 진행중인 프로젝트 저장소는
+
 - **넷플릭스(Netflix) 개선 프로젝트**를 진행하고 있어요. (비공개)
 
-  [![한나가 공부 중인 이듬 멘토링 프로그램](https://github-readme-stats.vercel.app/api/pin/?username=hanna244&repo=make-better-netflix-website&show_owner=true)](https://github.com/hanna244/make-better-netflix-website)
+  [![](https://github-readme-stats.vercel.app/api/pin/?username=hanna244&repo=make-better-netflix-website&show_owner=true)](https://github.com/hanna244/make-better-netflix-website)
+
+- **왓챠(WATCHA) 개선 프로젝트**를 진행하고 있어요. (비공개)
+
+  [![](https://github-readme-stats.vercel.app/api/pin/?username=hanna244&repo=make-better-netflix-website&show_owner=true)](https://github.com/hanna244/make-better-netflix-website)
