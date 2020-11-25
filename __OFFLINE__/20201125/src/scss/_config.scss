@@ -1,0 +1,40 @@
+// sass map === js object
+$colorMap: (
+  white: #fefefe,
+  black: #121212,
+);
+
+// console.log
+// sass 내장 함수 map-get(), map-has-key()
+@debug map-has-key($colorMap, white); // true
+
+@if map-has-key($colorMap, white) {
+  @debug '조건이 참이다';
+} @else {
+  @debug '조건이 거짓이다';
+}
+
+/* -------------------------------------------------------------------------- */
+
+// sass list === js array
+$breakpointList: 768, 1024, 1280;
+
+// console.log
+// @debug nth($breakpointList, 1); // 768
+
+// sass @each in === js for in
+@each $item in $breakpointList {
+  // js array
+  @debug $item;
+}
+
+@each $key, $value in $colorMap {
+  // js object
+  @debug $key;
+  @debug $value;
+}
+
+// sass @for === js for
+@for $i from 1 through length($breakpointList) {
+  @debug nth($breakpointList, $i);
+}
