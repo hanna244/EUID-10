@@ -53,9 +53,9 @@
   
   <br>객체 지향, 함수형 프로그래밍, ES6 구조 분해 할당에 대해 학습합니다.<br>
 
--  [ ]  객체 지향 프로그래밍 용어 풀이
--  [ ]  함수형 vs 객체 지향 프로그래밍 (15분 45초, 16분 59초)
--  [ ]  `ES6` 구조 분해 할당 ⎼ Destructuring Assignment (15분 2초)
+- [x] 객체 지향 프로그래밍 용어 풀이
+- [x] 함수형 vs 객체 지향 프로그래밍 (15분 45초, 16분 59초)
+- [x] `ES6` 구조 분해 할당 ⎼ Destructuring Assignment (15분 2초)
 </details>
 
 ## ␥ DAY 22
@@ -65,16 +65,16 @@
   
   <br>객체 지향 JavaScript, ES6에 대해 학습합니다.<br>
 
--  [ ]  객체 / 상속 (6분 48초, 8분 28초, 16분 54초)
--  [ ]  생성자 / 프로토타입 (9분 47초, 10분 54초, 16분 41초)
--  [ ]  객체지향 프로그래밍 (21분 12초)
--  [ ]  `ES6` 문자 ⎼ Template Literal (5분 44초)
--  [ ]  `ES6` 문자 ⎼ String Addtions (8분 47초)
--  [ ]  `ES6` 함수 ⎼ Arrow Function (20분 21초)
--  [ ]  `ES6` 함수 ⎼ Default Parameter (10분 05초)
--  [ ]  `ES6` 함수 ⎼ Rest Parameter (18분 38초)
--  [ ]  `ES6` 함수 ⎼ Spread Operator
--  [ ]  `ES6` 배열 ⎼ Array Additions (15분 43초, 10분 06초)
+- [ ] 객체 / 상속 (6분 48초, 8분 28초, 16분 54초)
+- [ ] 생성자 / 프로토타입 (9분 47초, 10분 54초, 16분 41초)
+- [ ] 객체지향 프로그래밍 (21분 12초)
+- [ ] `ES6` 문자 ⎼ Template Literal (5분 44초)
+- [ ] `ES6` 문자 ⎼ String Addtions (8분 47초)
+- [ ] `ES6` 함수 ⎼ Arrow Function (20분 21초)
+- [ ] `ES6` 함수 ⎼ Default Parameter (10분 05초)
+- [ ] `ES6` 함수 ⎼ Rest Parameter (18분 38초)
+- [ ] `ES6` 함수 ⎼ Spread Operator
+- [ ] `ES6` 배열 ⎼ Array Additions (15분 43초, 10분 06초)
 </details>
 
 ## ␥ DAY 20
@@ -84,9 +84,9 @@
   
   <br>JavaScript 수학, 숫자, 문자 객체에 대해 학습합니다.<br>
 
-- [ ]  숫자 / 수학 객체 (15분 31초, 8분 9초)
-- [ ]  문자 객체 (7분 26초, 16분 8초)
-- [ ]  [ES6] 문자 ⎼ String Addtions (8분 47초)
+- [x] 숫자 / 수학 객체 (15분 31초, 8분 9초)
+- [x] 문자 객체 (7분 26초, 16분 8초)
+- [x] [ES6] 문자 ⎼ String Addtions (8분 47초)
 </details>
 
 ## ␥ DAY 19
@@ -96,10 +96,10 @@
   
   <br>모던 JavaScript인 ES6 학습을 진행합니다.<br>
 
-- [ ]  [ES6] 블록영역 ⎼ let & const (14분 36초, 14분 05초)
-- [ ]  [ES6] 블록영역 ⎼ IIFE → Block (읽기)
-- [ ]  [ES6] 문자 ⎼ Template Literal (5분 44초)
-- [ ]  [ES6] 문자 ⎼ String Addtions (8분 47초)
+- [x] [ES6] 블록영역 ⎼ let & const (14분 36초, 14분 05초)
+- [x] [ES6] 블록영역 ⎼ IIFE → Block (읽기)
+- [x] [ES6] 문자 ⎼ Template Literal (5분 44초)
+- [x] [ES6] 문자 ⎼ String Addtions (8분 47초)
 </details>
 
 ## ␥ DAY 18
@@ -109,7 +109,7 @@
   
   <br>JavaScript 클로저에 대해 학습합니다.<br>
 
-- [ ] JavaScript 클로저 (원할한 이해를 위해서는 반복 시청이 중요합니다.)
+- [x] JavaScript 클로저 (원할한 이해를 위해서는 반복 시청이 중요합니다.)
 </details>
 
 ## ␥ DAY 16-17
@@ -119,9 +119,9 @@
   
   <br>Netflix 웹사이트 홈페이지를 제작합니다.<br>
 
-- [ ] Netflix 웹사이트에 사용된 개발 가이드 읽고 분석
-- [ ] Netflix 웹사이트 홈페이지 스타일링
-- [ ] CSS 리마인드 (모르는 부분 영상 강의 찾아 시청 후 정리)
+- [x] Netflix 웹사이트에 사용된 개발 가이드 읽고 분석
+- [x] Netflix 웹사이트 홈페이지 스타일링
+- [x] CSS 리마인드 (모르는 부분 영상 강의 찾아 시청 후 정리)
 
 </details>
 
