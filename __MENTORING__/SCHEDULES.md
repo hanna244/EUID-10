@@ -28,21 +28,48 @@
 - [DAY 20](#-day-20)
 - [DAY 21](#-day-21)
 - [DAY 22](#-day-22)
+- [DAY 23](#-day-23)
 
 <br />
 
 <!-- 일차 별 학습 진행 목표 -->
 
-## ␥ DAY 21
+## ␥ DAY 23
 
 <details open>
   <summary><b>학습 진행</b></summary>
   
+  <br>비동기 프로그래밍 학습을 진행합니다.<br>
+
+> 이번 학습용 [실습 자료](https://이듬.run/front-end-master/download/Ajax-practice.zip)를 다운로드 받은 후 영상 강의를 시청 및 실습 진행해봅니다.
+
+- [ ] 비동기 프로그래밍 → ajax 심플 라이브러리 (8분 28초, 8분 19초, 15분 3초, 11분 57초)
+- [ ] `ES6` 프로미스(Promise) (12분 56초, 4분 54초)
+</details>
+
+## ␥ DAY 22
+
+<details>
+  <summary><b>학습 진행</b></summary>
+  
+  <br>비동기 프로그래밍에 대해 학습을 시작합니다.<br>
+
+- [x] 비동기 프로그래밍 → 서버 환경 구성 (11분 25초, 6분 54초)
+- [x] 비동기 프로그래밍 → XMLHttpRequest (11분 24초, 6분 23초, 7분 51초)
+- [x] `ES6` 단축 속성 ⎼ Shorthand Properties (4분 43초)
+- [x] `ES6` 향상된 객체 표기법 ⎼ Object Enhancements (10분 19초, 8분 45초)
+</details>
+
+## ␥ DAY 21
+
+<details>
+  <summary><b>학습 진행</b></summary>
+  
   <br>객체 지향, 함수형 프로그래밍, ES6 구조 분해 할당에 대해 학습합니다.<br>
 
--  [ ]  객체 지향 프로그래밍 용어 풀이
--  [ ]  함수형 vs 객체 지향 프로그래밍 (15분 45초, 16분 59초)
--  [ ]  `ES6` 구조 분해 할당 ⎼ Destructuring Assignment (15분 2초)
+- [x] 객체 지향 프로그래밍 용어 풀이
+- [x] 함수형 vs 객체 지향 프로그래밍 (15분 45초, 16분 59초)
+- [x] `ES6` 구조 분해 할당 ⎼ Destructuring Assignment (15분 2초)
 </details>
 
 ## ␥ DAY 22
@@ -52,16 +79,16 @@
   
   <br>객체 지향 JavaScript, ES6에 대해 학습합니다.<br>
 
--  [ ]  객체 / 상속 (6분 48초, 8분 28초, 16분 54초)
--  [ ]  생성자 / 프로토타입 (9분 47초, 10분 54초, 16분 41초)
--  [ ]  객체지향 프로그래밍 (21분 12초)
--  [ ]  `ES6` 문자 ⎼ Template Literal (5분 44초)
--  [ ]  `ES6` 문자 ⎼ String Addtions (8분 47초)
--  [ ]  `ES6` 함수 ⎼ Arrow Function (20분 21초)
--  [ ]  `ES6` 함수 ⎼ Default Parameter (10분 05초)
--  [ ]  `ES6` 함수 ⎼ Rest Parameter (18분 38초)
--  [ ]  `ES6` 함수 ⎼ Spread Operator
--  [ ]  `ES6` 배열 ⎼ Array Additions (15분 43초, 10분 06초)
+- [ ] 객체 / 상속 (6분 48초, 8분 28초, 16분 54초)
+- [ ] 생성자 / 프로토타입 (9분 47초, 10분 54초, 16분 41초)
+- [ ] 객체지향 프로그래밍 (21분 12초)
+- [ ] `ES6` 문자 ⎼ Template Literal (5분 44초)
+- [ ] `ES6` 문자 ⎼ String Addtions (8분 47초)
+- [ ] `ES6` 함수 ⎼ Arrow Function (20분 21초)
+- [ ] `ES6` 함수 ⎼ Default Parameter (10분 05초)
+- [ ] `ES6` 함수 ⎼ Rest Parameter (18분 38초)
+- [ ] `ES6` 함수 ⎼ Spread Operator
+- [ ] `ES6` 배열 ⎼ Array Additions (15분 43초, 10분 06초)
 </details>
 
 ## ␥ DAY 20
@@ -71,9 +98,9 @@
   
   <br>JavaScript 수학, 숫자, 문자 객체에 대해 학습합니다.<br>
 
-- [ ]  숫자 / 수학 객체 (15분 31초, 8분 9초)
-- [ ]  문자 객체 (7분 26초, 16분 8초)
-- [ ]  [ES6] 문자 ⎼ String Addtions (8분 47초)
+- [x] 숫자 / 수학 객체 (15분 31초, 8분 9초)
+- [x] 문자 객체 (7분 26초, 16분 8초)
+- [x] [ES6] 문자 ⎼ String Addtions (8분 47초)
 </details>
 
 ## ␥ DAY 19
@@ -83,10 +110,10 @@
   
   <br>모던 JavaScript인 ES6 학습을 진행합니다.<br>
 
-- [ ]  [ES6] 블록영역 ⎼ let & const (14분 36초, 14분 05초)
-- [ ]  [ES6] 블록영역 ⎼ IIFE → Block (읽기)
-- [ ]  [ES6] 문자 ⎼ Template Literal (5분 44초)
-- [ ]  [ES6] 문자 ⎼ String Addtions (8분 47초)
+- [x] [ES6] 블록영역 ⎼ let & const (14분 36초, 14분 05초)
+- [x] [ES6] 블록영역 ⎼ IIFE → Block (읽기)
+- [x] [ES6] 문자 ⎼ Template Literal (5분 44초)
+- [x] [ES6] 문자 ⎼ String Addtions (8분 47초)
 </details>
 
 ## ␥ DAY 18
@@ -96,7 +123,7 @@
   
   <br>JavaScript 클로저에 대해 학습합니다.<br>
 
-- [ ] JavaScript 클로저 (원할한 이해를 위해서는 반복 시청이 중요합니다.)
+- [x] JavaScript 클로저 (원할한 이해를 위해서는 반복 시청이 중요합니다.)
 </details>
 
 ## ␥ DAY 16-17
@@ -106,9 +133,9 @@
   
   <br>Netflix 웹사이트 홈페이지를 제작합니다.<br>
 
-- [ ] Netflix 웹사이트에 사용된 개발 가이드 읽고 분석
-- [ ] Netflix 웹사이트 홈페이지 스타일링
-- [ ] CSS 리마인드 (모르는 부분 영상 강의 찾아 시청 후 정리)
+- [x] Netflix 웹사이트에 사용된 개발 가이드 읽고 분석
+- [x] Netflix 웹사이트 홈페이지 스타일링
+- [x] CSS 리마인드 (모르는 부분 영상 강의 찾아 시청 후 정리)
 
 </details>
 
