@@ -10,7 +10,8 @@
   <summary>D21 - D30</summary>
   <br />
 
-1. [D21](./D21.md)
+1. [D21](./D21.md) - 객체 지향 프로그래밍 용어, 구조 분해 할당
+1. [D22](./D22.md) - 비동기 프로그래밍(Ajax), XMLHttpRequest 동기 통신, Shorthand Properties(ES6)
 </details>
 
   <br />
