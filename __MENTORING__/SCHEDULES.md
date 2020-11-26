@@ -34,17 +34,17 @@
 
 <!-- 일차 별 학습 진행 목표 -->
 
-## ␥ DAY 22
+## ␥ DAY 23
 
 <details open>
   <summary><b>학습 진행</b></summary>
   
   <br>비동기 프로그래밍 학습을 진행합니다.<br>
 
-  > 이번 학습용 [실습 자료](https://이듬.run/front-end-master/download/Ajax-practice.zip)를 다운로드 받은 후 영상 강의를 시청 및 실습 진행해봅니다.
+> 이번 학습용 [실습 자료](https://이듬.run/front-end-master/download/Ajax-practice.zip)를 다운로드 받은 후 영상 강의를 시청 및 실습 진행해봅니다.
 
--  [ ]  비동기 프로그래밍 → ajax 심플 라이브러리 (8분 28초, 8분 19초, 15분 3초, 11분 57초)
--  [ ]  `ES6` 프로미스(Promise) (12분 56초, 4분 54초)
+- [ ] 비동기 프로그래밍 → ajax 심플 라이브러리 (8분 28초, 8분 19초, 15분 3초, 11분 57초)
+- [ ] `ES6` 프로미스(Promise) (12분 56초, 4분 54초)
 </details>
 
 ## ␥ DAY 22
