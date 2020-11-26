@@ -1,0 +1,11 @@
+@import './config';
+
+:root {
+  font-size: 10px;
+}
+
+body {
+  font-size: 1.5rem/1.5 SpoqaHanSans, Sans-Serif;
+  color: map-get($colorMap, white);
+  background: map-get($colorMap, black);
+}
