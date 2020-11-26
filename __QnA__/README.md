@@ -40,7 +40,6 @@
 1. [`ajax ~ then`문은 어떻게 작동하는 문법인가요?](#q30-질문)
 1. [라이브러리는 이미 만들어진 함수를 말하는 건가요?](#q31-질문)
 1. [옵션 객체란 무엇인가요?](#q32-질문)
-<!-- 1. [](#q19-질문) -->
 
 <br />
 
@@ -52,11 +51,45 @@
 
 옵션 객체란 무엇인가요?
 
-<details>
+<details open>
   <summary>A32. 답변</summary>
   <br/>
   
-  답변 내용을 작성합니다.
+  말 그대로 옵션(선택사항, options)을 설정할 때 사용되는 JavaScript 객체를 말합니다.
+  예를 들어 jQuery `ajax()`를 사용해 비동기 통신을 요청할 때 다음과 같이 옵션 객체를 전달해 사용자가 임의로 설정할 수 있습니다.
+
+  ```js
+  jQuery
+    .ajax({
+      method: "POST",
+      url: "server.php",
+      data: { name: "김한나", location: "경기도 일산" }
+    })
+    .then(function(msg) {
+      console.log(msg + "전송된 데이터가 저장되었습니다. ");
+    });
+  ```
+
+  위 코드에서 전달된 옵션 객체를 분리해보면 다음과 같이 작성할 수 있습니다.
+
+  ```js
+  // jQuery.ajax()에 전달할 옵션 객체
+  var options = {
+    method: "POST",
+    url: "server.php",
+    data: { name: "김한나", location: "경기도 일산" }
+  };
+
+  // -----------------------------------------------------------------------
+
+  jQuery
+    // 옵션 객체(options)를 jQuery.ajax()에 전달해 비동기 통신 요청
+    .ajax(options)
+    // 서버로부터 응답 받으면 실행되는 콜백 함수 설정
+    .then(function(msg) {
+      console.log(msg + "전송된 데이터가 저장되었습니다. ");
+    });
+  ```
 </details>
 
 <br/>
@@ -65,11 +98,24 @@
 
 라이브러리는 이미 만들어진 함수를 말하는 건가요?
 
-<details>
+<details open>
   <summary>A31. 답변</summary>
   <br/>
   
-  답변 내용을 작성합니다.
+  컴퓨터 과학 분야에서 [라이브러리(Library)](https://ko.wikipedia.org/wiki/%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC_(%EC%BB%B4%ED%93%A8%ED%8C%85))란? 
+  **소프트웨어를 개발할 때 컴퓨터 프로그램이 사용하는 하부 프로그램의 모음**을 말합니다. 
+  다시 말해 라이브러리는 "<u>미리 작성된 코드 모음</u>"으로 **함수**, **클래스**, **값**, **자료형** 등을 포함하는 사양을 말합니다. 
+
+  아래는 Front-End 개발 분야에서 주로 사용되는 UI 라이브러리입니다.
+
+  - [jQuery](https://jquery.com/)
+  - [anime](https://animejs.com)
+  - [React](https://reactjs.com/)
+
+  아래는 Front-End, Back-End 개발 분야에서 주로 사용되는 Utility 라이브러리입니다.
+
+  - [Lodash](https://lodash.com/)
+  - [Moment](https://momentjs.com/)
 </details>
 
 <br/>
@@ -78,11 +124,13 @@
 
 `ajax ~ then`문은 어떻게 작동하는 문법인가요?
 
-<details>
+<details open>
   <summary>A30. 답변</summary>
   <br/>
   
-  답변 내용을 작성합니다.
+  해당 질문은 `ajax` 라이브러리 코드를 설명해야 합니다.
+  그러므로 지면 답변 보다는 밋업을 통해 이야기 드리는 것이 적합하다고 판단됩니다.
+  그리고 해당 질문에 대한 답변은 ES6 Promise 영상 강의를 살펴보면 원리를 이해하기 보다 수월하니 먼저 시청해보세요.
 </details>
 
 <br/>
@@ -90,16 +138,59 @@
 ## Q29. 질문
 
 메서드에 함수를 참조 시키면 어떻게 작동되나요?
+`xhr.onreadystatechange`는 `xhr.status` 메서드의 값을 갖고 있지 않은데 어떻게 함수 안의  `if`문의 조건에 적용되는지 잘 모르겠습니다.
+
+![](./assets/Q29_XHR_method.jpg)
 
 <details open>
   <summary>A29. 답변</summary>
   <br/>
   
-  `xhr.onreadystatechange`는 `xhr.status` 메서드의 값을 갖고 있지 않은데 어떻게 함수 안의  `if`문의 조건에 적용되는지 잘 모르겠습니다.
+  먼저 질문에 사용된 용어 정리가 필요하겠습니다. 
+  메서드에 함수를 참조하는 것이 아니라, `xhr` 객체의 속성 `onreadystatechange`에 함수를 참조하는 것입니다.
+  그리고 `xhr.status` 또한 `xhr` 객체의 속성입니다.
 
-![](./assets/Q29_XHR_method.jpg)
+  `xhr`은 `XMLHttpRequest` 클래스를 사용해 생성된 인스턴스(객체)입니다.
 
-답변 내용을 작성합니다.
+  ```js
+  const xhr = new XMLHttpRequest()
+  ```
+
+  생성된 객체 `xhr`의 속성 및 메서드를 확인하려면 다음 명령을 사용해 Console 패널에 결과를 출력해봐야 합니다.
+
+  ```js
+  console.dir(xhr)
+  ```
+
+  그러면 다음과 같은 결과를 출력합니다.
+
+  ```js
+  XMLHttpRequest
+    onabort: null
+    onerror: null
+    onload: null
+    onloadend: null
+    onloadstart: null
+    onprogress: null
+    ontimeout: null
+    onreadystatechange: null  // ← 이벤트 속성
+    readyState: 0             // ← 상태 속성
+    status: 0                 // ← 상태 속성
+    statusText: ""            // ← 상태 속성
+    response: ""              // ← 응답 결과 속성
+    responseText: ""
+    responseType: ""
+    responseURL: ""
+    responseXML: null
+    timeout: 0
+    upload: XMLHttpRequestUpload {onloadstart: null, onprogress: null, onabort: null, onerror: null, onload: null, …}
+    withCredentials: false
+    __proto__: XMLHttpRequest
+  ```
+
+  `xhr` 객체의 내부 구조를 살펴보면 **이벤트 속성**, **상태 속성**, **응답 결과 속성**을 소유하고 있음을 확인할 수 있습니다.
+  그러므로 `onreadystatechange` 이벤트 속성에 연결된 함수 내부에서 `xhr` 객체의 상태 속성을 통해 비동기 통신 상태를 확인할 수 있는 것입니다.
+
 
 </details>
 
@@ -109,7 +200,7 @@
 
 마크다운에 이미지를 삽입할 때 이미지 크기를 조절하는 방법이 있나요?
 
-<details open>
+<details>
   <summary>A28. 답변</summary>
   <br/>
 
@@ -128,7 +219,7 @@ Markdown 이미지 삽입 시, 직접 HTML 코드를 삽입하고
 
 `callback` 함수란 무엇인가요?
 
-<details open>
+<details>
   <summary>A27. 답변</summary>
   <!-- <br /> -->
 
@@ -169,7 +260,7 @@ window.addEventListener("DOMContentLoaded", init);
 
 서버의 호스트 환경과 클라이언트 환경의 차이가 무엇이가요?
 
-<details open>
+<details>
   <summary>A26. 답변</summary>
   <!-- <br /> -->
 
