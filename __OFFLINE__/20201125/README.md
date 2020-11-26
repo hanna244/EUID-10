@@ -71,6 +71,60 @@
     $ sass src/scss/index.scss src/css/index.css
     ```
 
+    ### Sass 워치(Watch)
+
+    Sass 디렉토리를 관찰하여 업데이트 된 Sass 파일을 css 디렉토리로 컴파일합니다.
+
+    ```sh
+    $ sass --watch src/scss:src/css
+    ```
+
+    ### Sass 도움말
+
+    ```sh
+    Sass를 CSS로 컴파일 합니다.
+
+    사용법 1: 파일 변환 (input.file → output.file)
+      sass <input.scss> [output.css]
+    
+    사용법 2: 디렉토리 변환 (input.dir → output.dir)
+      sass <input/>:<output/>
+      sass <dir/>
+
+    ━━━ 인풋 & 아웃풋 ━━━━━━━━━━━━━━━━━━━
+        --[no-]stdin               stdin에서 스타일 시트를 읽습니다.
+        --[no-]indented            stdin 입력에 들여쓰기 구문을 사용합니다.
+    -I, --load-path=<PATH>         가져오기를 확인할 때 사용할 경로입니다.
+                                   여러 번 전달 될 수 있습니다.
+    -s, --style=<NAME>             컴파일 출력 스타일.
+                                   [expanded(기본값), compressed]
+        --[no-]charset             비 ASCII 문자가 있는 CSS에 대해 @charset 또는 BOM을 내보냅니다.
+                                   (기본값은 켜짐)
+        --[no-]error-css           오류가 발생하면 이를 설명하는 스타일 시트를 내보냅니다.
+                                   파일로 컴파일 할 때 기본값은 true입니다.
+        --update                   오래 된 스타일 시트만 컴파일 합니다.
+
+    ━━━ 소스맵 ━━━━━━━━━━━━━━━━━━━━━━━━
+        --[no-]source-map          소스맵 생성 여부.
+                                   (기본값은 켜짐)
+        --source-map-urls          소스맵에서 소스 파일로 링크하는 방법.
+                                   [relative (기본값), absolute]
+        --[no-]embed-sources       소스맵에 소스 파일 내용을 포함합니다.
+        --[no-]embed-source-map    CSS에 소스맵 콘텐츠를 포함합니다.
+
+    ━━━ Other ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+        --watch                    스타일 시트를 관찰하고, 파일이 변경되면 다시 컴파일합니다.
+        --[no-]poll                기본 감시자를 사용하는 대신 수동으로 변경 사항을 확인합니다.
+                                   --watch에서만 유효합니다.
+        --[no-]stop-on-error       오류가 발생하면 파일을 컴파일하지 않습니다.
+    -i, --interactive              인터랙티브 SassScript 셸(Shell)을 실행합니다.
+    -c, --[no-]color               메시지에 터미널 색상을 사용할지 여부.
+        --[no-]unicode             메시지에 유니코드 문자를 사용할지 여부.
+    -q, --[no-]quiet               경고를 출력하지 않습니다.
+        --[no-]trace               예외에 대한 전체 Dart 스택 추적을 출력합니다.
+    -h, --help                     도움말 정보를 출력합니다.
+        --version                  Dart Sass 버전을 출력합니다.
+    ```
   </details>
 
 <br/>
