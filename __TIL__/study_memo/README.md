@@ -4,15 +4,35 @@
 
 - 학습 중 새롭게 알게된 내용 또는 학습 목표 이외에 스스로 학습한 내용들을 정리합니다.
 
-[Function 예제 모음 및 정리](./Function.md)
-[sass 학습 내용 정리](./Sass.md)
-
 ## 목차
 
 1. [DOM API & BOM API & WEB API](##1)
 1. [`Element.classList` MDN문서 해석](##2)
 1. [`window` 상위 객체](##3)
 1. [제목 요소 순서](##4)
+1. [`js`에서 요소 노드를 불러올 때, 왜 상위 요소부터 차례로 불러오나요?](##5)
+
+## 5
+
+`js`에서 요소 노드를 불러올 때, 왜 상위 요소부터 차례로 불러오나요?
+
+<details open>
+  <summary>#5 보기</summary>
+
+  <br>
+
+```js
+var photoGallery = document.querySelector(".photoGallery");
+var photoGalleryBigPhoto = photoGallery.querySelector(
+  ".photoGallery__bigPhoto"
+);
+```
+
+상위 요소 부터 차례로 불러와야 내가 찾아 사용하려는 하위 요소가 어느 부모에 속해 있는 자식 요소인지 알 수 있다. 또한 이렇게 요소를 불러와야 내가 하려는 수행하려는 작업의 한 눈에 파악할 수 있어서 편리하다.
+
+</details>
+
+<br>
 
 ## 4
 
