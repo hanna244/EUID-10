@@ -1,0 +1,68 @@
+body {
+  margin: 3rem;
+}
+
+.container {
+  width: 120rem;
+  margin-left: auto;
+  margin-right: auto;
+  background: #fefefe;
+}
+
+.item {
+  width: 16rem;
+  height: 9rem;
+  margin: 1rem;
+  background: #000000;
+  color: #ffffff;
+}
+
+.floatMode .item {
+  float: left;
+  text-align: center;
+  line-height: 9rem;
+}
+
+.floatMode::after {
+  content: '';
+  clear: both;
+  display: block;
+}
+
+.floatMode--liquid .item {
+  /* (item 너비 / 전체 너비 * 100%) - (margin * 2) */
+  /* width: 25%; */
+  width: 22.9168%;
+  /* margin: 1.0416%; */
+}
+
+.flexMode {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.flexMode .item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* flex-grow: 1; */
+  /* flex-shrink: 1; */
+  /* flex-basis: calc(100% / 4 - 1rem * 2); */
+  flex: 0 0 calc(100% / 4 - 1rem * 2);
+}
+
+.gridMode {
+  display: grid;
+  grid-template-rows: repeat(3, 9rem);
+  grid-template-columns: repeat(4, 1fr);
+  grid-template: repeat(3, 9rem) / repeat(4, 1fr);
+}
+
+.gridMode .item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* width: calc(100% - 1rem); */
+  width: initial;
+  height: initial;
+}

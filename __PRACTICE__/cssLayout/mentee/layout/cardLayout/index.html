@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko-KR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,11 +9,53 @@
   <link rel="stylesheet" href="../../../common/userReset.css" />
   <link rel="stylesheet" href="../../../common/typography.css" />
   <link rel="stylesheet" href="./layout.css" />
+
+  <style>
+    .video-container {
+      position: relative;
+      width: 640px;
+      height: 480px;
+    }
+
+    .video-frame {
+      position: absolute;
+      z-index: 10;
+    }
+
+    .video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      transform: translate(-50%, -50%);
+    }
+
+    .video video {
+      width: 100%;
+      height: auto;
+      transform: scale(0.75);
+    }
+  </style>
+
 </head>
+
 <body>
+<<<<<<< Updated upstream:__PRACTICE__/cssLayout/mentee/layout/cardLayout/index.html
   
   <!-- <div class="container floatMode floatMode--liquid"> -->
   <!-- <div class="container flexMode"> -->
+=======
+
+  <div class="video-container">
+    <div class="video-frame"><img src="./frame_TV.png" alt="" width="640" height="480" /></div>
+    <div class="video"><video src="./video-tv-0819.m4v" autoplay muted loop></video></div>
+  </div>
+
+  <!-- <div class="container floatMode floatMode--liquid"> -->
+
+  <!-- <div class="container flexMode"> -->
+
+>>>>>>> Stashed changes:__PRACTICE__/cssLayout/mentee/input/cardLayout/index.html
   <div class="container gridMode">
     <div class="item item--1">01</div>
     <div class="item item--2">02</div>
@@ -23,9 +66,10 @@
     <div class="item item--7">07</div>
     <div class="item item--8">08</div>
     <div class="item item--9">09</div>
-    <div class="item item--10">10</div>  
+    <div class="item item--10">10</div>
     <!-- <div style="clear: both;"></div> -->
   </div>
 
 </body>
+
 </html>

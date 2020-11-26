@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 /* -------------- 기본 레이아웃 구성*/
 body {
   position: absolute;
@@ -118,4 +119,9 @@ header, footer {
 .gridMode .item--3{
   background-color: rgb(236, 217, 211);
   flex: 1;
+=======
+body {
+  display: flex;
+  flex-flow: column;
+>>>>>>> Stashed changes
 }
