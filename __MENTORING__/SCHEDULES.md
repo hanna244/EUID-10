@@ -40,10 +40,10 @@
   
   <br>비동기 프로그래밍에 대해 학습을 시작합니다.<br>
 
--  [ ]  비동기 프로그래밍 → 서버 환경 구성 (11분 25초, 6분 54초)
--  [ ]  비동기 프로그래밍 → XMLHttpRequest (11분 24초, 6분 23초, 7분 51초)
--  [ ]  `ES6` 단축 속성 ⎼ Shorthand Properties (4분 43초)
--  [ ]  `ES6` 향상된 객체 표기법 ⎼ Object Enhancements (10분 19초, 8분 45초)
+- [x] 비동기 프로그래밍 → 서버 환경 구성 (11분 25초, 6분 54초)
+- [x] 비동기 프로그래밍 → XMLHttpRequest (11분 24초, 6분 23초, 7분 51초)
+- [x] `ES6` 단축 속성 ⎼ Shorthand Properties (4분 43초)
+- [x] `ES6` 향상된 객체 표기법 ⎼ Object Enhancements (10분 19초, 8분 45초)
 </details>
 
 ## ␥ DAY 21
