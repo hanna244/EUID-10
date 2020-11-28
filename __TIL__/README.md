@@ -11,7 +11,8 @@
   <br />
 
 1. [D21](./D21.md) - 객체 지향 프로그래밍 용어, 구조 분해 할당
-1. [D22](./D22.md) - 비동기 프로그래밍(Ajax), XMLHttpRequest 동기 통신, Shorthand Properties(ES6)
+1. [D22](./D22.md) - `Ajax` 비동기 프로그래밍, XMLHttpRequest 동기 통신, `ES6` Shorthand Properties
+1. [D23](./D23.md) - `ES6` Promise
 </details>
 
   <br />
@@ -27,7 +28,7 @@
 1. [D15](./D15.md) - IIFE 즉시 실행 함수
 1. [D16](./D16.md) - 20201107 오프라인 수업 정리
 1. [D17](./D17.md) - 클로저
-1. [D18](./D18.md) - ES6 - 블록 영역, Template Literal, String Addtions
+1. [D18](./D18.md) - `ES6` 블록 영역, Template Literal, String Addtions
 1. [D19](./D19.md) - 20201111 오프라인 수업 정리
 1. [D20](./D20.md) - 20201114 오프라인 수업 정리
 </details>
