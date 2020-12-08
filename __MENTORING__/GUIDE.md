@@ -109,3 +109,38 @@ Responsibility | 좋은 개발자로서의 **책무** | 형식적인 개발자�
 3개월 차 | 125만원(현금 분납 가능) | 137.5만원(카드 결제 시, VAT 포함)
 총액 | 300만원 | 330만원(VAT 포함)
 
+
+
+---
+
+```
+// 한나님 의견
+// UI: 도움은 되나... 
+
+// 12월: UI 결과물 보자 기간 (한국 취업: JavaScript, Frameworks, Back-End > HTML/CSS)
+// 몸 상태: 예전처럼 공부할 수 없어요... 
+// 1주간 "쉼"
+
+// Portfolio
+// 다양한 결과물 (은행 5, 포털 2, 기업 4, 쇼핑몰 2, .... UI 디자인 ► 웹) HTML, CSS, jQuery(Plugins)
+
+// 순도 높은 결과물
+// Homepage, header, main, FAQ, footer
+// Signup, Signin, Browse Page → Movie Details Page
+// Ediya, Netflix, Watcha
+
+// *화 (코드 리뷰, 개선 방향 정리)
+// 수 (개선 / Netflix 원본의 모방(video 부분, 원리/이해, 설명) → 홈페이지의 나머지 부분 실습)
+// *목 (코드 리뷰, 개선 방향 정리)
+// 금 (개선 → 홈페이지에 반영)
+// *토 (홈페이지 최종 리뷰, 결론 도출 및 회고 정리)
+
+// UI 제작 "총력"
+// 월/수/금 (실습)
+// 화/목/토 (수업)
+
+// 연구, 성과, 회고 (TIL)
+// Netflix(4) - HTML/CSS/JavaScript
+// Netflix(4) - React/ES6/StyledComponents/Storybook
+// Netflix(4) - React/TypeScript
+```
