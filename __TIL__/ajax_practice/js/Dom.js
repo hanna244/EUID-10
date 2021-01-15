@@ -36,6 +36,7 @@
       callback(list[i], i)
     }
   }
+  // json 실습에서 사용할 수 있도록 추가
   Dom.map = function (list, callback) {
     return [].map.call(list, callback)
   }
