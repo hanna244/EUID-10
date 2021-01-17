@@ -10,17 +10,9 @@
   // 사용법
   // 'http://www.kaist.ac.kr/_module/api/json.php?code=kr_060501&start=1&display=10'
   var kaist_open_api_address = 'http://www.kaist.ac.kr/_module/api/json.php'
-
-  // 뉴스    : news
-  // 알림사항 : 0801
-  // 학사공지 : 0802
-  // 채용초빙 : 0814
+  // 알림사항 : 0801, 학사공지 : 0802, 채용초빙 : kr_0814, 뉴스 : news
   var code = 'news'
-
-  // 정수: 1 ~ 1000
   var start = 1
-
-  // 정수: 1 ~ 100
   var display = 5
 
   ajax
@@ -49,15 +41,7 @@
 
   var api_address = 'https://yamoo9.herokuapp.com/rest/ediya-menu'
 
-  // SOP 문제 발생!
-  // Ajax 비동기 호출
-
-  // ajax.get(api_address).then(function (data) {
-  //   console.log(data)
-  // })
-
-  // SOP 문제 해결
-  // Ajax가 아닌, JSONP 방식으로 호출 (GET 메서드만 가능)
+  // jsonp 헬퍼함수
   function jsonp(url, callback, time_limit, log) {
     var unique_id = Math.floor(Math.random() * 100000)
     var jsonpCb = 'jsonpCb_' + unique_id
@@ -73,30 +57,22 @@
     }, (time_limit || 3) * 1000)
   }
 
-  // 헬퍼 함수 사용하기
-  var templ = jsonp(
-    api_address,
-    function (data) {
-      $.template(data, function (item) {
-        console.log(item)
-      })
-    },
-    10,
-    true
-  )
+  ajax.jsonp(api_address, function (data) {
+    $.template(data, function (item) {
+      console.log(item)
+    })
+  })
 
-  $('main').html(templ)
+  // jsonp 원리 익히기
+  // var script = document.createElement('script')
+  // script.src = api_address + '?callback=jsonpCB'
 
-  // jsonp 방식 실습
+  // document.head.insertAdjacentElement('beforeend', script)
 
-  // var scriptNode = document.createElement('script')
-  // scriptNode.src = api_address
-  // document.head.insertAdjacentElement('beforeend', scriptNode)
-
-  // function jsonCB(data) {
+  // function jsonp(data) {
   //   console.log(data)
   // }
-})(window, Dom, ajax)
+}) //(window, Dom, ajax)
 
 /* CORS 무료 프록시 서버 활용 -------------------------------------------------------- */
 ;(function (global, $, ajax) {
@@ -107,4 +83,4 @@
   function corsURL(url) {
     return 'https://crossorigin.me/' + url
   }
-}) //(window, Dom, ajax)
+})(window, Dom, ajax)
