@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-flow: column wrap;
+      min-height: 100vh;
+      font: 14px/1.5 "Spoqa Han Sans", Sans-Serif;
+    }
+
+    body * {
+      /* 탭 하이라이트 컬러 설정 */
+      -webkit-tap-highlight-color: rgba(255,255,230,0.35);
+      tap-highlight-color: rgba(255,255,230,0.35);
+    }
+
+    .link.is-monkys {
+      position: relative;
+      transform: scale(0.8);
+      transition: all 0.1s ease;
+    }
+
+    .link.is-monkys::before,
+    .link.is-monkys::after {
+      opacity: 0;
+      position: absolute;
+      left: 50%;
+      transition: all 0.4s ease-out;
+      transform: translateX(-50%) translateY(10px);
+    }
+
+    .link.is-monkys::before {
+      content: '우리를 클릭해봐 몽~';
+      top: 5px;
+      border-radius: 30px;
+      padding: 1em 1.5em;
+      text-align: center;
+      background: #4195e1;
+      color: #ffffff;
+    }
+    .link.is-monkys::after {
+      content: '';
+      top: 53px;
+      border-top: 8px solid #4195e1;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+    }
+
+    .link.is-monkys:hover::before,
+    .link.is-monkys:hover::after,
+    .link.is-monkys:focus::before,
+    .link.is-monkys:focus::after {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .link.is-monkys:active {
+      opacity: 0.8;
+      transform: scale(0.75);
+    }
+  </style>
+  <title>Document</title>
+</head>
+<body>
+  <a href="#" class="link is-monkys">
+    <img src="monks-frame-normal.jpg" alt="팔짱 낀 몽키">
+  </a>
+</body>
+</html>
