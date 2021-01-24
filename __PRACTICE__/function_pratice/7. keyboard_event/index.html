@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      overflow-x: hidden;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      flex-flow: column wrap;
+      min-height: 100vh;
+      font: 14px/1.5 "Spoqa Han Sans", Sans-Serif;
+    }
+
+    /* -----------------------------------------------------------------------------
+    * 구름 스타일링
+    * --------------------------------------------------------------------------- */
+    .cloud {
+      position: absolute;
+      background: url("cloud.png") no-repeat;
+      animation-name: flow;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+
+    .cloud.is-big {
+      top: 100px;
+      left: 100vw;
+      width: 120px;
+      height: 120px;
+      background-size: 120px;
+    }
+    .cloud.is-regular {
+      top: 170px;
+      left: 150vw;
+      width: 130px;
+      height: 100px;
+      background-size: 100px;
+    }
+    .cloud.is-small {
+      top: 45px;
+      left: 130vw;
+      width: 60px;
+      height: 60px;
+      background-size: 60px;
+    }
+    .cloud.is-slow {
+      animation-duration: 30s;
+    }
+    .cloud.is-normal {
+      animation-duration: 26s;
+    }
+    .cloud.is-fast {
+      animation-duration: 22s;
+    }
+
+    .cloud.is-stop {
+      animation-play-state: paused;
+    }
+
+    /* -----------------------------------------------------------------------------
+    * 캐릭터 스타일링
+    * --------------------------------------------------------------------------- */
+    .boy {
+      margin: 0;
+      background: url("character-jump-outlines.png") no-repeat;
+      width: 145px;
+      height: 220px;
+    }
+
+    .boy.jump {
+      animation: jump 0.4s steps(2);
+    }
+
+    .info {
+      margin-bottom: 6vh;
+    }
+
+    @media (min-width: 60em) {
+      .info {
+        margin-bottom: 20vh;
+      }
+    }
+
+    .info kbd {
+      border-radius: 5px;
+      padding: 0.1em 0.3em;
+      vertical-align: 1.5px;
+      line-height: 1;
+      background: #f0f0f0;
+    }
+
+    @keyframes flow {
+      to {
+        transform: translateX(-110vw);
+      }
+    }
+
+    @keyframes jump {
+      to {
+        background-position: 200% 0;
+      }
+    }
+  </style>
+  <title>키보드 이벤트 실습</title>
+</head>
+<body>
+  <div class="clouds">
+    <figure class="cloud is-slow is-big" aria-label="크고 느린 구름"></figure>
+    <figure class="cloud is-normal is-regular" aria-label="보통 크기, 속도인 구름"></figure>
+    <figure class="cloud is-fast is-small" aria-label="작고 빠른 구름"></figure>
+  </div>
+  
+  <figure class="boy" aria-label="서있는 소년"></figure>
+  
+  <p class="info">화살표 <kbd>up</kbd>, <kbd>left</kbd>, <kbd>right</kbd> 키를 눌러보세요.</p>
+</body>
+</html>
