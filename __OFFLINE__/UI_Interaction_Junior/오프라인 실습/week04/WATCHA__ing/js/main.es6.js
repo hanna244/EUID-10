@@ -131,15 +131,15 @@ var goToSectionButtonArr = makeArray(goToSectionButtonList)
 // }
 
 // 버튼 집합을 순환하기
-// goToSectionButtonArr.forEach(function (item, index) {
-//   item.addEventListener('click', handleGoToSection(index))
-// })
+goToSectionButtonArr.forEach(function (item, index) {
+  item.addEventListener('click', handleGoToSection(index))
+})
 
 // 버튼 집합을 순환하기(for문)
-// for (let i = 0; i < buttonList.length; i++) {
-//   const button = buttonList[i];
-//   button.addEventListener('click', handleClick)
-// }
+for (let i = 0; i < buttonList.length; i++) {
+  const button = buttonList[i]
+  button.addEventListener('click', handleClick)
+}
 
 /* -------------------------------------------------------------------------- */
 

@@ -45,37 +45,31 @@ var wallpapers = [
   'v1598872045/yejizhji2kl6v6vq7im5',
 ]
 
-const buttonList = document.querySelectorAll('.appNavigation__button')
-const sceneList = document.querySelectorAll('.featureSection')
-const arrButton = makeArray(buttonList)
-const arrScene = makeArray(sceneList)
-
-const handleChangeScene = (index) => {
-  return (e) => {
-    e.preventDefault()
-    arrScene[index].scrollIntoView({ behavior: 'smooth' })
-  }
-}
-
-arrButton.forEach((item, index) => {
-  item.addEventListener('click', handleChangeScene(index))
-})
-
 wallpapers = wallpapers.map(function (path) {
   return 'https://dhgywazgeek0d.cloudfront.net/watcha/image/upload/' + path
 })
 
-/* ---------------------------------------------------------------------- */
+// shuffle(wallpapers) {
+//   filter(function(wallpaper, index) {
+//     return index < 5
+//   })
+// }
 
 var wallpaperList = shuffle(wallpapers).filter(function (wallpaper, index) {
   return index < 5
 })
 
-/* ---------------------------------------------------------------------- */
+// console.log(shuffle(wallpapers), wallpapers)
 
+// 현재 홈페이지에 사용할 월페이퍼 리스트 (집합)
+// console.log(wallpaperList)
+
+/* -------------------------------------------------------------------------- */
 var featureSections = document.querySelectorAll('.featureSection')
 
 featureSectionArray = makeArray(featureSections)
+
+// console.log(Array.isArray(featureSectionArray))
 
 featureSectionArray.forEach(function (section, index) {
   var selector = '.featureSection:nth-of-type(' + (index + 1) + ')::before'

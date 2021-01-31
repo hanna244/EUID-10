@@ -1,19 +1,21 @@
-var goToTopButton = document.querySelector('.button-goToTop');
+const button = document.querySelector('.button-goToTop');
+const GO_TO_TOP_BUTTON_ACTIVE = 'is--active';
+const headerHeight = 60;
 
-console.log(goToTopButton);
+const showButton = (el, className, height) => {
+  if (window.scrollY >= height && !el.classList.contains(className)) {
+    el.classList.add(className);
+  }
+};
+const hideButton = (el, className, height) => {
+  if (window.scrollY < height && el.classList.contains(className)) {
+    el.classList.remove(className);
+  }
+};
 
-/* 내가 생각한 답 */
-// function delayedAlert() {
-//   window.setTimeout(slowAlert, 3000);
-//   goToTopButton.classList.add('is--active');
-// }
+const handleGoToTopButton = function (e) {
+  showButton(this, GO_TO_TOP_BUTTON_ACTIVE, headerHeight);
+  hideButton(this, GO_TO_TOP_BUTTON_ACTIVE, headerHeight);
+};
 
-// delayedAlert();
-
-/* 수업에서 나온 답 */
-
-function showGoToTopButton() {
-  goToTopButton.classList.add('is--active');
-}
-
-window.setTimeout(showGoToTopButton, 3000);
+window.addEventListener('scroll', handleGoToTopButton.bind(button));
