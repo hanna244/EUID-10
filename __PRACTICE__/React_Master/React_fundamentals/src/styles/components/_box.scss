@@ -1,0 +1,19 @@
+@import '../lib/euid';
+
+.box {
+  @include flex-container(column justify-center items-center);
+  @include m(rem(5));
+  @include size(rem(100));
+  border: 1px solid get-color(black);
+  text-align: center;
+
+  &--sm {
+    @include size(rem(50));
+  }
+  &--md {
+    @include size(rem(100));
+  }
+  &--lg {
+    @include size(rem(200));
+  }
+}

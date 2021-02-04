@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>안녕 React!</title>
+    <link href="/dist/assets/favicon.svg" rel="shortcut icon" />
+    <link href="https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css" rel="stylesheet" />
+    <link href="/dist/styles/main.css" rel="stylesheet" />
+    <script type="module" src="/dist/scripts/main.js" data-euid="getting-started/hello-react" defer></script>
+  </head>
+
+  <body>
+
+    <!-- <div id="root"></div> -->
+
+    <script type="module">
+      /* 실습 ----------------------------------------------------------------------- */
+      // root 요소 동적으로 추가
+      const divNode = document.createElement('div')
+      divNode.setAttribute('id', 'root')
+      divNode.textContent = ''
+      document.body.appendChild(divNode)
+      
+
+      // 1-1. h1 요소 생성
+      // 1-2. headline 클래스 속성 추가
+      // 1-3. "안녕! React" 텍스트 콘텐츠 포함
+
+      // 2. #root 요소 노드 안에 h1 요소 노드 포함
+      const headline_text = '안녕! React'
+      const head = document.createElement('h1')
+      head.classList.add('headline')
+      head.textContent = headline_text
+      document.querySelector('#root').appendChild(head)
+
+      
+
+      // 특정 유형의 노드를 찾을 떄는 getElement~를 사용하면 더 빠름 
+    </script>
+
+  </body>
+
+</html>

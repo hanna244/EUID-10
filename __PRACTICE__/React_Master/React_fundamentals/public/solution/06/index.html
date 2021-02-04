@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>프래그먼트</title>
+    <link href="/dist/assets/favicon.svg" rel="shortcut icon" />
+    <link href="https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css" rel="stylesheet" />
+    <link href="/dist/styles/main.css" rel="stylesheet" />
+    <script type="module" src="/dist/scripts/main.js" data-euid="getting-started/react-fragments" defer></script>
+
+    <script src="https://unpkg.com/react/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/prop-types/prop-types.js"></script>
+  </head>
+
+  <body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+      /* 실습 ----------------------------------------------------------------------- */
+      const Message = ({ size, ...restProps }) => {
+        size = size ? `message--${size}` : ''
+        return <span className={`message ${size}`.trim()} {...restProps} />
+      }
+
+      Message.propTypes = {
+        size: PropTypes.string
+      }
+
+      const reactElement = (
+        <>
+          <h1 className="headline">
+            React <strong>컴포넌트</strong>
+          </h1>
+          <p>
+            <Message size="xl">컴포넌트는 함수처럼 재사용을 목적으로 사용되며,</Message>{' '}
+            <Message>JSX 문법 안에서도 보간 처리가 가능합니다.</Message>
+          </p>
+        </>
+      )
+
+      ReactDOM.render(reactElement, document.getElementById('root'))
+    </script>
+
+  </body>
+
+</html>

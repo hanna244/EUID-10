@@ -1,0 +1,21 @@
+// @euid/scss-mixins
+// https://yamoo9.gitbook.io/euid-scss-mixins
+@import '../../node_modules/@euid/scss-mixins';
+
+@mixin size($value) {
+  width: $value;
+  height: $value;
+}
+
+@mixin container($limit: 960) {
+  max-width: rem($limit);
+  @include mx(auto);
+}
+
+@function headings($begin: 1, $end: 6) {
+  $headings: '';
+  @for $index from $begin through $end {
+    $headings: $headings + 'h#{$index}' + if($index != $end, ',', '');
+  }
+  @return $headings;
+}

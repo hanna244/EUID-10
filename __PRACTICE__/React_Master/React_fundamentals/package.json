@@ -1,0 +1,22 @@
+{
+  "name": "euid-react--fundamentals",
+  "version": "0.0.1",
+  "description": "이듬 React 라이브러리 시작하기",
+  "private": true,
+  "scripts": {
+    "start": "snowpack dev"
+  },
+  "author": "yamoo9 <yamoo9@euid.dev>",
+  "license": "MIT",
+  "devDependencies": {
+    "@euid/scss-mixins": "^0.2.0",
+    "@snowpack/plugin-sass": "^1.3.0",
+    "budo": "^11.6.4",
+    "snowpack": "^3.0.11"
+  },
+  "main": "index.js",
+  "keywords": [],
+  "dependencies": {
+    "virtual-dom": "^2.1.1"
+  }
+}

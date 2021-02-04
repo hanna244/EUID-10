@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>리스트 렌더링</title>
+    <link href="/dist/assets/favicon.svg" rel="shortcut icon" />
+    <link href="https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css" rel="stylesheet" />
+    <link href="/dist/styles/main.css" rel="stylesheet" />
+    <script type="module" src="/dist/scripts/main.js" data-euid="getting-started/list-rendering" defer></script>
+
+    <script src="https://unpkg.com/react/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/prop-types/prop-types.js"></script>
+  </head>
+
+  <body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+      /* 실습 ----------------------------------------------------------------------- */
+
+      const weatherList = [
+        { id: 'pzkde', content: '☀️ 맑음' },
+        { id: 'eodke', content: '🌧 비' },
+        { id: 'waswk', content: '🌧 눈' },
+        { id: 'wodkr', content: '☁️ 구름' },
+        { id: 'kwejv', content: '🌩 천둥' },
+        { id: 'qkwod', content: '🌪 태풍' },
+      ]
+
+      const shuffle = (list) => {
+        const copyedList = [...list]
+        let currentIndex = copyedList.length
+        let randomIndex
+        let tempValue
+        // 셔플 할 요소가 남아 있는 동안
+        while (0 !== currentIndex) {
+          // 랜덤 인덱스 값 생성
+          randomIndex = Math.floor(Math.random() * currentIndex)
+          // 현재 인덱스 업데이트
+          currentIndex -= 1
+          // 배열의 현재 아이템을 임시로 저장
+          tempValue = copyedList[currentIndex]
+          // 배열의 현재 아이템 인덱스에 랜덤 인덱스 값 설정
+          copyedList[currentIndex] = copyedList[randomIndex]
+          // 렌덤 인덱스에 기억된 임시 값 설정
+          copyedList[randomIndex] = tempValue
+        }
+        return copyedList
+      }
+
+      const styles = {
+        container: { marginTop: 50, width: 560 },
+        list: { listStyle: 'none', paddingLeft: 0 },
+        item: { display: 'flex', justifyContent: 'flex-start', alignItems: 'center', padding: 10 },
+        label: { marginRight: 10 },
+        input: { flex: 1, marginRight: 10, padding: 3 },
+        button: { backgroundColor: 'transparent', marginTop: 1, border: 0 }
+      }
+
+      const App = () => {
+
+        const [weathers, setWeathers] = React.useState(weatherList)
+
+        React.useEffect(() => {
+          const intervalId = window.setInterval(() => setWeathers(shuffle), 1500)
+          return () => window.clearInterval(intervalId)
+        }, [])
+
+        const getChangeHandler = targetWeather => event => {
+          const newContent = event.target.value
+          setWeathers(weathers => weathers.map(weather => ({
+            ...weather,
+            content: weather.id === targetWeather.id ? newContent : weather.content
+          })))
+        }
+
+        return (
+          <div className="weathers" style={styles.container}>
+            <div>
+              <h2>key 속성이 설정되지 않은 경우</h2>
+              {
+                weathers.map(weather => (
+                  <input type="text" value={weather.content} onChange={getChangeHandler(weather)} />
+                ))
+              }
+            </div>
+            <div>
+              <h2>key 속성이 배열 인덱스로 설정된 경우</h2>
+              {
+                weathers.map((weather, index) => (
+                  <input key={index} type="text" value={weather.content} onChange={getChangeHandler(weather)} />
+                ))
+              }
+            </div>
+            <div>
+              <h2>key 속성이 아이템 ID로 설정된 경우</h2>
+              {
+                weathers.map(weather => (
+                  <input key={weather.id} type="text" value={weather.content} onChange={getChangeHandler(weather)} />
+                ))
+              }
+            </div>
+          </div>
+        )
+      }
+
+
+      ReactDOM.render(<App />, document.getElementById('root'))
+    </script>
+
+  </body>
+
+</html>

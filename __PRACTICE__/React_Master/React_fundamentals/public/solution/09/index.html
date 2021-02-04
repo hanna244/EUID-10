@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>리스트 렌더링</title>
+    <link href="/dist/assets/favicon.svg" rel="shortcut icon" />
+    <link href="https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css" rel="stylesheet" />
+    <link href="/dist/styles/main.css" rel="stylesheet" />
+    <script type="module" src="/dist/scripts/main.js" data-euid="getting-started/list-rendering" defer></script>
+
+    <script src="https://unpkg.com/react/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/prop-types/prop-types.js"></script>
+  </head>
+
+  <body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+      /* 실습 ----------------------------------------------------------------------- */
+
+      const weatherList = [
+        { id: 'pzkde', content: '☀️ 맑음' },
+        { id: 'eodke', content: '🌧 비' },
+        { id: 'waswk', content: '🌧 눈' },
+        { id: 'wodkr', content: '☁️ 구름' },
+        { id: 'kwejv', content: '🌩 천둥' },
+        { id: 'qkwod', content: '🌪 태풍' },
+      ]
+
+      const styles = {
+        container: { marginTop: 50, width: 500 },
+        list: { listStyle: 'none', paddingLeft: 0 },
+        item: { display: 'flex', justifyContent: 'flex-start', alignItems: 'center', padding: 10 },
+        label: { marginRight: 10 },
+        input: { flex: 1, marginRight: 10, padding: 3 },
+        button: { backgroundColor: 'transparent', marginTop: 1, border: 0 }
+      }
+
+      const App = () => {
+
+        const [weathers, setWeathers] = React.useState(weatherList)
+
+        const addWeather = () => {
+          setWeathers([
+            ...weathers,
+            weatherList.find(weather => !weathers.map(({ id }) => id).includes(weather.id)),
+          ])
+        }
+
+        const removeWeather = (removeWeather) => {
+          setWeathers(weathers.filter(weather => weather.id !== removeWeather.id))
+        }
+
+        return (
+          <div className="weathers" style={styles.container}>
+            <button type="button" disabled={weathers.length >= weatherList.length} onClick={addWeather}>
+              날씨 아이템 추가
+            </button>
+            <ul style={styles.list}>
+              {weathers.map(({ id, content }) => (
+                // 아래 <li>에 key 속성을 추가하세요.
+                <li key={id} style={styles.item}>
+                  <label htmlFor={`${id}-input`} style={styles.label}>{content}</label>{' '}
+                  <input id={`${id}-input`} style={styles.input} defaultValue={content} />
+                  <button type="button" style={styles.button} onClick={() => removeWeather({ id, content })} aria-label="제거">🗑</button>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )
+      }
+
+
+      ReactDOM.render(<App />, document.getElementById('root'))
+    </script>
+
+  </body>
+
+</html>

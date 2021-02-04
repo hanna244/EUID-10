@@ -1,0 +1,80 @@
+@import '../lib/euid';
+
+$colors: map-merge(
+  $colors,
+  (
+    darkblue: #070c1d,
+    cyan: #00c3ff,
+    state-selection-bg: #00d9ff,
+    state-selection-fg: #071924,
+  )
+);
+
+@include selection() {
+  background: get-color(state-selection-bg);
+  color: get-color(state-selection-fg);
+}
+
+@include selection('img,button') {
+  background: transparent;
+}
+
+body {
+  background: get-color(darkblue);
+  color: get-color(white);
+}
+
+#root {
+  @include flex-container(column justify-center items-center);
+  @include my(rem(100));
+
+  h1 {
+    margin-bottom: rem(50);
+  }
+
+  nav {
+    @include font(size rem(24));
+    width: 100%;
+    margin-top: rem(40);
+  }
+
+  ol {
+    @include reset-list;
+    @include media('<=lg') {
+      @include mx(rem(10));
+    }
+  }
+
+  li {
+    @include flex-container(justify-start items-center);
+    margin-bottom: rem(10);
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  strong {
+    @include flex(1);
+    @include media('<=lg') {
+      font-size: rem(18);
+    }
+  }
+
+  a {
+    $color: get-color(cyan);
+    text-decoration: none;
+    color: $color;
+    @include font-size-padding(18, 3);
+    transition: color 0.4s ease(out-circ);
+    &:hover {
+      color: lighten($color, 50%);
+    }
+    &::after {
+      content: ' | ';
+      color: get-color(white);
+    }
+    &:last-child::after {
+      content: '';
+    }
+  }
+}

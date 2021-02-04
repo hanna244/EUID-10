@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React APIs</title>
+    <link href="/dist/assets/favicon.svg" rel="shortcut icon" />
+    <link href="https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css" rel="stylesheet" />
+    <link href="/dist/styles/main.css" rel="stylesheet" />
+    <script type="module" src="/dist/scripts/main.js" data-euid="getting-started/react-intro" defer></script>
+
+    <!-- React, ReactDOM 라이브러리 호출 -->
+    <script src="https://unpkg.com/react/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+  </head>
+
+  <body>
+
+    <div id="root"></div>
+
+    <script type="module">
+      /* 실습 ----------------------------------------------------------------------- */
+      // React를 사용하여 이 코드를 재구성합니다.
+      const elementName = 'h1'
+      const elementProps = {className: 'headline', children: 'React APIs'}
+      const reactElement = React.createElement(elementName, elementProps)
+      var rootNode = document.getElementById('root')
+      ReactDOM.render(reactElement, rootNode)
+
+      const rootElementProps = {id: 'root'}
+      const headlineElementProps = {className: 'headline', lang: 'en'}
+      const strongElementProps = {children: 'React'}
+      const abbrElementProps = {title: 'Application Programming Interfaces', children: 'APIs'}
+
+      const rootElement = React.createElement('div', rootElementProps)
+      const headlineElement = React.createElement('h1', headlineElementProps)
+      const strongElement = React.createElement('strong', strongElementProps)
+      const abbrElement = React.createElement('abbr', abbrElementProps)
+
+      
+
+      // 다음의 3줄은 React.createElement() 구현과 유사합니다.
+      // const h1Node = document.createElement('h1')
+      // h1Node.classList.add('headline')  // React에서는 `className` props로 설정합니다.
+      // h1Node.textContent = 'React APIs' // React에서는 `children` props로 설정합니다.
+      
+      // 다음 라인은 ReactDOM.render() 구현과 유사합니다.
+      // const rootNode = document.querySelector('#root')
+      // rootNode.append(h1Node)
+    </script>
+
+  </body>
+
+</html>

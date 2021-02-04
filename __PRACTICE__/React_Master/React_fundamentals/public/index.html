@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이듬 React 시작하기</title>
+    <link href="/dist/assets/favicon.svg" rel="shortcut icon" />
+    <link href="https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css" rel="stylesheet" />
+    <link href="/dist/styles/main.css" rel="stylesheet" />
+    <script type="module" src="/dist/scripts/main.js" data-euid="getting-started" defer></script>
+    <script src="https://unpkg.com/react/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/prop-types/prop-types.js"></script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+
+      const NavItem = ({ item: { id, headline, extra } }) => (
+        <li>
+          <strong>{headline}</strong>
+          <a href={`./practice/${id}/`}>실습</a>
+          <a href={`./solution/${id}/`}>완성</a>
+          {extra?.map(({ key, text, link }) => <a key={key} href={`./solution/${id}/${link}`}>{text}</a>)}
+        </li>
+      )
+
+      const navList = [
+        {
+          id: '01',
+          headline: '안녕! React',
+          extra: [{ key: 'extra-1', text: '추가 실습', link: 'extra' }],
+        },
+        {
+          id: '02',
+          headline: 'React 소개',
+          extra: [{ key: 'extra-2', text: '추가 실습', link: 'extra' }],
+        },
+        {
+          id: '03',
+          headline: 'JSX 활용',
+          extra: [
+            { key: 'extra-3.1', text: '추가 실습 1', link: 'extra1' },
+            { key: 'extra-3.2', text: '추가 실습 2', link: 'extra2' },
+          ],
+        },
+        {
+          id: '04',
+          headline: '컴포넌트 생성',
+          extra: [
+            { key: 'extra-4.1', text: '추가 실습 1', link: 'extra1' },
+            { key: 'extra-4.2', text: '추가 실습 2', link: 'extra2' },
+          ],
+        },
+        { id: '05', headline: '전달 속성 검사', extra: [{ key: 'extra-5', text: '추가 실습', link: 'extra' }] },
+        { id: '06', headline: '프래그먼트', extra: [] },
+        {
+          id: '07',
+          headline: '스타일링',
+          extra: [
+            { key: 'extra-7.1', text: '추가 실습 1', link: 'extra1' },
+            { key: 'extra-7.2', text: '추가 실습 2', link: 'extra2' },
+          ],
+        },
+        {
+          id: '08',
+          headline: '폼 컨트롤',
+          extra: [
+            { key: 'extra-8.1', text: '추가 실습 1', link: 'extra1' },
+            { key: 'extra-8.2', text: '추가 실습 2', link: 'extra2' },
+            { key: 'extra-8.3', text: '추가 실습 3', link: 'extra3' },
+          ],
+        },
+        { id: '09', headline: '리스트 렌더링', extra: [{ key: 'extra-9', text: '추가 실습', link: 'extra' }] },
+      ]
+
+      const NavList = () => (
+        <nav>
+          <ol>
+            {navList.map(item => <NavItem key={item.id} item={item} />)}
+          </ol>
+        </nav>
+      )
+
+      const App = () => (
+        <>
+          <img src="/dist/assets/react.webp" alt="React" height="200" />
+          <h1>React 톺아보기</h1>
+          <NavList />
+        </>
+      )
+
+      ReactDOM.render(<App />, document.getElementById('root'))
+    </script>
+  </body>
+
+</html>

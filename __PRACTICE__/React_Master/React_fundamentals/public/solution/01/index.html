@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>안녕 React!</title>
+    <link href="/dist/assets/favicon.svg" rel="shortcut icon" />
+    <link href="https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css" rel="stylesheet" />
+    <link href="/dist/styles/main.css" rel="stylesheet" />
+    <script type="module" src="/dist/scripts/main.js" data-euid="getting-started/hello-react" defer></script>
+  </head>
+
+  <body>
+
+    <div id="root"></div>
+
+    <script type="module">
+      /* 실습 ----------------------------------------------------------------------- */
+
+      // 1-1. h1 요소 생성
+      const h1Node = document.createElement('h1')
+      // 1-2. headline 클래스 속성 추가
+      h1Node.classList.add('headline')
+      // 1-3. "안녕! React" 텍스트 콘텐츠 포함
+      h1Node.textContent = '안녕! React'
+
+      // 2. #root 요소 노드 안에 h1 요소 노드 포함
+      document.querySelector('#root').append(h1Node)
+    </script>
+
+  </body>
+
+</html>

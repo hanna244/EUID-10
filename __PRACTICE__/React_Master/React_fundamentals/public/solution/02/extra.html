@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React APIs</title>
+    <link href="/dist/assets/favicon.svg" rel="shortcut icon" />
+    <link href="https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css" rel="stylesheet" />
+    <link href="/dist/styles/main.css" rel="stylesheet" />
+    <script type="module" src="/dist/scripts/main.js" data-euid="getting-started/react-intro" defer></script>
+
+    <script src="https://unpkg.com/react/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+  </head>
+
+  <body>
+
+    <div id="root"></div>
+
+    <script type="module">
+      const strongElement = React.createElement(
+        'strong',
+        null,
+        'React'
+      )
+
+      const abbrElement = React.createElement(
+        'abbr', 
+        { 
+          title: 'Application Programming Interfaces', 
+          children: 'APIs' 
+        }
+      )
+      
+      const reactElement = React.createElement(
+        'h1', 
+        {
+          lang: 'en', 
+          className: 'headline', 
+          children: [
+            strongElement, 
+            ' ', 
+            abbrElement
+          ]
+        }
+      )
+
+      ReactDOM.render(reactElement, document.getElementById('root'))
+    </script>
+
+  </body>
+
+</html>

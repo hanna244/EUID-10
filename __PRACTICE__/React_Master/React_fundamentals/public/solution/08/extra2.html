@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>폼 컨트롤</title>
+    <link href="/dist/assets/favicon.svg" rel="shortcut icon" />
+    <link href="https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css" rel="stylesheet" />
+    <link href="/dist/styles/main.css" rel="stylesheet" />
+    <script type="module" src="/dist/scripts/main.js" data-euid="getting-started/form-control" defer></script>
+
+    <script src="https://unpkg.com/react/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/prop-types/prop-types.js"></script>
+  </head>
+
+  <body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+      /* 실습 ----------------------------------------------------------------------- */
+
+      const styles = {
+        form: { marginTop: 100 },
+        formControl: { position: 'relative', display: 'inline-block', marginRight: 12 },
+        label: { marginRight: 6, verticalAlign: -2 },
+        input: { border: '2px solid #9a9a9a', borderRadius: 6, padding: '6px 8px' },
+        alert: { position: 'absolute', top: 'calc(100% + 5px)', left: 0, width: '30em', color: '#e21842' },
+        button: { backgroundColor: '#111', color: '#fff', marginTop: 6, border: 0, borderRadius: 6, padding: '6px 8px 4px' }
+      }
+
+      const Form = ({ onSubmit }) => {
+
+        const usernameRef = React.useRef(null)
+
+        // 오류 상태
+        const [error, setError] = React.useState(null)
+
+        // 입력 변경 이벤트 핸들러
+        // 사용자가 입력한 값을 가져오는 핸들러
+        const handleInput = e => {
+          const inputValue = usernameRef?.current?.value
+          // 사용자 입력 값 유효성 검사
+          // 오직 한글만 사용 가능
+          setError(/^([ㄱ-ㅎ|ㅏ-ㅣ|가-힣])+$/g.test(inputValue) ? null : { message: '사용자 이름은 공백 없는 한글만 입력 가능합니다.' })
+        }
+
+        const handleSubmit = e => {
+          e.preventDefault()
+          onSubmit(usernameRef?.current?.value)
+        }
+
+        return (
+          <form onSubmit={handleSubmit} style={styles.form}>
+            <div className="form-control" style={styles.formControl}>
+              <label htmlFor="username" style={styles.label}>사용자 이름</label>
+              <input ref={usernameRef} onInput={handleInput} id="username" type="text" style={styles.input} />
+              {error && <span role="alert" style={styles.alert}>{error.message}</span>}
+            </div>
+            <button 
+              type="submit" 
+              disabled={error} 
+              style={{ ...styles.button, ...{ cursor: error ? 'not-allowed' : null, background: error ? '#dadada' : '#111' } }}
+            >
+              전송
+            </button>
+          </form>
+        )
+      }
+
+      const App = () => {
+        const handleSubmit = username => console.log(`입력된 사용자 이름: ${username}`)
+        return (
+          <Form onSubmit={handleSubmit} />
+        )
+      }
+
+
+      ReactDOM.render(<App />, document.getElementById('root'))
+    </script>
+
+  </body>
+
+</html>

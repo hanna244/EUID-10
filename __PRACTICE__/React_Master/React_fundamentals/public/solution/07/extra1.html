@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>스타일링</title>
+    <link href="/dist/assets/favicon.svg" rel="shortcut icon" />
+    <link href="https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css" rel="stylesheet" />
+    <link href="/dist/styles/main.css" rel="stylesheet" />
+    <script type="module" src="/dist/scripts/main.js" data-euid="getting-started/styling" defer></script>
+
+    <script src="https://unpkg.com/react/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/prop-types/prop-types.js"></script>
+  </head>
+
+  <body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+      /* 실습 ----------------------------------------------------------------------- */
+
+      const BOX_COLORS = {
+        blueGem: '#2D179B',
+        purpleHeart: '#4125D0',
+        mediumPurple: '#8D7CE4'
+      }
+
+      const Box = ({ size = '', className = '', children, ...restProps }) => {
+        return <div className={`box ${size} ${className}`.trim()} {...restProps}>{children}</div>
+      }
+
+      Box.propTypes = {
+        size: PropTypes.string
+      }
+
+      const smallBox = <Box size="box--sm" style={{ backgroundColor: BOX_COLORS.blueGem, color: '#fff' }}>Small Box</Box>
+      const mediumBox = <Box size="box--md" style={{ backgroundColor: BOX_COLORS.mediumPurple, color: '#121212' }}>Medium Box</Box>
+      const largeBox = <Box size="box--lg" style={{ backgroundColor: BOX_COLORS.purpleHeart, color: '#fff' }}>Large Box</Box>
+
+      const App = () => (
+        <div lang="en" className="boxGroup" style={{ marginTop: 60 }}>
+          {smallBox}
+          {mediumBox}
+          {largeBox}
+        </div>
+      )
+
+
+      ReactDOM.render(<App />, document.getElementById('root'))
+    </script>
+
+  </body>
+
+</html>
