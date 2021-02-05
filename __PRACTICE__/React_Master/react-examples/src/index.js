@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
 
@@ -19,32 +19,34 @@ const FEML_lecturers = [
   },
 ]
 
-const lecturerMember =
-  FEML_lecturers.length > 0 ? (
+class Lecturer extends Component {
+  render() {
+  return(
     <ul className="lecturers">
-      {FEML_lecturers.map((lecturer) => (
-        <li className="lecturers" key={lecturer.id}>
-          <a href={lecturer.facebook} rel="noreferer nopener">
-            <figure className="lecturer-info">
-              <img src={lecturer.image} alt="" className="lecturer-photo" />
-              <figcaption>
-                {lecturer.module} 모듈을 담당 할 {lecturer.name} 강사 Facebook
-                바로가기
-              </figcaption>
-            </figure>
-          </a>
-        </li>
-      ))}
-    </ul>
-  ) : (
-    <p>강사의 정보가 없습니다. 문의 사항은 고객센터로 연락주세요.</p>
-  )
+  {FEML_lecturers.map((lecturer) => (
+    <li className="lecturers" key={lecturer.id}>
+      <a href={lecturer.facebook} rel="noreferer nopener">
+        <figure className="lecturer-info">
+          <img src={lecturer.image} alt="" className="lecturer-photo" />
+          <figcaption>
+            {lecturer.module} 모듈을 담당 할 {lecturer.name} 강사 Facebook
+            바로가기
+          </figcaption>
+        </figure>
+      </a>
+    </li>
+  ))}
+</ul>
+  )}
+}
 
-const app = (
-  <div className="app" role="main" aria-labelledby="main-title">
-    <h1 id="main-title">Front-End Masters League 강사진</h1>
-    {lecturerMember}
-  </div>
-)
+function App() {
+  return(
+    <div className="app" role="main" aria-labelledby="main-title">
+      <h1 id="main-title">Front-End Masters League 강사진</h1>
+      <Lecturer />
+    </div>
+  ) 
+} 
 
-ReactDOM.render(app, document.getElementById('root'))
+ReactDOM.render(<App />, document.getElementById('root'))
