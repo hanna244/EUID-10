@@ -19,9 +19,8 @@ const FEML_lecturers = [
   },
 ]
 
-const app = (
-  <div className="app" role="main" aria-labelledby="main-title">
-    <h1 id="main-title">Front-End Masters League 강사진</h1>
+const lecturerMember =
+  FEML_lecturers.length > 0 ? (
     <ul className="lecturers">
       {FEML_lecturers.map((lecturer) => (
         <li className="lecturers" key={lecturer.id}>
@@ -37,6 +36,14 @@ const app = (
         </li>
       ))}
     </ul>
+  ) : (
+    <p>강사의 정보가 없습니다. 문의 사항은 고객센터로 연락주세요.</p>
+  )
+
+const app = (
+  <div className="app" role="main" aria-labelledby="main-title">
+    <h1 id="main-title">Front-End Masters League 강사진</h1>
+    {lecturerMember}
   </div>
 )
 
