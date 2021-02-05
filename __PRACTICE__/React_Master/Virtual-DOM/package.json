@@ -1,0 +1,14 @@
+{
+  "name": "Virtual-dom-demo",
+  "version": "1.0.0",
+  "description": "가상 DOM에 대한 튜토리얼",
+  "scripts": {
+    "start": "budo index.js --live"
+  },
+  "devDependencies": {
+    "budo": "^11.6.4"
+  },
+  "dependencies": {
+    "virtual-dom": "^2.1.1"
+  }
+}
