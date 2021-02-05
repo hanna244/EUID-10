@@ -2,27 +2,29 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
 
-const state = {
-  appClass: 'app',
+// 조건부 처리할 함수
+function conditionaRendering(usingList = false) {
+  // 조건문 if, switch
+  if (usingList) {
+    return (
+      <ul>
+        <li>조건 문 사용</li>
+        <li>조건 식 (3항식, 논리곱/합 연산자) 활용</li>
+      </ul>
+    )
+  } else {
+    return <p>"조건 문 활용" 또는 "조건 식 (3항식, 논리곱/합 연산자) 활용"</p>
+  }
 }
 
-const borderColor = 'blue'
-
-const liStyle = { color: '#ea6666', fontWeight: 100 }
+function randomBoolean() {
+  return Math.random() < 0.5 ? true : false
+}
 
 const app = (
-  <div className={state.appClass}>
-    <h1 className="a11y-hidden">속성 컴파일</h1>
-    <ul>
-      {/* 직접 스타일 추가 */}
-      <li style={{ color: '#ea6666', fontWeight: 900 }}>스타일 속성(인라인)</li>
-      {/* 영역 외부에서 설정한 스타일 추가 */}
-      <li style={liStyle}>스타일 속성(객체)</li>
-      <li className="bordered rounded">클래스 속성</li>
-      <li className={`rounded bordered bordered-${borderColor}`}>
-        클래스 속성(동적 처리)
-      </li>
-    </ul>
+  <div className="app">
+    <h1>조건부 렌더링</h1>
+    {conditionaRendering(randomBoolean())}
   </div>
 )
 
