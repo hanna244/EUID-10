@@ -1,6 +1,6 @@
 import React from 'react'
 import Lecturers from './Components/Lucturers'
-// import DeliveryComment from './Components/DeliveryComment'
+import DeliveryComment from './Components/DeliveryComment'
 
 const FEML_lecturers = [
   {
@@ -24,6 +24,7 @@ function App() {
     <div className="app" role="main" aria-labelledby="main-title">
       <h1 id="main-title">Front-End Masters League 강사진</h1>
       <Lecturers instructor={FEML_lecturers} />
+      <DeliveryComment />
     </div>
   )
 }
