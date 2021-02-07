@@ -1,7 +1,16 @@
-import React, { Component } from 'react'
+import React from 'react'
+import { array } from 'prop-types'
 import Lecture from './Lecture'
 
-export default class Lecturer extends Component {
+class Lecturer extends React.Component {
+  static propTypes = {
+    array,
+  }
+
+  static defaultProps = {
+    instructor: [],
+  }
+
   render() {
     return (
       <ul className="lecturers">
@@ -20,3 +29,5 @@ export default class Lecturer extends Component {
     )
   }
 }
+
+export default Lecturer
