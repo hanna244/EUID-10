@@ -1,40 +1,22 @@
 import React from 'react'
-import Lecturers from './Components/Lucturers'
+import Lecturers from './Components/Lecturers'
 
-// const FEML_lecturers = [
-//   {
-//     id: 'lecturer-az081871',
-//     name: '김데레사',
-//     module: 'A',
-//     facebook: 'http://facebook.com/seulbinim',
-//   },
-//   {
-//     id: 'lecturer-az081872',
-//     name: '야무',
-//     module: 'B, C',
-//     facebook: 'http://facebook.com/yamoo9',
-//   },
-// ]
-
-class App extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      FEML_lecturers: [
-        {
-          id: 'lecturer-az081871',
-          name: '김데레사',
-          module: 'A',
-          facebook: 'http://facebook.com/seulbinim',
-        },
-        {
-          id: 'lecturer-az081872',
-          name: '야무',
-          module: 'B, C',
-          facebook: 'http://facebook.com/yamoo9',
-        },
-      ],
-    }
+export default class App extends React.Component {
+  state = {
+    FEML_lecturers: [
+      {
+        id: 'lecturer-az081871',
+        name: '김데레사',
+        module: 'A',
+        facebook: 'http://facebook.com/seulbinim',
+      },
+      {
+        id: 'lecturer-az081872',
+        name: '야무',
+        module: 'B, C',
+        facebook: 'http://facebook.com/yamoo9',
+      },
+    ],
   }
 
   render() {
@@ -45,6 +27,12 @@ class App extends React.Component {
       </div>
     )
   }
-}
 
-export default App
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({
+        FEML_lecturers: [this.state.FEML_lecturers.pop()],
+      })
+    }, 2000)
+  }
+}

@@ -12,4 +12,8 @@ export default class Lecture extends Component {
       </li>
     )
   }
+
+  componentWillUnmount() {
+    console.log('Lecture 컴포넌트 제거', this.props.lecturer.name)
+  }
 }
