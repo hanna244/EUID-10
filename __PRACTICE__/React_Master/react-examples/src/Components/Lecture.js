@@ -1,19 +1,19 @@
 import React, { Component } from 'react'
+import Lecturer from './Lecturers'
 
-export default class Lecture extends Component {
-  render() {
-    // const lecturer = this.props.lecturer
-    const { lecturer, children } = this.props
-    return (
-      <li className="lecturers">
-        <a href={lecturer.facebook} rel="noreferer nopener">
-          {children}
-        </a>
-      </li>
-    )
-  }
+const Lecture = ({ lecturer, children, onParentCallback }) => (
+  <li className="lecturers">
+    <a href={lecturer.facebook} rel="noreferer nopener">
+      {children}
+    </a>
+    <button
+      type="button"
+      className="button-remove-lecturer"
+      onClick={handleRemoveLecture}
+    >
+      제거
+    </button>
+  </li>
+)
 
-  componentWillUnmount() {
-    console.log('Lecture 컴포넌트 제거', this.props.lecturer.name)
-  }
-}
+export default Lecture
