@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { Component } from 'react'
 import PropsTypes from 'prop-types'
 import Lecture from './Lecture'
 
-class Lecturer extends React.Component {
+class Lecturer extends Component {
   static propTypes = {
     instructor: PropsTypes.array,
   }
@@ -11,11 +11,19 @@ class Lecturer extends React.Component {
     instructor: [],
   }
 
+  handleClickButton = () => {
+    console.log('부모 컴포넌트 콜백 함수 실행 성공!')
+  }
+
   render() {
     return (
       <ul className="lecturers">
         {this.props.instructor.map((lecturer) => (
-          <Lecture key={lecturer.id} lecturer={lecturer} handleRemoveLecture={}>
+          <Lecture
+            key={lecturer.id}
+            lecturer={lecturer}
+            parentComponentClick={this.handleClickButton}
+          >
             <figure className="lecturer-info">
               <img src={lecturer.image} alt="" className="lecturer-photo" />
               <figcaption>
