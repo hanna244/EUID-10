@@ -11,10 +11,6 @@ class Lecturer extends Component {
     instructor: [],
   }
 
-  handleClickButton = () => {
-    console.log('부모 컴포넌트 콜백 함수 실행 성공!')
-  }
-
   render() {
     return (
       <ul className="lecturers">
@@ -22,7 +18,7 @@ class Lecturer extends Component {
           <Lecture
             key={lecturer.id}
             lecturer={lecturer}
-            parentComponentClick={this.handleClickButton}
+            handleRemoveLecturer={this.props.handleRemoveLecturer}
           >
             <figure className="lecturer-info">
               <img src={lecturer.image} alt="" className="lecturer-photo" />

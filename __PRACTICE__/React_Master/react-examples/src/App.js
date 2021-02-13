@@ -21,20 +21,12 @@ export default class App extends React.Component {
 
   linkStyle = { color: '#3c4bab', textDecoration: 'none' }
 
-  handleLinkClick = (title, e) => {
-    e.preventDefault()
-    this.otherMemberMethod()
-    console.log(title)
-  }
-
-  otherMemberMethod() {
-    console.log('다른 멤버 호출 됨')
-  }
-
-  removeLecture = () => {
-    console.log('callback')
+  removeLecture = (removeId) => {
+    const filteredLecturers = this.state.FEML_lecturers.filter(
+      (lecture) => lecture.id !== removeId
+    )
     this.setState({
-      // this.state.FEML_lecturers 데이터 변경
+      FEML_lecturers: filteredLecturers,
     })
   }
 
@@ -50,7 +42,6 @@ export default class App extends React.Component {
             lang="en"
             target="_blank"
             rel="noopener noreferrer"
-            onClick={this.handleLinkClick.bind(this, instructorTitle)}
           >
             Front-End Masters League
           </a>{' '}
@@ -58,7 +49,7 @@ export default class App extends React.Component {
         </h1>
         <Lecturers
           instructor={this.state.FEML_lecturers}
-          handleRemoveLecturer
+          handleRemoveLecturer={this.removeLecture}
         />
       </div>
     )
