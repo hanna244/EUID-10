@@ -15,11 +15,7 @@ class Lecturer extends Component {
     return (
       <ul className="lecturers">
         {this.props.instructor.map((lecturer) => (
-          <Lecture
-            key={lecturer.id}
-            lecturer={lecturer}
-            handleRemoveLecturer={this.props.handleRemoveLecturer}
-          >
+          <Lecture key={lecturer.id} lecturer={lecturer}>
             <figure className="lecturer-info">
               <img src={lecturer.image} alt="" className="lecturer-photo" />
               <figcaption>
