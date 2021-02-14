@@ -1,11 +1,10 @@
 import React from 'react'
-// 네임으로 내보낼 때는 중괄호 잊지 않기
-import { AppContext } from '../App'
+import LectureContext from '../context/LectureComponent'
 
 const Lecture = ({ lecturer, children }) => (
-  <AppContext.Consumer>
-    {/* 받아오는 값 매개변수 설정해주기 */}
-    {(removeLecture) => {
+  <LectureContext.Consumer>
+    {/* // App에서 Props를 객체로 내보냈기 때문에 객체로 받아오기  */}
+    {({ removeLecture }) => {
       return (
         <li className="lecturers">
           <a href={lecturer.facebook} rel="noreferer nopener">
@@ -17,7 +16,7 @@ const Lecture = ({ lecturer, children }) => (
         </li>
       )
     }}
-  </AppContext.Consumer>
+  </LectureContext.Consumer>
 )
 
 export default Lecture

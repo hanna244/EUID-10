@@ -1,7 +1,7 @@
-import React, { Component, createContext } from 'react'
+import React, { Component } from 'react'
+import LectureContext from './context/LectureComponent'
 import Lecturers from './Components/Lecturers'
-
-export var AppContext = createContext(() => {})
+import AppHeader from './layout/AppHeader'
 
 export default class App extends Component {
   state = {
@@ -21,8 +21,6 @@ export default class App extends Component {
     ],
   }
 
-  linkStyle = { color: '#3c4bab', textDecoration: 'none' }
-
   removeLecture = (removeId) => {
     const filteredLecturers = this.state.FEML_lecturers.filter(
       (lecture) => lecture.id !== removeId
@@ -35,27 +33,18 @@ export default class App extends Component {
   render() {
     const instructorTitle = '강사진'
     return (
-      // createContext에서 사용하는 Provider 또는 Consumer은 컴포넌트이다. 대문자 잊지 말기
-      <AppContext.Provider value={this.removeLecture}>
+      // props 객체로 내보내기
+      <LectureContext.Provider
+        value={{
+          lecturers: this.state.FEML_lecturers,
+          removeLecture: this.removeLecture,
+        }}
+      >
         <div className="app" role="main" aria-labelledby="main-title">
-          <h1 id="main-title">
-            <a
-              style={this.linkStyle}
-              href="http://yamoo9.github.io"
-              lang="en"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Front-End Masters League
-            </a>{' '}
-            {instructorTitle}
-          </h1>
-          <Lecturers
-            instructor={this.state.FEML_lecturers}
-            handleRemoveLecturer={this.removeLecture}
-          />
+          <AppHeader title={instructorTitle} />
+          <Lecturers instructor={this.state.FEML_lecturers} />
         </div>
-      </AppContext.Provider>
+      </LectureContext.Provider>
     )
   }
 }
