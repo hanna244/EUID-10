@@ -1,5 +1,5 @@
 import React from 'react'
-import LectureContext from '../context/LectureComponent'
+import LectureContext from '../context/LectureContext'
 
 const Lecture = ({ lecturer, children }) => (
   <LectureContext.Consumer>

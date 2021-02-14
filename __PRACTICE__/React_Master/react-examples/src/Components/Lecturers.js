@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropsTypes from 'prop-types'
 import Lecture from './Lecture'
 
-class Lecturer extends Component {
+class Lecturers extends Component {
   static propTypes = {
     instructor: PropsTypes.array,
   }
@@ -30,4 +30,4 @@ class Lecturer extends Component {
   }
 }
 
-export default Lecturer
+export default Lecturers

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import LectureContext from './context/LectureComponent'
-import Lecturers from './Components/Lecturers'
+import LectureContext from './context/LectureContext'
 import AppHeader from './layout/AppHeader'
+import AppMain from './layout/AppMain'
 
 export default class App extends Component {
   state = {
@@ -31,7 +31,6 @@ export default class App extends Component {
   }
 
   render() {
-    const instructorTitle = '강사진'
     return (
       // props 객체로 내보내기
       <LectureContext.Provider
@@ -41,8 +40,8 @@ export default class App extends Component {
         }}
       >
         <div className="app" role="main" aria-labelledby="main-title">
-          <AppHeader title={instructorTitle} />
-          <Lecturers instructor={this.state.FEML_lecturers} />
+          <AppHeader title="강사진" />
+          <AppMain />
         </div>
       </LectureContext.Provider>
     )
