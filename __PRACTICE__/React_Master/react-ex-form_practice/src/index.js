@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import AppForm from './AppForm'
+import { AppSelect } from './AppSelect'
 
-ReactDOM.render(<AppForm />, document.getElementById('root'))
+ReactDOM.render(<AppSelect />, document.getElementById('root'))
