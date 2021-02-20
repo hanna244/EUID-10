@@ -1,7 +1,9 @@
+/**@jsx createElement */
 import { success } from './modules/LOGGER'
 import { createElement, getById, render } from './modules/DOM'
 import Button from './components/Button/Button'
 import Heading from './components/Heading/Heading'
+import Container from './components/Container/Container'
 
 /* -------------------------------------------------------------------------- */
 
@@ -12,15 +14,15 @@ const button = new Button({
   children: 'click me!',
 })
 
-const heading = new Heading({
+const heading = Heading({
   children: '웹팩도 사랑해요!!🧡',
 })
 
-// 함수형 컴포넌트
-// const heading = Heading({
-//   children: '웹팩도 사랑해요!!🧡',
-// })
-
-const app = createElement('div', null, [heading.render(), button.render()])
+const app = (
+  <div>
+    {heading}
+    {button.render()}
+  </div>
+)
 
 render(app, getById('root'))

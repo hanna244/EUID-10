@@ -1,3 +1,4 @@
+/**@jsx createElement */
 import { createElement } from '../../modules/DOM'
 
 export default class Button {
@@ -10,6 +11,6 @@ export default class Button {
   }
 
   render() {
-    return createElement('button', this.props)
+    return <button {...this.props} />
   }
 }
