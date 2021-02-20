@@ -1,6 +1,6 @@
 /**@jsx createElement */
 import { createElement } from '@modules/DOM'
-import './Button.css'
+import styles from './Button.module.css'
 
 export default class Button {
   constructor(props) {
@@ -9,10 +9,10 @@ export default class Button {
 
   static defaultProps = {
     type: 'button',
-    className: 'buttonNode',
+    // className: 'buttonNode',
   }
 
   render() {
-    return <button {...this.props} />
+    return <button className={styles.buttonNode} {...this.props} />
   }
 }

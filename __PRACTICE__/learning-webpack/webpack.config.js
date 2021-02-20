@@ -24,9 +24,25 @@ module.exports = {
         exclude: /node_modules/,
         use: ['babel-loader'],
       },
+      // style-loader, css-loader 구성
       {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
+        // exclude: /\.module\.css$/i,
+      },
+      // CSS Module ([filename].module.css)
+      {
+        test: /\.module\.css$/i,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+            },
+          },
+        ],
+        include: /\.module\.css$/i,
       },
     ],
   },
