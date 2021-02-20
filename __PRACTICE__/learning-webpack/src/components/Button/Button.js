@@ -1,5 +1,5 @@
 /**@jsx createElement */
-import { createElement } from '../../modules/DOM'
+import { createElement } from 'modules/DOM'
 
 export default class Button {
   constructor(props) {
