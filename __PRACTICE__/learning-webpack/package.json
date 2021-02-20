@@ -1,0 +1,27 @@
+{
+  "name": "learning-webpack",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Webpack 러닝",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run bundle",
+    "bundle": "webpack --config webpack.config.js",
+    "watch": "npm run bundle -- -w",
+    "build": "npm run bundle -- --mode=production",
+    "help": "webpack -h"
+  },
+  "keywords": [
+    "webpack",
+    "babel"
+  ],
+  "author": "hanna244 <hanna@euid.dev>",
+  "devDependencies": {
+    "@babel/core": "^7.12.17",
+    "@babel/plugin-proposal-class-properties": "^7.12.13",
+    "@babel/preset-env": "^7.12.17",
+    "babel-loader": "^8.2.2",
+    "webpack": "^5.23.0",
+    "webpack-cli": "^4.5.0"
+  }
+}
