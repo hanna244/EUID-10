@@ -27,10 +27,11 @@ module.exports = {
     ],
   },
 
+  // https://webpack.js.org/configuration/resolve/#resolvealias
   resolve: {
     alias: {
-      modules: getAbsPath('src/modules/'),
-      components: getAbsPath('src/components/'),
+      '@modules': getAbsPath('src/modules/'),
+      '@components': getAbsPath('src/components/'),
     },
   },
 }
