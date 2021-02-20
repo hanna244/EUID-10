@@ -28,6 +28,7 @@ module.exports = {
       {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
+        // module 단어가 있는 css 파일이 이 곳에서 걸러지지 않도록 설정
         exclude: /\.module\.css$/i,
       },
       // CSS Module ([filename].module.css)
@@ -38,9 +39,11 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
+              importLoaders: 1,
               modules: true,
             },
           },
+          'postcss-loader',
         ],
         include: /\.module\.css$/i,
       },

@@ -1,8 +1,14 @@
+:root {
+  --bg-color: #224163;
+}
+
 .buttonNode {
+  display: grid;
+  grid-template-rows: 2;
   margin-top: 10px;
   padding: 0.6em 0.94;
   border: 0;
   border-radius: 4px;
-  background: #000;
+  background: var(--bg-color);
   color: #fff;
 }
