@@ -1,9 +1,8 @@
 /**@jsx createElement */
-import { success } from './modules/LOGGER'
-import { createElement, getById, render } from './modules/DOM'
-import Button from './components/Button/Button'
-import Heading from './components/Heading/Heading'
-import Container from './components/Container/Container'
+import { success } from '@modules/LOGGER'
+import { createElement, getById, render } from '@modules/DOM'
+import Button from '@components/Button/Button'
+import Heading from '@components/Heading/Heading'
 
 /* -------------------------------------------------------------------------- */
 
