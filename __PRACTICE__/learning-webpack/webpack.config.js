@@ -28,7 +28,7 @@ module.exports = {
       {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
-        // exclude: /\.module\.css$/i,
+        exclude: /\.module\.css$/i,
       },
       // CSS Module ([filename].module.css)
       {
