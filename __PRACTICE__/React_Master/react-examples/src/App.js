@@ -32,7 +32,7 @@ export default class App extends Component {
 
   render() {
     return (
-      // props 객체로 내보내기
+      // props 객체로 내보내기 즉, 데이터 공급
       <LectureContext.Provider
         value={{
           lecturers: this.state.FEML_lecturers,
