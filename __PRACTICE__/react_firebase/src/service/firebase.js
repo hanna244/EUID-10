@@ -1,5 +1,6 @@
 import firebase from 'firebase/app'
 import 'firebase/auth'
+import 'firebase/firestore'
 
 const config = {
   apiKey: 'AIzaSyBJnWzlHKFgYVClvOXzkZpfyKXbf8WB3Qg',
@@ -12,9 +13,19 @@ const config = {
 
 firebase.initializeApp(config)
 
+export const db = firebase.firestore()
+
+export const getAllUsers = (collectionName) => {
+  return db
+    .collection(collectionName)
+    .get()
+    .then((snapshop) => snapshop.docs.map((doc) => doc.data()))
+    .catch((error) => error)
+}
+
 export const auth = firebase.auth()
 
-auth.setPersistence(firebase.auth.Auth.Persistence.NONE)
+auth.setPersistence(firebase.auth.Auth.Persistence.SESSION)
 
 // 구글 인증 공급업체 로그인 함수
 const googleAuthProvider = new firebase.auth.GoogleAuthProvider()
