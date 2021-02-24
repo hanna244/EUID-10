@@ -14,10 +14,10 @@ firebase.initializeApp(config)
 
 export const auth = firebase.auth()
 
+auth.setPersistence(firebase.auth.Auth.Persistence.NONE)
+
 // 구글 인증 공급업체 로그인 함수
 const googleAuthProvider = new firebase.auth.GoogleAuthProvider()
-
-// console.log(googleAuthProvider)
 
 googleAuthProvider.setCustomParameters({ prompt: 'select_account' })
 
