@@ -31,7 +31,7 @@ export const db = firebase.firestore()
 /* -------------------------------------------------------------------------- */
 
 // 로컬라이제이션
-// auth.languageCode = 'ko'
+// auth.languageCode = 'ja'
 auth.useDeviceLanguage()
 
 // 로그인(인증) 지속성 설정
@@ -42,7 +42,9 @@ auth.useDeviceLanguage()
 
 /* -------------------------------------------------------------------------- */
 
-// Google 인증 공급업체 객체 생성
+/**
+ * Google 인증 공급업체 객체 생성
+ */
 const googleAuthProvider = new firebase.auth.GoogleAuthProvider()
 // 사용자의 컴퓨터에 등록되어 있는 Google 계정 중 하나를 사용자가 선택할 수 있도록 한다.
 googleAuthProvider.setCustomParameters({ prompt: 'select_account' })

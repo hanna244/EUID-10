@@ -96,12 +96,12 @@ function App() {
   }
 
   // Firebase Cloud Firestore 문서 제거
-  const removeUser = () => {
+  const removeUser = async () => {
     try {
-      removeUsersInFirestore('name', '상욱')
+      await removeUsersInFirestore('name', '상욱')
       getAllUsers()
     } catch (error) {
-      hasError(error)
+      setHasError(error)
     }
   }
 
