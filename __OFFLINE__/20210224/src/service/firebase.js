@@ -1,5 +1,6 @@
 import firebase from 'firebase/app'
 import 'firebase/auth'
+import 'firebase/firestore'
 
 // Firebase 구성 객체
 const config = {
@@ -17,6 +18,9 @@ firebase.initializeApp(config)
 
 // Firebase 인증 객체
 export const auth = firebase.auth()
+
+// Firebase 데이터베이스 객체
+export const db = firebase.firestore()
 
 // 로컬라이제이션
 // auth.languageCode = 'ko'
@@ -37,6 +41,30 @@ export const signInWithGoogle = () => auth.signInWithPopup(googleAuthProvider)
 
 // 로그아웃 함수
 export const signOut = () => auth.signOut()
+
+// 모든 사용자 정보 가져오기
+export const getAllUsers = () => {
+  return db
+    .collection('Users')
+    .get()
+    .then(
+      (snapshot) => snapshot.docs.map((doc) => doc.data()),
+      (error) => console.error(error.message)
+    )
+}
+
+// 새로운 사용자 추가
+export const addUser = (newUser) => {
+  return db.collection('Users').add(newUser)
+}
+
+export const removeUsers = async (key, value) => {
+  const usersRef = db.collection('Users')
+  const willDeleteUsersDocRef = await usersRef.where(key, '==', value).get()
+  return await willDeleteUsersDocRef.docs.map((doc) =>
+    usersRef.doc(doc.id).delete()
+  )
+}
 
 // firebase 기본 내보내기
 export default firebase

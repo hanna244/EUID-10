@@ -1,6 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
-import { auth, signInWithGoogle, signOut } from './service/firebase'
+import {
+  auth,
+  signInWithGoogle,
+  signOut,
+  getAllUsers as getAllUsersInFirestore,
+  addUser as addUserInFirestore,
+  removeUsers as removeUsersInFirestore,
+} from './service/firebase'
 import Loader from './components/Loader'
 import Avatar from './components/Avatar'
 
@@ -41,9 +48,12 @@ function App() {
   const [currentUser, setCurrentUser] = React.useState(null)
   const [isPending, setIsPending] = React.useState(true)
   const [hasError, setHasError] = React.useState(null)
+  const [users, setUsers] = React.useState([])
 
   // 사이드 이펙트
   React.useEffect(() => {
+    getAllUsers()
+
     // Google 인증 공급자의 상태 변경 이벤트 감지 (구독)
     const unsubscribe = auth.onAuthStateChanged(
       // resolve (success)
@@ -78,6 +88,41 @@ function App() {
   // 오류가 발생하면 오류 메시지를 UI에 렌더링
   if (hasError) {
     return <div role="alert">{hasError.message}</div>
+  }
+
+  // 모든 사용자 가져오기 함수
+  const getAllUsers = async () => {
+    // Firestore의 모든 데이터 가져오기
+
+    // async 함수 사용법
+    const users = await getAllUsersInFirestore()
+    setUsers(users)
+
+    // promise 사용법 (위 함수에서 async 키워드 제거 필요)
+    // getAllUsersInFirestore().then((users) => {
+    //   setUsers(users)
+    // })
+  }
+
+  // Firebase Cloud Firestore 문서 추가
+  // 새로운 사용자 추가 함수
+  const addUser = async (newUser) => {
+    // 임시 데이터
+    const dummyUser = {
+      name: '상욱',
+      email: 'swook@gmail.com',
+      job: '교사',
+    }
+
+    await addUserInFirestore(dummyUser)
+    getAllUsers()
+  }
+
+  // Firebase Cloud Firestore 문서 제거
+  // 리팩터링 전 코드
+  const removeUser = async () => {
+    await removeUsersInFirestore('name', '상욱')
+    getAllUsers()
   }
 
   return (
@@ -120,6 +165,23 @@ function App() {
                 로그인
               </Button>
             )}
+
+            <Button
+              type="button"
+              onClick={addUser}
+              style={{ width: 130, marginTop: 10 }}
+            >
+              상욱 데이터 추가
+            </Button>
+            <Button
+              type="button"
+              onClick={removeUser}
+              style={{ width: 170, marginTop: 10 }}
+            >
+              상욱 데이터 모두 제거
+            </Button>
+
+            <pre>{JSON.stringify(users, null, 2)}</pre>
           </>
         )}
       </header>
