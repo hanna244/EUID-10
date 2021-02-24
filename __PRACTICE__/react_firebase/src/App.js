@@ -21,7 +21,13 @@ function App() {
   const [hasError, setHasError] = React.useState(null)
 
   React.useEffect(() => {
-    auth.onAuthStateChanged((currentUser) => setCurrentUser(currentUser))
+    const unsubscribe = auth.onAuthStateChanged((currentUser) =>
+      setCurrentUser(currentUser)
+    )
+
+    return () => {
+      unsubscribe()
+    }
   }, [])
 
   // 로그인 함수
