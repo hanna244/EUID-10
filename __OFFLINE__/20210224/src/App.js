@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import { auth, signInWithGoogle, signOut } from './service/firebase'
+import Loader from './components/Loader'
+import Avatar from './components/Avatar'
 
 /* -------------------------------------------------------------------------- */
 
@@ -37,6 +39,7 @@ const Headline = styled.h1`
 
 function App() {
   const [currentUser, setCurrentUser] = React.useState(null)
+  const [isPending, setIsPending] = React.useState(true)
   const [hasError, setHasError] = React.useState(null)
 
   // 사이드 이펙트
@@ -47,6 +50,8 @@ function App() {
       (currentUser) => {
         // 실시간 컴포넌트 상태 업데이트
         setCurrentUser(currentUser)
+        // 팬딩 상태 업데이트
+        setIsPending(false)
       },
       // reject (error)
       ({ code, message }) => {
@@ -80,33 +85,42 @@ function App() {
       <header className="App-header">
         <Headline>Google Auth Provider 사용하기</Headline>
 
-        {currentUser ? (
-          <p>
-            <strong>{currentUser.displayName}</strong>님이 입장하셨습니다.
-          </p>
+        {isPending ? (
+          <Loader loadingMessage="앱을 준비 중입니다" height="90" />
         ) : (
-          <p>로그인을 해야 서비스를 이용할 수 있습니다.</p>
-        )}
+          <>
+            {currentUser ? (
+              <>
+                <Avatar url={currentUser.photoURL} />
+                <p>
+                  <strong>{currentUser.displayName}</strong>님이 입장하셨습니다.
+                </p>
+              </>
+            ) : (
+              <p>로그인을 해야 서비스를 이용할 수 있습니다.</p>
+            )}
 
-        {currentUser ? (
-          <Button
-            type="button"
-            onClick={logOut}
-            color="#eee"
-            background="#000"
-            hoverColor="#242424"
-          >
-            로그아웃
-          </Button>
-        ) : (
-          <Button
-            type="button"
-            onClick={logIn}
-            color="#182bd6"
-            hoverColor="#eaebf0"
-          >
-            로그인
-          </Button>
+            {currentUser ? (
+              <Button
+                type="button"
+                onClick={logOut}
+                color="#eee"
+                background="#000"
+                hoverColor="#242424"
+              >
+                로그아웃
+              </Button>
+            ) : (
+              <Button
+                type="button"
+                onClick={logIn}
+                color="#182bd6"
+                hoverColor="#eaebf0"
+              >
+                로그인
+              </Button>
+            )}
+          </>
         )}
       </header>
     </Container>
