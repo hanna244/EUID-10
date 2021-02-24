@@ -2,6 +2,8 @@ import firebase from 'firebase/app'
 import 'firebase/auth'
 import 'firebase/firestore'
 
+/* -------------------------------------------------------------------------- */
+
 // Firebase 구성 객체
 const config = {
   apiKey: 'AIzaSyA0zozq0tAcSqppM0MDUfGUk5a7PLnnOwM',
@@ -13,14 +15,20 @@ const config = {
   appId: '1:474758312015:web:de4c029882400fdde83a3a',
 }
 
+/* -------------------------------------------------------------------------- */
+
 // Firebase 앱 초기화
 firebase.initializeApp(config)
+
+/* -------------------------------------------------------------------------- */
 
 // Firebase 인증 객체
 export const auth = firebase.auth()
 
 // Firebase 데이터베이스 객체
 export const db = firebase.firestore()
+
+/* -------------------------------------------------------------------------- */
 
 // 로컬라이제이션
 // auth.languageCode = 'ko'
@@ -31,6 +39,8 @@ auth.useDeviceLanguage()
 // console.log(firebase.auth.Auth.Persistence.SESSION) // 열린 세션(창)에서만 로그인 상태 유지
 // console.log(firebase.auth.Auth.Persistence.NONE) // 창을 닫으면 로그오프
 // auth.setPersistence(firebase.auth.Auth.Persistence.SESSION)
+
+/* -------------------------------------------------------------------------- */
 
 // Google 인증 공급업체 객체 생성
 const googleAuthProvider = new firebase.auth.GoogleAuthProvider()
@@ -43,28 +53,35 @@ export const signInWithGoogle = () => auth.signInWithPopup(googleAuthProvider)
 export const signOut = () => auth.signOut()
 
 // 모든 사용자 정보 가져오기
-export const getAllUsers = () => {
-  return db
-    .collection('Users')
-    .get()
-    .then(
-      (snapshot) => snapshot.docs.map((doc) => doc.data()),
-      (error) => console.error(error.message)
-    )
+export const getAllUsers = async () => {
+  try {
+    const snapshot = await db.collection('Users').get()
+    return snapshot.docs.map((doc) => doc.data())
+  } catch (error) {
+    console.error(error.message)
+  }
 }
+
+/* -------------------------------------------------------------------------- */
 
 // 새로운 사용자 추가
-export const addUser = (newUser) => {
-  return db.collection('Users').add(newUser)
+export const addUser = (newUser) => db.collection('Users').add(newUser)
+
+// 사용자 key, value 값으로 필터링 하여 제거
+export const removeUsers = async (key, value) => {
+  try {
+    const usersRef = db.collection('Users')
+    const willDeleteUsersDocRef = await usersRef.where(key, '==', value).get()
+    const deletedResult = willDeleteUsersDocRef.docs.map(
+      async (doc) => await usersRef.doc(doc.id).delete()
+    )
+    return deletedResult
+  } catch (error) {
+    console.error(error.message)
+  }
 }
 
-export const removeUsers = async (key, value) => {
-  const usersRef = db.collection('Users')
-  const willDeleteUsersDocRef = await usersRef.where(key, '==', value).get()
-  return await willDeleteUsersDocRef.docs.map((doc) =>
-    usersRef.doc(doc.id).delete()
-  )
-}
+/* -------------------------------------------------------------------------- */
 
 // firebase 기본 내보내기
 export default firebase
