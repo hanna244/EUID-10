@@ -99,7 +99,9 @@ function App() {
   const removeUser = async () => {
     try {
       await removeUsersInFirestore('name', '상욱')
-      getAllUsers()
+      // Firebase 데이터베이스가 지워진 후, 반영되기 까지 다소 시간이 걸리는 것으로 보임
+      // 0.1초 정도 시간차를 두어 정상적으로 상태 변경되도록 설정
+      window.setTimeout(() => getAllUsers(), 200)
     } catch (error) {
       setHasError(error)
     }
