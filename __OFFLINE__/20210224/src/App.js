@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { signInWithGoogle, signOut } from './service/firebase'
+import { auth, signInWithGoogle, signOut } from './service/firebase'
 
 /* -------------------------------------------------------------------------- */
 
@@ -39,27 +39,36 @@ function App() {
   const [currentUser, setCurrentUser] = React.useState(null)
   const [hasError, setHasError] = React.useState(null)
 
-  // 로그인 함수
-  const logIn = () => {
-    signInWithGoogle()
-      .then(({ credential, user }) => {
-        const { accessToken } = credential
-        setCurrentUser({
-          accessToken,
-          // ...user,
-          ...user.providerData[0],
+  // 사이드 이펙트
+  React.useEffect(() => {
+    // Google 인증 공급자의 상태 변경 이벤트 감지 (구독)
+    const unsubscribe = auth.onAuthStateChanged(
+      // resolve (success)
+      (currentUser) => {
+        // 실시간 컴포넌트 상태 업데이트
+        setCurrentUser(currentUser)
+      },
+      // reject (error)
+      ({ code, message }) => {
+        setHasError({
+          code,
+          message,
         })
-      })
-      .catch((error) => setHasError(error))
-  }
+      }
+    )
+
+    // 클린업 (정리)
+    return () => {
+      // 구독 (취소)
+      unsubscribe()
+    }
+  }, [])
+
+  // 로그인 함수
+  const logIn = () => signInWithGoogle()
 
   // 로그아웃 함수
-  const logOut = () => {
-    signOut().then(() => {
-      console.log('로그아웃')
-      setCurrentUser(null)
-    })
-  }
+  const logOut = () => signOut()
 
   // 오류가 발생하면 오류 메시지를 UI에 렌더링
   if (hasError) {

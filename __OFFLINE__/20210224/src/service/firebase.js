@@ -22,6 +22,12 @@ export const auth = firebase.auth()
 // auth.languageCode = 'ko'
 auth.useDeviceLanguage()
 
+// 로그인(인증) 지속성 설정
+console.log(firebase.auth.Auth.Persistence.LOCAL) // 창을 닫아도 로그인 상태 유지 (기본 값)
+console.log(firebase.auth.Auth.Persistence.SESSION) // 열린 세션(창)에서만 로그인 상태 유지
+console.log(firebase.auth.Auth.Persistence.NONE) // 창을 닫으면 로그오프
+auth.setPersistence(firebase.auth.Auth.Persistence.SESSION)
+
 // Google 인증 공급업체 객체 생성
 const googleAuthProvider = new firebase.auth.GoogleAuthProvider()
 // 사용자의 컴퓨터에 등록되어 있는 Google 계정 중 하나를 사용자가 선택할 수 있도록 한다.
