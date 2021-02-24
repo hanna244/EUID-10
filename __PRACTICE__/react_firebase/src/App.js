@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { signInWithGoogle, signOut } from './service/firebase'
+import { signInWithGoogle, signOut, auth } from './service/firebase'
 
 const Container = styled.div`
   margin: 40px;
@@ -20,25 +20,15 @@ function App() {
   const [currentUser, setCurrentUser] = React.useState(null)
   const [hasError, setHasError] = React.useState(null)
 
+  React.useEffect(() => {
+    auth.onAuthStateChanged((currentUser) => setCurrentUser(currentUser))
+  }, [])
+
   // 로그인 함수
-  const logIn = () => {
-    signInWithGoogle()
-      .then(({ credential, user }) => {
-        setCurrentUser({
-          accessToken: credential.accessToken,
-          ...user.providerData[0],
-        })
-      })
-      .catch((error) => console.log(error.message))
-  }
+  const logIn = () => signInWithGoogle()
 
   // 로그아웃 함수
-  const logOut = () => {
-    signOut().then(() => {
-      console.log('로그아웃')
-    })
-    setCurrentUser(null)
-  }
+  const logOut = () => signOut()
 
   // if (hasError) {
   //   return <div role="alert">{hasError.message}</div>
