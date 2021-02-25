@@ -2,6 +2,8 @@ import React from 'react'
 import store from './store/store'
 import MessageControl from './components/MessageControl'
 
+const { greeting: message } = store.getState()
+
 function App() {
   const [context, setContext] = React.useState(store.getState().greeting)
 
