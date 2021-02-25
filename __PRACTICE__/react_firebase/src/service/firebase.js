@@ -13,6 +13,7 @@ const config = {
 
 firebase.initializeApp(config)
 
+// ------------- Firestore
 export const db = firebase.firestore()
 
 export const getAllUsers = (collectionName) => {
@@ -23,11 +24,16 @@ export const getAllUsers = (collectionName) => {
     .catch((error) => error)
 }
 
+// ------------- Auth
 export const auth = firebase.auth()
 
+// setPersistence을 사용해서 로그인 기억하기
 auth.setPersistence(firebase.auth.Auth.Persistence.SESSION)
 
-// 구글 인증 공급업체 로그인 함수
+// 언어 선택
+auth.languageCode = 'zh'
+
+// ------------- 구글 인증 공급업체 로그인 함수
 const googleAuthProvider = new firebase.auth.GoogleAuthProvider()
 
 googleAuthProvider.setCustomParameters({ prompt: 'select_account' })
@@ -38,13 +44,3 @@ export const signInWithGoogle = () => auth.signInWithPopup(googleAuthProvider)
 export const signOut = () => auth.signOut()
 
 export default firebase
-
-// setCurrentUser({
-//   accessToken: res.credential.accessToken,
-//   uid: res.profile.uid,
-//   displayName: res.user.displayName,
-//   photoURL: res.user.pothoURL,
-//   email: res.user.email,
-//   phoneNumber: res.user.phoneNumber,
-//   providerId: res.credential.providerId,
-// })
