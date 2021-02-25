@@ -1,7 +1,7 @@
 import { createStore } from 'redux'
 
 const initialState = {
-  greeting: '안녕!! 리덕스~',
+  greeting: '안녕!! 한나~',
 }
 
 const reducer = (state, action) => {

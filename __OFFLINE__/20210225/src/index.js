@@ -7,11 +7,9 @@ import App from './App'
 
 // 앱을 렌더링 하는 함수
 function render() {
-  const { greeting: message } = store.getState()
-
   ReactDOM.render(
     <React.StrictMode>
-      <App message={message} />
+      <App />
     </React.StrictMode>,
     document.getElementById('root')
   )
