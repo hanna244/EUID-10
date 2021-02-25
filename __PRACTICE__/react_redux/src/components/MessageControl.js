@@ -1,28 +1,14 @@
-import React, { Fragment } from 'react'
-import store from '../store/store'
-
-// 클래스 내부에는 const 구문을 사용할 수 없다.
-const { greeting } = store.getState()
+import React from 'react'
 
 class MessageControl extends React.Component {
-  state = {
-    context: greeting,
-  }
-
-  changeText = () => {
-    {
-      input.value
-    }
-  }
-
-  static Input = ({ id, type, ...props }) => {
+  static Input = ({ id, type, context, changeText, ...props }) => {
     return (
       <div>
         <label htmlFor={id}>이메일 변경</label>
         <input
           id={id}
           type={type}
-          value={this.state.context}
+          value={context}
           onChange={changeText}
           {...props}
         />
