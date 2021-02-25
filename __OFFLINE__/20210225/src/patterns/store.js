@@ -27,6 +27,8 @@ function createStore(reducer, initialState = {}) {
   // 상태 변경 알림 요청 함수
   const dispatch = (action /*{ type[, payload] }*/) => {
     // action을 reducer 함수에 전달, 실행
+    _state = reducer(getState(), action)
+
     // 현재 구독 중인 함수(들)을 모두 실행
     _listeners.forEach((listener) => listener())
   }

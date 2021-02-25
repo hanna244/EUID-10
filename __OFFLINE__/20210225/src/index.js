@@ -9,6 +9,21 @@ import App from './App'
 
 const storeReducer = (state, action) => {
   switch (action.type) {
+    case '학교 가기 싫어':
+      return {
+        ...state,
+        mind: '나쁜 마음',
+      }
+    case '멘토가 싫어!':
+      return {
+        ...state,
+        mentor: '데레사',
+      }
+    case '한 해가 갔어':
+      return {
+        ...state,
+        age: state.age + 1,
+      }
     default:
       return state
   }
@@ -17,6 +32,7 @@ const storeReducer = (state, action) => {
 const store = createStore(storeReducer, {
   name: '한나',
   age: 25,
+  mind: '평상심 유지',
   mentor: '야무',
 })
 
@@ -46,11 +62,19 @@ function run() {
 
 store.subscribe(sleep)
 store.subscribe(awake)
-// store.subscribe(goToSchool)
+store.subscribe(goToSchool)
 store.subscribe(draw)
 store.subscribe(run)
 
-store.dispatch()
+console.log('상태 업데이트 전', store.getState())
+
+window.setTimeout(() => {
+  store.dispatch({
+    type: '한 해가 갔어',
+  })
+
+  console.log('상태 업데이트 후', store.getState())
+}, 3000)
 
 /* -------------------------------------------------------------------------- */
 
