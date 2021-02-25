@@ -15,6 +15,9 @@ function createStore(reducer, initialState = {}) {
   }
 
   // 캡슐화 [비공개]
+  // 리스너 함수를 기억(메모리)하기 위한 리스너 목록(배열)
+  let _listeners = []
+
   // 상태
   let _state = initialState
 
@@ -24,15 +27,19 @@ function createStore(reducer, initialState = {}) {
   // 상태 변경 알림 요청 함수
   const dispatch = (action /*{ type[, payload] }*/) => {
     // action을 reducer 함수에 전달, 실행
+    // 현재 구독 중인 함수(들)을 모두 실행
+    _listeners.forEach((listener) => listener())
   }
 
   // 구독 함수
   const subscribe = (listener) => {
-    // 전달 받은 함수(listener)를 실행
+    // 전달 받은 함수(listener) 구독 설정
+    _listeners = [..._listeners, listener]
 
     // 구독 취소 함수 반환
-    return function unsubscribe(unsubscribedListener) {
+    return function unsubscribe(removeListener) {
       // 구독을 취소할 함수를 실행 목록에서 제외
+      _listeners = _listeners.filter((listener) => listener !== removeListener)
     }
   }
 
