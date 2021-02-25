@@ -1,10 +1,14 @@
 import { createStore } from 'redux'
 
-const initialState = { greeting: '안녕하세요~ 리덕스 공부 중 입니다!' }
+const initialState = { greeting: '안녕하세요~ ' }
 
-const reducer = (state) => {
+const reducer = (state, action) => {
+  if (action.type === 'CHANGE_TEXT') {
+    return { ...state, greeting: action.payload }
+  }
   return state
 }
+
 const store = createStore(reducer, initialState)
 
 export default store
