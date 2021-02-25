@@ -1,4 +1,4 @@
-.GoToTop {
+.goToTop {
   overflow: hidden;
   visibility: hidden;
   opacity: 0;
@@ -11,7 +11,7 @@
   border-radius: 50%;
   transition: all 0.3s ease-out 0.1s;
   transform: translateY(100px);
-  
+
   &.is-show {
     visibility: visible;
     opacity: 1;

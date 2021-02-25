@@ -1,10 +1,15 @@
 import './AppHeader.scss'
 import React from 'react'
+import AppHomeLink from '../AppHomeLink/AppHomeLink'
+import AppNavigation from '../AppNavigation/AppNavigation'
 
-export default const AppHeader = () => {
+const AppHeader = () => {
   return (
-    <div>
-      앱 헤더
-    </div>
+    <header className="appHeader">
+      <AppHomeLink />
+      <AppNavigation />
+    </header>
   )
 }
+
+export default AppHeader

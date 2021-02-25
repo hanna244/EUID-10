@@ -1,10 +1,14 @@
 import './AppMain.scss'
 import React from 'react'
+import BeverageList from '../BeverageList/BevergeList'
 
-export default const AppMain = () => {
+const AppMain = () => {
   return (
-    <div>
-      앱 메인 
-    </div>
+    <main className="appMain">
+      <h2 className="a11yHidden">이디야 음료</h2>
+      <BeverageList />
+    </main>
   )
 }
+
+export default AppMain
