@@ -5,9 +5,16 @@ const initialState = {
 }
 
 const reducer = (state, action) => {
+  if (action.type === 'CHANGE_GREETING') {
+    return {
+      ...state,
+      greeting: action.payload,
+    }
+  }
   return state
 }
 
-const store = createStore(reducer, initialState) // {dispatch, getState, subscribe, replaceReducer}
+// {dispatch, getState, subscribe, replaceReducer}
+const store = createStore(reducer, initialState)
 
 export default store
