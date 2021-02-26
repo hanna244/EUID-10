@@ -1,6 +1,6 @@
 // 초기 상태(initial state)
 const initialState = {
-  animationClass: '',
+  animationClass: 'run-animation',
 }
 
 // 스토어 리듀서(store reducer)
@@ -34,5 +34,5 @@ export const stopLogoAnimation = () => ({
   type: STOP_LOGO_ANIMATION,
 })
 
-// 리듀서 기본 내보내기
-export default logoAnimationReducer
+// 리듀서 내보내기
+export { logoAnimationReducer }
