@@ -7,7 +7,7 @@ import classNames from 'classnames'
 
 import AppButton from '../../components/AppButton/AppButton'
 import Counter from '../../components/Counter/Counter'
-import ManageList from '../../components/ManageList/ManageList'
+import ManageList from '../../components/ManageList/ManageList.func'
 
 import {
   playLogoAnimation,
