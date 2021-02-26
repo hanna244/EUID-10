@@ -4,7 +4,7 @@ const initialState = {
 }
 
 // 스토어 리듀서(store reducer)
-const logoAnimationReducer = (state, action) => {
+const logoAnimationReducer = (state = initialState, action) => {
   switch (action.type) {
     case STOP_LOGO_ANIMATION:
       return {
