@@ -4,16 +4,30 @@ import './App.css'
 import { connect } from 'react-redux'
 import classNames from 'classnames'
 import AppButton from './components/AppButton'
+import {
+  playlogoanimation,
+  stoplogoanimation,
+} from './store/slices/logoAnimationSlice'
 
-function App(props) {
+const mapStateToProps = (state) => ({
+  animationClass: state.animationClass,
+})
+
+const mapDispatchToProps = {
+  playLogo: playlogoanimation,
+  stopLogo: stoplogoanimation,
+}
+
+function App({ animationClass, playLogo, stopLogo, ...restProps }) {
   const [control, setControl] = useState(true)
 
-  const combindClassNames = classNames('App-logo', '')
+  const combindClassNames = classNames('App-logo', animationClass)
 
-  const controlText = () => (!control ? '실행' : '정지')
+  const controlText = () => (!control ? '정지' : '실행')
 
   const animationStateChange = () => {
     setControl(!control)
+    control ? playLogo('run-animation') : stopLogo()
   }
 
   return (
@@ -28,13 +42,5 @@ function App(props) {
     </div>
   )
 }
-
-// 컴포넌트 내부가 아닌 외부에 작성해야 한다.
-// 왜? connect() 함수를 사용해서 store의 state를 받아와서 props를 전달하기 때문이다.
-const mapStateToProps = (state) => ({
-  animationClass: state.animationClass,
-})
-
-const mapDispatchToProps = () => {}
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)

@@ -2,7 +2,7 @@ const initialState = {
   animationClass: '',
 }
 
-const logoAnimationReducer = (state = initialState, action) => {
+export const logoAnimationSlice = (state = initialState, action) => {
   switch (action.type) {
     default:
     case 'run 함수 초기 실행':
@@ -15,7 +15,7 @@ const logoAnimationReducer = (state = initialState, action) => {
     case PLAY_LOGO_ANIMATION:
       return {
         ...state,
-        animationClass: 'run-animation',
+        animationClass: action.animationClass,
       }
   }
 }
@@ -31,5 +31,3 @@ export const playlogoanimation = (animationClass) => ({
 export const stoplogoanimation = () => ({
   type: STOP_LOGO_ANIMATION,
 })
-
-export logoAnimationReducer
