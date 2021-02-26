@@ -1,27 +1,15 @@
 import './index.css'
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { Provider } from 'react-redux'
+import { store } from './store'
 import App from './App'
 
-// 스토어 불러오기
-import { store } from './store'
-
-// 실행 함수 (렌더러)
-function run() {
-  ReactDOM.render(
-    <React.StrictMode>
+ReactDOM.render(
+  <React.StrictMode>
+    <Provider store={store}>
       <App />
-    </React.StrictMode>,
-    document.getElementById('root')
-  )
-}
-
-// 실행 함수 구독
-store.subscribe(run)
-
-// run()
-
-// 구독 중인 함수를 실행하려면?
-store.dispatch({
-  type: 'run 함수 초기 실행',
-})
+    </Provider>
+  </React.StrictMode>,
+  document.getElementById('root')
+)

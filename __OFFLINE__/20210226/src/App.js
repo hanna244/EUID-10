@@ -1,23 +1,30 @@
 import './App.css'
 import logo from './logo.svg'
 import React from 'react'
+import { connect } from 'react-redux'
 import classNames from 'classnames'
-import { store } from './store'
 import AppButton from './AppButton'
 
-function App() {
-  const { animationClass } = store.getState()
+// 스토어의 상태를 props로 매핑(mapping)
+const mapStateToProps = (state) => ({
+  animationClass: state.animationClass,
+})
+
+// 스토어의 액션 크리에이터 함수를 props로 매핑
+const mapDispatchToProps = {
+  // action creators 연결
+}
+
+function App(props) {
+  console.log(props)
   const [isToggled, setIsToggled] = React.useState(false)
 
-  const combinedClassNames = classNames('App-logo', animationClass)
+  const combinedClassNames = classNames('App-logo', '')
 
   const getToggedMessage = () => (isToggled ? '정지' : '실행')
 
   const handleToggleLogoAnimation = () => {
     setIsToggled(!isToggled)
-    store.dispatch({
-      type: `로고 애니메이션 ${getToggedMessage()}`,
-    })
   }
 
   return (
@@ -44,4 +51,4 @@ function App() {
   )
 }
 
-export default App
+export default connect(mapStateToProps, mapDispatchToProps)(App)
