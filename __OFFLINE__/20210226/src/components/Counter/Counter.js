@@ -8,14 +8,6 @@ class Counter extends React.Component {
     return <output style={{ margin: '-4px 6px 0' }}>{props.count ?? 0}</output>
   }
 
-  static ButtonStyle = {
-    cursor: 'pointer',
-    border: 0,
-    borderRadius: 10,
-    width: 20,
-    height: 20,
-  }
-
   static Controls = ({ children, onIncrement, onDecrement, ...restProps }) => {
     return (
       <div
@@ -25,15 +17,23 @@ class Counter extends React.Component {
           justifyContent: 'center',
         }}
       >
-        <button type="button" onClick={onIncrement} style={Counter.ButtonStyle}>
+        <button type="button" onClick={onIncrement} style={Counter.buttonStyle}>
           +
         </button>
         {children}
-        <button type="button" onClick={onDecrement} style={Counter.ButtonStyle}>
+        <button type="button" onClick={onDecrement} style={Counter.buttonStyle}>
           -
         </button>
       </div>
     )
+  }
+
+  static buttonStyle = {
+    cursor: 'pointer',
+    border: 0,
+    borderRadius: 10,
+    width: 20,
+    height: 20,
   }
 
   // 렌더링
@@ -41,5 +41,8 @@ class Counter extends React.Component {
     return <div>{this.props.children}</div>
   }
 }
+
+Counter.Display.displayName = 'Display'
+Counter.Controls.displayName = 'Controls'
 
 export default Counter

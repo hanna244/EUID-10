@@ -22,8 +22,8 @@ const logoAnimationReducer = (state = initialState, action) => {
 }
 
 // 액션 타입
-export const STOP_LOGO_ANIMATION = '로고 애니메이션 정지'
-export const PLAY_LOGO_ANIMATION = '로고 애니메이션 실행'
+const STOP_LOGO_ANIMATION = '로고 애니메이션 정지'
+const PLAY_LOGO_ANIMATION = '로고 애니메이션 실행'
 
 // 액션 크리에이터
 export const playLogoAnimation = (activeAnimationClassName) => ({

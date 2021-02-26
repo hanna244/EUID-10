@@ -12,14 +12,18 @@ import {
   playLogoAnimation,
   stopLogoAnimation,
 } from '../../store/slices/logoAnimationSlice'
+import { increment, decrement } from '../../store/slices/countSlice'
 
 /* -------------------------------------------------------------------------- */
 
 function App() {
   // 스토어에서 상태 가져오기
-  const { animationClass } = useSelector((state) => ({
-    animationClass: state.animationClass,
-  }))
+  const { animationClass, count } = useSelector(({ logoAnim, counter }) => {
+    return {
+      animationClass: logoAnim.animationClass,
+      count: counter.count,
+    }
+  })
 
   // 스토어 디스패치 가져오기
   const dispatch = useDispatch()
@@ -28,6 +32,9 @@ function App() {
     dispatch(playLogoAnimation(activeClassName))
 
   const stopLogo = () => dispatch(stopLogoAnimation())
+
+  const incrementCount = () => dispatch(increment())
+  const decrementCount = () => dispatch(decrement())
 
   // ------------------------------------------------------------------
 
@@ -56,10 +63,10 @@ function App() {
         {/* 카운터 컴포넌트 상태 제어 예제 */}
         <Counter>
           <Counter.Controls
-            onIncrement={() => console.log('증가 ')}
-            onDecrement={() => console.log('감소 ')}
+            onIncrement={incrementCount}
+            onDecrement={decrementCount}
           >
-            <Counter.Display count={101} />
+            <Counter.Display count={count} />
           </Counter.Controls>
         </Counter>
       </header>
