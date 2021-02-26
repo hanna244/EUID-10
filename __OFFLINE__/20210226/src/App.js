@@ -1,26 +1,27 @@
 import './App.css'
 import logo from './logo.svg'
 import React from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import classNames from 'classnames'
 import AppButton from './AppButton'
-import { connect } from 'react-redux'
 import {
   playLogoAnimation,
   stopLogoAnimation,
 } from './store/slices/logoAnimationSlice'
 
-const mapStateToProps = (state) => ({
-  animationClass: state.animationClass,
-})
-
-const mapDispatchToProps = {
-  playLogo: playLogoAnimation,
-  stopLogo: stopLogoAnimation,
-}
-
 /* -------------------------------------------------------------------------- */
 
-function App({ animationClass, playLogo, stopLogo, ...restProps }) {
+function App() {
+  // 스토어에서 상태 가져오기
+  const animationClass = useSelector((state) => state.animationClass)
+  // 스토어 디스패치 가져오기
+  const dispatch = useDispatch()
+
+  const playLogo = (activeClassName) =>
+    dispatch(playLogoAnimation(activeClassName))
+
+  const stopLogo = () => dispatch(stopLogoAnimation())
+
   const [isToggled, setIsToggled] = React.useState(false)
 
   const combinedClassNames = classNames('App-logo', animationClass)
@@ -56,4 +57,4 @@ function App({ animationClass, playLogo, stopLogo, ...restProps }) {
   )
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App)
+export default App
