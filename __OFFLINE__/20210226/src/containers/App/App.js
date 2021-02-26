@@ -7,15 +7,16 @@ import classNames from 'classnames'
 
 import AppButton from '../../components/AppButton/AppButton'
 import Counter from '../../components/Counter/Counter'
+import ManageList from '../../components/ManageList/ManageList'
 
 import {
   playLogoAnimation,
   stopLogoAnimation,
 } from '../../store/slices/logoAnimationSlice'
+
 import { increment, decrement } from '../../store/slices/countSlice'
 
 /* -------------------------------------------------------------------------- */
-
 function App() {
   // 스토어에서 상태 가져오기
   const { animationClass, count } = useSelector(({ logoAnim, counter }) => {
@@ -69,6 +70,8 @@ function App() {
             <Counter.Display count={count} />
           </Counter.Controls>
         </Counter>
+
+        <ManageList />
       </header>
     </div>
   )
