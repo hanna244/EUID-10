@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import logo from './logo.svg'
 import './App.css'
-import { connect } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import classNames from 'classnames'
 import AppButton from './components/AppButton'
 import {
@@ -9,16 +9,14 @@ import {
   stoplogoanimation,
 } from './store/slices/logoAnimationSlice'
 
-const mapStateToProps = (state) => ({
-  animationClass: state.animationClass,
-})
+function App() {
+  const dispatch = useDispatch()
 
-const mapDispatchToProps = {
-  playLogo: playlogoanimation,
-  stopLogo: stoplogoanimation,
-}
+  const animationClass = useSelector((state) => state.animationClass)
+  const playLogo = (animationClass) =>
+    dispatch(playlogoanimation(animationClass))
+  const stopLogo = () => dispatch(stoplogoanimation())
 
-function App({ animationClass, playLogo, stopLogo, ...restProps }) {
   const [control, setControl] = useState(true)
 
   const combindClassNames = classNames('App-logo', animationClass)
@@ -43,4 +41,4 @@ function App({ animationClass, playLogo, stopLogo, ...restProps }) {
   )
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App)
+export default App
