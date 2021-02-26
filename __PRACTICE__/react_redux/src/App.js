@@ -18,6 +18,7 @@ function App() {
   const stopLogo = () => dispatch(stoplogoanimation())
 
   const [control, setControl] = useState(true)
+  const [number, setNumber] = useState(null)
 
   const combindClassNames = classNames('App-logo', animationClass)
 
@@ -28,6 +29,13 @@ function App() {
     control ? playLogo('run-animation') : stopLogo()
   }
 
+  const decrease = () => {
+    setNumber(number - 1)
+  }
+  const increase = () => {
+    setNumber(number + 1)
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -36,6 +44,9 @@ function App() {
           children={`로고 애니메이션 ${controlText()}`}
           onClick={animationStateChange}
         />
+        <AppButton children="-" onClick={decrease} />
+        <p>{number ?? 0}</p>
+        <AppButton children="+" onClick={increase} />
       </header>
     </div>
   )
