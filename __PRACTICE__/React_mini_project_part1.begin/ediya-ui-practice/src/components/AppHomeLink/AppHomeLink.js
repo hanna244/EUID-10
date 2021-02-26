@@ -1,7 +1,7 @@
 import './AppHomeLink.scss'
 import React from 'react'
 
-const AppHomeLink = () => {
+const AppHomeLink = (props) => {
   return (
     <h1 className="appHeader__brand">
       <a
@@ -11,9 +11,7 @@ const AppHomeLink = () => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <span className="a11yHidden" lang="en">
-          EDIYA COFFEE
-        </span>
+        {props.children}
       </a>
     </h1>
   )

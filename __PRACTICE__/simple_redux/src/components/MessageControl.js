@@ -1,17 +1,11 @@
 import React from 'react'
 
 class MessageControl extends React.Component {
-  static Input = ({ id, type, context, changeText, ...props }) => {
+  static Input = ({ id, type, ...props }) => {
     return (
       <div>
         <label htmlFor={id}>이메일 변경</label>
-        <input
-          id={id}
-          type={type}
-          value={context}
-          onChange={changeText}
-          {...props}
-        />
+        <input id={id} type={type} {...props} />
       </div>
     )
   }

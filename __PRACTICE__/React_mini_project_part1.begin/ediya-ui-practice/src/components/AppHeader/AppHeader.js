@@ -6,7 +6,11 @@ import AppNavigation from '../AppNavigation/AppNavigation'
 const AppHeader = () => {
   return (
     <header className="appHeader">
-      <AppHomeLink />
+      <AppHomeLink href="/" title="이디야 홈">
+        <span className="a11yHidden" lang="en">
+          EDIYA COFFEE
+        </span>
+      </AppHomeLink>
       <AppNavigation />
     </header>
   )

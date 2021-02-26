@@ -5,13 +5,16 @@ import MessageControl from './components/MessageControl'
 const { greeting: message } = store.getState()
 
 function App() {
-  const [state, setState] = React.useState({
-    context: message,
-  })
+  const [context, setContext] = React.useState(store.getState().greeting)
 
   const changeText = (e) => {
-    setState({
-      context: e.target.value,
+    setContext(e.target.value)
+  }
+
+  const changeButton = () => {
+    store.dispatch({
+      type: 'CHANGE_TEXT',
+      payload: context,
     })
   }
 
@@ -21,19 +24,12 @@ function App() {
       <p>{store.getState().greeting}</p>
       <MessageControl>
         <MessageControl.Input
+          value={context}
+          onChange={changeText}
           id="greeting"
           type="text"
-          context={state.context}
-          changeText={changeText}
         />
-        <MessageControl.Button
-          onClick={() =>
-            store.dispatch({
-              type: 'change message',
-              payload: state.context,
-            })
-          }
-        />
+        <MessageControl.Button onClick={changeButton} />
       </MessageControl>
     </div>
   )
