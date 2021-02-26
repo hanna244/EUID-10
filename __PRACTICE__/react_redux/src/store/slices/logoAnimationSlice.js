@@ -4,9 +4,6 @@ const initialState = {
 
 export const logoAnimationSlice = (state = initialState, action) => {
   switch (action.type) {
-    default:
-    case 'run 함수 초기 실행':
-      return state
     case STOP_LOGO_ANIMATION:
       return {
         ...state,
@@ -17,6 +14,9 @@ export const logoAnimationSlice = (state = initialState, action) => {
         ...state,
         animationClass: action.animationClass,
       }
+    default:
+    case 'run 함수 초기 실행':
+      return state
   }
 }
 
