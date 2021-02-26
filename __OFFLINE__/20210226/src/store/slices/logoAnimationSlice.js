@@ -1,6 +1,6 @@
 // 초기 상태(initial state)
 const initialState = {
-  animationClass: '',
+  animationClass: 'run-animation',
 }
 
 // 스토어 리듀서(store reducer)
