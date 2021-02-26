@@ -1,20 +1,17 @@
+import './index.css'
 import React from 'react'
 import ReactDOM from 'react-dom'
-import './index.css'
-import App from './App'
+import { Provider } from 'react-redux'
 import store from './store/store'
+import App from './App'
 
-function run() {
-  ReactDOM.render(
-    <React.StrictMode>
+console.log()
+
+ReactDOM.render(
+  <React.StrictMode>
+    <Provider store={store}>
       <App />
-    </React.StrictMode>,
-    document.getElementById('root')
-  )
-}
-
-store.subscribe(run)
-
-store.dispatch({
-  type: '로고 애니메이션 실행',
-})
+    </Provider>
+  </React.StrictMode>,
+  document.getElementById('root')
+)
