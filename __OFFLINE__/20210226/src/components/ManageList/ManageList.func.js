@@ -1,16 +1,18 @@
 import React from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { fetchPeople, removePerson } from '../../store/slices/peopleSlice'
 
 /* -------------------------------------------------------------------------- */
 
 export default function ManageList() {
+  const people = useSelector(({ people }) => people)
+  const dispatch = useDispatch()
+
+  /* -------------------------------------------------------------------------- */
+
   const [isPending, setIsPending] = React.useState(false)
   const [hasError, setHasError] = React.useState(null)
-  const [listData, setListData] = React.useState([])
-
-  const deleteItem = React.useCallback(
-    (removeId) => setListData(listData.filter(({ id }) => id !== removeId)),
-    [listData]
-  )
+  // const [listData, setListData] = React.useState(people ?? [])
 
   React.useEffect(() => {
     const fetchListData = async () => {
@@ -20,7 +22,8 @@ export default function ManageList() {
         const response = await fetch('/api/list.json')
         const data = await response.json()
         setIsPending(false)
-        setListData(data)
+        // setListData(data)
+        dispatch(fetchPeople(data))
       } catch (error) {
         setIsPending(false)
         setHasError(error)
@@ -28,7 +31,15 @@ export default function ManageList() {
     }
 
     fetchListData()
-  }, [])
+  }, [dispatch])
+
+  const deleteItem = React.useCallback(
+    (removeId) => {
+      // setListData(listData.filter(({ id }) => id !== removeId))
+      dispatch(removePerson(removeId))
+    },
+    [dispatch]
+  )
 
   if (isPending) {
     return <div role="alert">컴포넌트를 로딩 중입니다...</div>
@@ -38,9 +49,9 @@ export default function ManageList() {
     return <div role="alert">오류 발생 {hasError.message}</div>
   }
 
-  return listData.length > 0 ? (
+  return people.length > 0 ? (
     <ul>
-      {listData.map(({ id, text }) => (
+      {people.map(({ id, text }) => (
         <ManageList.Item
           key={id}
           id={id}
