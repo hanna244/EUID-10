@@ -1,44 +1,35 @@
 import './App.css'
 import logo from './logo.svg'
 import React from 'react'
-import { connect } from 'react-redux'
 import classNames from 'classnames'
 import AppButton from './AppButton'
+import { connect } from 'react-redux'
 import {
   playLogoAnimation,
   stopLogoAnimation,
 } from './store/slices/logoAnimationSlice'
 
-// 스토어의 상태를 props로 매핑(mapping)
 const mapStateToProps = (state) => ({
   animationClass: state.animationClass,
 })
 
-// 스토어의 액션 크리에이터 함수를 props로 매핑
-// const mapDispatchToProps = {
-//   // action creators 연결
-//   playLogoAnimation,
-//   stopLogoAnimation,
-// }
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    playLogoAnimation: (animationClass) =>
-      dispatch(playLogoAnimation(animationClass)),
-    stopLogoAnimation: () => dispatch(stopLogoAnimation()),
-  }
+const mapDispatchToProps = {
+  playLogo: playLogoAnimation,
+  stopLogo: stopLogoAnimation,
 }
 
-function App(props) {
-  console.log(props)
+/* -------------------------------------------------------------------------- */
+
+function App({ animationClass, playLogo, stopLogo, ...restProps }) {
   const [isToggled, setIsToggled] = React.useState(false)
 
-  const combinedClassNames = classNames('App-logo', '')
+  const combinedClassNames = classNames('App-logo', animationClass)
 
   const getToggedMessage = () => (isToggled ? '정지' : '실행')
 
   const handleToggleLogoAnimation = () => {
     setIsToggled(!isToggled)
+    !isToggled ? playLogo('run-animation') : stopLogo()
   }
 
   return (
@@ -65,17 +56,4 @@ function App(props) {
   )
 }
 
-export default connect(
-  // mapStateToProps
-  ({ animationClass }) => ({ animationClass }),
-  // mapDispatchToProps
-  (dispatch) => {
-    return {
-      playLogoAnimation: (activeAnimationClassName) =>
-        dispatch(playLogoAnimation(activeAnimationClassName)),
-      stopLogoAnimation: () => {
-        dispatch(stopLogoAnimation())
-      },
-    }
-  }
-)(App)
+export default connect(mapStateToProps, mapDispatchToProps)(App)
