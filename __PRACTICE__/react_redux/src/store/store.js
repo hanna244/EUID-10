@@ -1,6 +1,6 @@
 import { createStore } from 'redux'
-import { logoAnimationReducer } from './slices/logoAnimationReducer'
+import { logoAnimationSlice } from './slices/logoAnimationSlice'
 
-const store = createStore(logoAnimationReducer)
+const store = createStore(logoAnimationSlice)
 
 export default store
