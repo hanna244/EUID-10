@@ -34,5 +34,5 @@ export const stopLogoAnimation = () => ({
   type: STOP_LOGO_ANIMATION,
 })
 
-// 리듀서 기본 내보내기
-export default logoAnimationReducer
+// 리듀서 내보내기
+export { logoAnimationReducer }

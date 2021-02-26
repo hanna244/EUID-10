@@ -1,6 +1,6 @@
 // redux에서 createStore 모듈 추출
 import { createStore } from 'redux'
-import logoAnimationReducer from './reducers/logoAnimationReducer'
+import { logoAnimationReducer } from './slices/logoAnimationSlice'
 
 // createStore(reducer, initialState) → store { getState, dispatch, subscribe }
 const store = createStore(logoAnimationReducer)

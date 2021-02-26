@@ -4,6 +4,10 @@ import React from 'react'
 import { connect } from 'react-redux'
 import classNames from 'classnames'
 import AppButton from './AppButton'
+import {
+  playLogoAnimation,
+  stopLogoAnimation,
+} from './store/slices/logoAnimationSlice'
 
 // 스토어의 상태를 props로 매핑(mapping)
 const mapStateToProps = (state) => ({
@@ -11,8 +15,18 @@ const mapStateToProps = (state) => ({
 })
 
 // 스토어의 액션 크리에이터 함수를 props로 매핑
-const mapDispatchToProps = {
-  // action creators 연결
+// const mapDispatchToProps = {
+//   // action creators 연결
+//   playLogoAnimation,
+//   stopLogoAnimation,
+// }
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    playLogoAnimation: (animationClass) =>
+      dispatch(playLogoAnimation(animationClass)),
+    stopLogoAnimation: () => dispatch(stopLogoAnimation()),
+  }
 }
 
 function App(props) {
@@ -51,4 +65,17 @@ function App(props) {
   )
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App)
+export default connect(
+  // mapStateToProps
+  ({ animationClass }) => ({ animationClass }),
+  // mapDispatchToProps
+  (dispatch) => {
+    return {
+      playLogoAnimation: (activeAnimationClassName) =>
+        dispatch(playLogoAnimation(activeAnimationClassName)),
+      stopLogoAnimation: () => {
+        dispatch(stopLogoAnimation())
+      },
+    }
+  }
+)(App)
