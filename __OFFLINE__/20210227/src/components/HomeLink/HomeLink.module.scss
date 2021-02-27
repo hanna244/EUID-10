@@ -1,0 +1,31 @@
+.heading {
+  margin: 0;
+  font-size: 1em;
+}
+
+.logo {
+  pointer-events: none;
+  height: 2em;
+  vertical-align: -10px;
+}
+
+.link {
+  display: block;
+  text-decoration: none;
+  color: #38cff9;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .logo {
+    animation: spin infinite 24s linear;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
