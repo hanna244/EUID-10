@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots 디자인 시스템/폼 컨트롤/StoryInput Large 1`] = `
+<div
+  className="storyInput lg"
+>
+  <label
+    htmlFor="lg-size-kwdj8"
+  >
+    이메일
+  </label>
+  <input
+    id="lg-size-kwdj8"
+    placeholder="yamoo9@euid.dev"
+    type="email"
+  />
+</div>
+`;
+
+exports[`Storyshots 디자인 시스템/폼 컨트롤/StoryInput Medium 1`] = `
+<div
+  className="storyInput md"
+>
+  <label
+    htmlFor="md-size-kwdj5"
+  >
+    이메일
+  </label>
+  <input
+    id="md-size-kwdj5"
+    placeholder="yamoo9@euid.dev"
+    type="email"
+  />
+</div>
+`;
+
+exports[`Storyshots 디자인 시스템/폼 컨트롤/StoryInput Small 1`] = `
+<div
+  className="storyInput sm"
+>
+  <label
+    htmlFor="sm-size-kwdj1"
+  >
+    이메일
+  </label>
+  <input
+    id="sm-size-kwdj1"
+    placeholder="yamoo9@euid.dev"
+    type="email"
+  />
+</div>
+`;

@@ -1,0 +1,114 @@
+@use 'sass:map';
+
+$colors: (
+  dark: (
+    label: #767f96,
+    input: (
+      border: #1f57e7,
+      bg: #292f3a,
+      fg: #f5f5f5,
+    ),
+  ),
+  light: (
+    label: #595d65,
+    input: (
+      border: #9f9da9,
+      bg: #fdfdfd,
+      fg: #08163a,
+    ),
+  ),
+);
+
+@function getLabelColor($theme-name: light) {
+  $theme: map.get($colors, $theme-name);
+  @return map.get($theme, label);
+}
+
+@function getInputColor($name, $theme-name: light) {
+  $theme: map.get($colors, $theme-name);
+  $input: map.get($theme, input);
+  @return map.get($input, $name);
+}
+
+.a11yHidden {
+  overflow: hidden;
+  visibility: hidden;
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  clip-path: circle(0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  bottom: 0;
+  padding: 0;
+  white-space: nowrap;
+}
+
+.storyInput {
+  $size: 14px;
+
+  display: inline-flex;
+  flex-direction: column;
+
+  label {
+    margin-bottom: 0.4em;
+    color: getLabelColor();
+  }
+
+  input {
+    border: 2px solid rgba(getInputColor(border), 0.4);
+    border-radius: 8px;
+    padding: 1em;
+    background: getInputColor(bg);
+    color: getInputColor(fg);
+
+    &:focus {
+      outline: 0;
+      border: 2px solid getInputColor(border);
+      box-shadow: 2px solid rgba(getInputColor(border), 0.4);
+    }
+  }
+
+  // Dark Mode
+  .dark & {
+    label {
+      color: getLabelColor(dark);
+    }
+    input {
+      border-color: rgba(getInputColor(border, dark), 0.4);
+      background: getInputColor(bg, dark);
+      color: getInputColor(fg, dark);
+
+      &:focus {
+        border-color: getInputColor(border, dark);
+        box-shadow: 2px solid rgba(getInputColor(border, dark), 0.4);
+      }
+    }
+    ::placeholder {
+      color: #767f96;
+    }
+  }
+
+  // Size
+
+  &.sm {
+    label,
+    input {
+      font-size: $size * 0.8;
+    }
+  }
+
+  &.md,
+  input {
+    label {
+      font-size: $size;
+    }
+  }
+
+  &.lg {
+    label,
+    input {
+      font-size: $size * 1.2;
+    }
+  }
+}
