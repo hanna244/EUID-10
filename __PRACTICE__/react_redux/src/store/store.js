@@ -1,6 +1,8 @@
 import { createStore } from 'redux'
 import { logoAnimationSlice } from './slices/logoAnimationSlice'
 
-const store = createStore(logoAnimationSlice)
+import { composeWithDevTools } from 'redux-devtools-extension'
+
+const store = createStore(logoAnimationSlice, composeWithDevTools())
 
 export default store
