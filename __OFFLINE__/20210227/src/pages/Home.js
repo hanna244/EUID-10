@@ -1,8 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import styled from 'styled-components/macro'
+
 import Layout from 'containers/Layout/Layout'
 import NoFooterLayout from 'containers/Layout/NoFooterLayout'
+
+import News from 'components/News/News'
 
 /* -------------------------------------------------------------------------- */
 
@@ -23,20 +26,20 @@ const LayoutModeChanger = styled.button`
 
 const Home = () => {
   const [layoutMode, setLayoutMode] = React.useState(true)
-
   const LayoutMode = layoutMode ? Layout : NoFooterLayout
 
   return (
     <>
+      <LayoutMode>
+        <p>News API를 사용해 전 세계 뉴스를 표시할 것입니다.</p>
+        <News />
+      </LayoutMode>
       {ReactDOM.createPortal(
         <LayoutModeChanger onClick={() => setLayoutMode(!layoutMode)}>
           {layoutMode ? 'NoFooterLayout' : 'Layout'}
         </LayoutModeChanger>,
         document.body
       )}
-      <LayoutMode>
-        <p>News API를 사용해 전 세계 뉴스를 표시할 것입니다.</p>
-      </LayoutMode>
     </>
   )
 }
