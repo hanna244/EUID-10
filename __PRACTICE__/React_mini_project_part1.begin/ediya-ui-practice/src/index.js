@@ -1,10 +1,16 @@
 import 'react-app-polyfill/ie11'
 import 'styles/index.scss'
+import EdiyaContext, { ediyaContext } from '~/context/ediyaContext'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from '~/App/App'
 
-ReactDOM.render(<App />, document.getElementById('reactApp'))
+ReactDOM.render(
+  <EdiyaContext.Provider value={ediyaContext}>
+    <App />
+  </EdiyaContext.Provider>,
+  document.getElementById('reactApp')
+)
 
 // 앱을 오프라인에서 작동시키고 보다 빠르게 로드 하고자 한다면?
 // 아래 코드의 unregister()를 register()로 변경합니다.
