@@ -1,12 +1,22 @@
+import { useSpring, animated } from 'react-spring'
 import logo from './logo.svg'
 import './App.css'
 
 function App() {
+  const showLogo = useSpring({
+    opacity: 1,
+    from: { opacity: 0 },
+  })
+
   return (
     <div className="App">
       <header className="App-header">
-        <img style={showLogo} src={logo} className="App-logo" alt="logo" />
-        <span>{props.number}</span>
+        <animated.img
+          style={showLogo}
+          src={logo}
+          className="App-logo"
+          alt="logo"
+        />
       </header>
     </div>
   )
