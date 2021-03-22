@@ -1,5 +1,5 @@
 import React from 'react'
-import { useSpring, animated } from 'react-spring'
+import { useSpring, useTransition, animated } from 'react-spring'
 import logo from './logo.svg'
 import './App.css'
 import { ToggleButton } from './ToggleButton/ToggleButton'
@@ -45,6 +45,15 @@ function App() {
     from: { opacity: 0, color: 'red' },
   })
 
+  /* useTransition ------------------------------------------------------------ */
+
+  const [change, setChange] = React.useState(false)
+  const transitions = useTransition(change, null, {
+    from: { opacity: 0 },
+    enter: { opacity: 1 },
+    leave: { opacity: 0 },
+  })
+
   return (
     <div className="App">
       <header className="App-header">
@@ -59,6 +68,17 @@ function App() {
         <animated.span style={props}>안녕하세요!</animated.span>
         <br />
         <ToggleButton handle={() => setToggle(!toggle)} />
+        {transitions.map(({ item, key, props }) =>
+          item ? (
+            <animated.div onClick={() => setChange(!change)} style={props}>
+              😄
+            </animated.div>
+          ) : (
+            <animated.div onClick={() => setChange(!change)} style={props}>
+              🤪
+            </animated.div>
+          )
+        )}
       </header>
     </div>
   )
