@@ -8,6 +8,11 @@ function App() {
     from: { opacity: 0 },
   })
 
+  const innerHtmlNumber = useSpring({
+    number: 3,
+    from: { number: 0 },
+  })
+
   return (
     <div className="App">
       <header className="App-header">
@@ -17,6 +22,7 @@ function App() {
           className="App-logo"
           alt="logo"
         />
+        <animated.span>{innerHtmlNumber.number}</animated.span>
       </header>
     </div>
   )
