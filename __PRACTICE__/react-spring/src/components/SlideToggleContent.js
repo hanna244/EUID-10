@@ -16,6 +16,7 @@ export const SlideToggleContent = ({ isVisible, children, ...restProps }) => {
   })
 
   return transition.map(({ item: show, prop: toggleStyle, key }) =>
+    // 여기서 열고 닫을 떄 애니메이션이 적용되고 닫을 수 있도록 하는가?
     show ? (
       <animated.div prop={toggleStyle} key={key} {...restProps}>
         {children}
