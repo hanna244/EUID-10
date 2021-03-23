@@ -3,6 +3,7 @@ import { useSpring, useTransition, animated } from 'react-spring'
 import logo from './logo.svg'
 import './App.css'
 import { ToggleButton } from './ToggleButton/ToggleButton'
+import { SideToggle } from './components/SideToggle'
 
 function App() {
   const [toggle, setToggle] = React.useState(true)
@@ -79,6 +80,7 @@ function App() {
             </animated.div>
           )
         )}
+        <SideToggle />
       </header>
     </div>
   )
