@@ -7,6 +7,10 @@ export const SlideToggleContent = ({ isVisible, children, ...restProps }) => {
   })
 
   return transition.map(({ item: show, prop: toggleStyle, key }) =>
-    console.log(show)
+    show ? (
+      <animated.div prop={toggleStyle} key={key} {...restProps}>
+        {children}
+      </animated.div>
+    ) : null
   )
 }
