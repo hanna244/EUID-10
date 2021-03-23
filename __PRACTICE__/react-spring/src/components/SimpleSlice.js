@@ -1,5 +1,14 @@
 import React, { Fragment, useState, useRef } from 'react'
 import { animated, useTransition } from 'react-spring'
+import styled from 'styled-components'
+
+const Inner = styled.div`
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+  }
+`
 
 const visibleStyle = { height: 'auto', opacity: 1, overflow: 'visible' }
 const hiddenStyle = { height: 0, opacity: 0, overflow: 'hidden' }
@@ -14,21 +23,23 @@ const SimpleSliceItem = ({
   forceSlideIn = false,
   ...restProps
 }) => {
-  const isVisibleOnMount = useRef(isVisible && !forceSlideIn)
+  // const isVisibleOnMount = useRef(isVisible && !forceSlideIn)
+  const isVisibleOnMount = useRef(isVisible)
   const containerRef = useRef(null)
+  const innerRef = useRef(null)
 
   const transition = useTransition(isVisible, null, {
     enter: () => async (next, cancel) => {
-      const height = getElementHeight(containerRef)
+      const height = getElementHeight(innerRef)
       cancel()
 
-      await next({ height, overflow: 'hidden' })
+      await next({ height, opacity: 1, overflow: 'visible' })
       await next(visibleStyle)
     },
     leave: () => async (next, cancel) => {
       const height = getElementHeight(containerRef)
       cancel()
-      await next({ height, overflow: 'hidden' })
+      await next({ height })
       await next(hiddenStyle)
 
       isVisibleOnMount.current = false
@@ -40,7 +51,7 @@ const SimpleSliceItem = ({
   return transition.map(({ item: show, key, props }) =>
     show ? (
       <animated.div ref={containerRef} style={props} {...restProps}>
-        {children}
+        <div ref={innerRef}>{children}</div>
       </animated.div>
     ) : null
   )
@@ -54,8 +65,8 @@ export const SimpleSlice = () => {
         {isVisible ? 'true' : 'false'}
       </button>
       <SimpleSliceItem isVisible={isVisible}>
-        <p>이 것은</p>
-        <p>데모입니다.</p>
+        {/* <p>이 것은</p> */}
+        <Inner>데모입니다.</Inner>
       </SimpleSliceItem>
     </Fragment>
   )
