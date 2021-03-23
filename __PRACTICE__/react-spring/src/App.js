@@ -58,17 +58,16 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <animated.img
+        {/* <animated.img
           style={showLogo}
           src={logo}
           className="App-logo"
           alt="logo"
         />
         <br />
-        {/* <animated.span style={props}>{innerHtmlNumber.number}</animated.span> */}
         <animated.span style={props}>안녕하세요!</animated.span>
         <br />
-        <ToggleButton handle={() => setToggle(!toggle)} />
+        <ToggleButton handle={() => setToggle(!toggle)} /> */}
         {transitions.map(({ item, key, props }) =>
           item ? (
             <animated.div onClick={() => setChange(!change)} style={props}>

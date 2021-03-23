@@ -1,20 +1,18 @@
-import React from 'react'
+import React, { useState, Fragment } from 'react'
 import { SlideToggleContent } from './SlideToggleContent'
 
 export const SideToggle = ({ ...restProps }) => {
-  const [isVisible, setIsVisible] = React.useState(false)
+  const [isVisible, setIsVisible] = useState(false)
   return (
-    <>
-      <h3 {...restProps}>Slide Toggle</h3>
+    <Fragment>
+      <h3>Side Toggle</h3>
       <button type="button" onClick={() => setIsVisible(!isVisible)}>
-        {isVisible ? 'Close' : 'Open'} content
+        {isVisible ? '닫기' : '열기'}
       </button>
       <SlideToggleContent isVisible={isVisible}>
-        <>
-          <h4>Success!! 🎉</h4>
-          <p>This content will be mounted and unmounted</p>
-        </>
+        <h4>react-spring 학습 중</h4>
+        <p>익숙해 질 떄까지!</p>
       </SlideToggleContent>
-    </>
+    </Fragment>
   )
 }
