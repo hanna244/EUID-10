@@ -4,6 +4,7 @@ import logo from './logo.svg'
 import './App.css'
 import { ToggleButton } from './ToggleButton/ToggleButton'
 import { SideToggle } from './components/SideToggle'
+import { SimpleSlice } from './components/SimpleSlice'
 
 function App() {
   const [toggle, setToggle] = React.useState(true)
@@ -58,6 +59,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <SimpleSlice />
         {/* <animated.img
           style={showLogo}
           src={logo}
