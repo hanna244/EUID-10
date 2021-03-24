@@ -51,7 +51,7 @@ const SimpleSliceItem = ({
   return transition.map(({ item: show, key, props }) =>
     show ? (
       <animated.div ref={containerRef} style={props} {...restProps}>
-        <div ref={innerRef}>{children}</div>
+        <Inner ref={innerRef}>{children}</Inner>
       </animated.div>
     ) : null
   )
@@ -65,8 +65,8 @@ export const SimpleSlice = () => {
         {isVisible ? 'true' : 'false'}
       </button>
       <SimpleSliceItem isVisible={isVisible}>
-        {/* <p>이 것은</p> */}
-        <Inner>데모입니다.</Inner>
+        <p>이 것은</p>
+        <p>데모입니다.</p>
       </SimpleSliceItem>
     </Fragment>
   )
