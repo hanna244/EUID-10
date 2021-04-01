@@ -41,13 +41,17 @@ function App() {
 
   const [isToggled, setIsToggled] = React.useState(animationClass)
 
-  const combinedClassNames = classNames('App-logo', animationClass)
+  const combinedClassNames = classNames(
+    'App-logo',
+    'run-animation',
+    animationClass
+  )
 
-  const getToggedMessage = () => (isToggled ? '정지' : '실행')
+  const getToggedMessage = () => (!isToggled ? '정지' : '실행')
 
   const handleToggleLogoAnimation = () => {
     setIsToggled(!isToggled)
-    !isToggled ? playLogo('run-animation') : stopLogo()
+    !isToggled ? playLogo('stop-animation') : stopLogo()
   }
 
   // ------------------------------------------------------------------

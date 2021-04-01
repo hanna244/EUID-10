@@ -17,12 +17,12 @@ class Counter extends React.Component {
           justifyContent: 'center',
         }}
       >
-        <button type="button" onClick={onIncrement} style={Counter.buttonStyle}>
-          +
-        </button>
-        {children}
         <button type="button" onClick={onDecrement} style={Counter.buttonStyle}>
           -
+        </button>
+        {children}
+        <button type="button" onClick={onIncrement} style={Counter.buttonStyle}>
+          +
         </button>
       </div>
     )
