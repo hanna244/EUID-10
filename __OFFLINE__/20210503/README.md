@@ -10,9 +10,10 @@
 
 - 목표: LVPS(Luxury Vehicle Protection Services) - 고급 차량 보호 서비스
 - 팀원: 이재훈, 김지원, 김연구, 배근아
+- [GitHub 저장소](https://github.com/FDS-18-Final-Project/lvps)
 - [발표 자료](https://docs.google.com/presentation/d/1R8ejT2C4aFgI6PrCriOfr37V29hFLfX_Brr1bhpRsVY/edit?usp=sharing)
 - 점수: ★★★☆☆
-- 이유: GitHub 저장소 "비공개" - 진행 과정, 배포 여부 판단이 어려움 (-50점)
+- 이유: GitHub 저장소 <s>"비공개"</s> - 진행 과정, 배포 여부 판단이 어려움 (-50점)
 
 ## 2조 "우연히, 식단"
 
